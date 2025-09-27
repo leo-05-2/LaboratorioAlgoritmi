@@ -41,3 +41,24 @@ class LinkedList:
                 return Node
             current = current.next
         return None
+# funzioni per il confronto
+def kth_smallest(self, k) -> Node or None:
+    current = self._root
+    count = 1
+    while current:
+        if count == k:
+            return current.data
+        current = current.next
+        count += 1
+    return None  # k troppo grande
+
+
+def rank(self, x) -> int or None:
+    current = self._root
+    count = 0
+    while current and current.data < x:
+        count += 1
+        current = current.next
+    return count
+#insert e delete
+

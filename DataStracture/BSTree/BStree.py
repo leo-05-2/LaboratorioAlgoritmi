@@ -4,6 +4,12 @@ class BSTree:
     def __init__(self):
         self._root = None
 
+    def get_root(self):
+        return self._root
+
+    def set_root(self, root):
+        self._root = root
+
     def insert(self, key):
         new_node = Node(key)  #rimane da gestire il caso in cui un valore sia uguale al nuovo dato
         if self._root is None:
@@ -85,3 +91,41 @@ class BSTree:
         if v is not None:
             v.set_father(parent)
 
+
+    def in_order(self, node, k, result,count):
+        if node is None or result[0] is not None:
+            return
+        self.in_order(node.get_left(), k, result, count)
+        if result[0] is None:
+              count[0] += 1
+              if count[0] == k:
+                result[0] = node.get_data()
+                return
+        self.in_order(node.get_right(), k, result, count)
+
+    def _subtree_size(self, node):
+        if node is None:
+            return 0
+        return 1 + self._subtree_size(node.get_left()) + self._subtree_size(node.get_right())
+
+
+# funzioni per il confronto
+    def select(self, k):
+
+        result = [None]
+        count = [0]
+        self.in_order(self._root,k,result,count)
+        return result
+
+    def rank(self, x):
+        current = self._root
+        rank = 0
+        while current:
+            if x > current.get_data():
+                left_size = self._subtree_size(current.get_left())
+                rank += 1 + left_size
+                current = current.get_right()
+            else:
+                current = current.get_left()
+        return rank
+#insert e delete
