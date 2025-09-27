@@ -44,42 +44,19 @@ class BSTree:
         return current
 
     def _remove(self, node):
-        if node.get_left() is None and node.get_right() is None:
-            parent = node.get_father()
-            if parent is None:
-                self._root = None
-            elif parent.get_left() == node:
-                parent.set_left(None)
-            else:
-                parent.set_right(None)
-            return
-        if node.get_left() is None or node.get_right() is None:
-            if node.get_left():
-                child = node.get_left()
-            else:
-                child = node.get_right()
-            parent = node.get_father()
-            if parent is None:
-                self._root = child
-            elif parent.get_left() == node:
-                parent.set_left(child)
-            else:
-                parent.set_right(child)
-            if child:
-                child.set_father(parent)
-            return
-
-
-        successor = self.tree_successor(node)
-        node.set_data(successor.get_data())
-        self._remove(successor)
-
-
-
-
-
-
-
+        if node.get_left() is None:
+            self._transplant(node, node.get_right())
+        elif node.get_right() is None:
+            self._transplant(node, node.get_left())
+        else:
+            successor = self._min_value_node(node.get_right())
+            if successor.get_father() != node:
+                self._transplant(successor, successor.get_right())
+                successor.set_right(node.get_right())
+                successor.get_right().set_father(successor)
+            self._transplant(node, successor)
+            successor.set_left(node.get_left())
+            successor.get_left().set_father(successor)
 
     def remove(self, key) -> bool:
         node = self.search(key)
@@ -96,3 +73,15 @@ class BSTree:
             node = parent
             parent = parent.get_father()
         return parent
+
+    def _transplant(self, u, v):
+        parent = u.get_father()
+        if parent is None:
+            self._root = v
+        elif u == parent.get_left():
+            parent.set_left(v)
+        else:
+            parent.set_right(v)
+        if v is not None:
+            v.set_father(parent)
+
