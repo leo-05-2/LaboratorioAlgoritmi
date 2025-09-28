@@ -44,9 +44,7 @@ class ABSTree(ABC):
         if v is not None:
             v.set_father(parent)
 
-    @abstractmethod
-    def in_order(self, node, k, result, count):
-        pass
+
 
         # funzioni per il confronto
 
@@ -57,6 +55,30 @@ class ABSTree(ABC):
     @abstractmethod
     def rank(self, x):
         pass
+
+
+    def in_order_walk(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node is None:
+            return result
+        if node:
+            self.in_order_walk(node.get_left(), result)
+            result.append(node)
+            self.in_order_walk(node.get_right(), result)
+        return result
+
+
+    def pre_order_walk(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node is None:
+            return result
+        if node:
+            result.append(node.get_data())
+            self.pre_order_walk(node.get_left(), result)
+            self.pre_order_walk(node.get_right(), result)
+        return result
 
 
 

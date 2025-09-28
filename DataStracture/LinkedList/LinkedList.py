@@ -1,4 +1,4 @@
-from Node import *
+from DataStracture.LinkedList.Node import Node
 
 class LinkedList:
 # lista ordinata 

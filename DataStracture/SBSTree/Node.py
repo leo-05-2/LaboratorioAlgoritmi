@@ -5,7 +5,7 @@ class Node:
         self._right = None
         self._data = key
         self._father = None
-        _size = 1
+        self._size = 1
 
     def get_data(self):
         return self._data

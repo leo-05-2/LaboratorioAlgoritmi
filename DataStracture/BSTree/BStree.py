@@ -67,16 +67,7 @@ class BSTree(ABSTree):
         self._remove(node)
         return True
 
-    def in_order(self, node, k, result,count):
-        if node is None or result[0] is not None:
-            return
-        self.in_order(node.get_left(), k, result, count)
-        if result[0] is None:
-              count[0] += 1
-              if count[0] == k:
-                result[0] = node.get_data()
-                return
-        self.in_order(node.get_right(), k, result, count)
+
 
     def _subtree_size(self, node):
         if node is None:
@@ -87,10 +78,10 @@ class BSTree(ABSTree):
 # funzioni per il confronto
     def select(self, k):
 
-        result = [None]
+        result = []
         count = [0]
-        self.in_order(self._root,k,result,count)
-        return result
+        result = super().in_order_walk(self._root,result)
+        return result[k-1]
 
     def rank(self, x):
         current = self._root
@@ -106,15 +97,3 @@ class BSTree(ABSTree):
 #insert e delete
 
 
-    def pre_order_walk(self, node=None, result=None):
-        if result is None:
-            result = []
-        if node is None:
-            node = self._root
-            result.append(node)
-            return result
-        if node:
-            result.append(node.get_data())
-            self.pre_order_walk(node.get_left(), result)
-            self.pre_order_walk(node.get_right(), result)
-        return result

@@ -1,5 +1,6 @@
-from Node import *
+
 from DataStracture.AstructSracture.ABSTree import ABSTree
+from DataStracture.SBSTree.Node import Node
 
 class SBStree(ABSTree):
     def __init__(self):
@@ -46,20 +47,24 @@ class SBStree(ABSTree):
         node = self.search(key)
         if node is None:
             return False
-        parent = node.get_father()
         self._remove(node)
-        self._update_size_upwards(parent)
         return True
 
     def _remove(self, node):
         if node.get_left() is None:
             self._transplant(node, node.get_right())
+            self._update_size_upwards(node.get_father())
+
         elif node.get_right() is None:
             self._transplant(node, node.get_left())
+            self._update_size_upwards(node.get_father())
+
+
         else:
             successor = self._min_value_node(node.get_right())
             if successor.get_father() != node:
                 self._transplant(successor, successor.get_right())
+                self._update_size_upwards(successor.get_father())
                 successor.set_right(node.get_right())
                 successor.get_right().set_father(successor)
             self._transplant(node, successor)
@@ -76,7 +81,7 @@ class SBStree(ABSTree):
             return None
         left_size = node.get_left().get_size() if node.get_left() else 0
         if k == left_size + 1:
-            return node.get_data()
+            return node
         elif k <= left_size:
             return self._select(node.get_left(), k)
         else:
@@ -99,13 +104,4 @@ class SBStree(ABSTree):
             return left_size
 
 
-    def pre_order_walk(self, node=None, result=None):
-        if result is None:
-            result = []
-        if node is None:
-            node = self._root
-        if node:
-            result.append(node.get_data())
-            self.pre_order_walk(node.get_left(), result)
-            self.pre_order_walk(node.get_right(), result)
-        return result
+
