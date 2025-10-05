@@ -1,5 +1,8 @@
-
+from Tester import *
 
 if __name__ == "__main__":
-    print("Hello, World!")
+    tester = StructureTester()
+    tester.run_tests()
+    tester.plot_results()
+    tester.plot_sbstree_only()
 
