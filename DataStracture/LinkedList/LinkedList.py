@@ -42,7 +42,7 @@ class LinkedList:
             current = current.next
         return None
 
-    def kth_smallest(self, k) -> Node or None:
+    def select(self, k) -> Node or None:
         current = self._root
         count = 1
         while current:

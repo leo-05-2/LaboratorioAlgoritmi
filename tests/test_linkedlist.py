@@ -34,9 +34,9 @@ class TestLinkedList(unittest.TestCase):
         self.assertIsNone(current)  # La lista deve terminare qui
         self.assertFalse(self.list.remove(42))
 
-    def test_kth_smallest(self):
-        self.assertEqual(self.list.kth_smallest(3), 4)
-        self.assertIsNone(self.list.kth_smallest(10))  # k troppo grande
+    def test_select (self):
+        self.assertEqual(self.list.select(3), 4)
+        self.assertIsNone(self.list.select(10))  # k troppo grande
 
     def test_rank(self):
         self.assertEqual(self.list.rank(6), 4)  # 2,3,4,5 sono <6
