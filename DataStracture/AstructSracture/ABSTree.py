@@ -57,7 +57,7 @@ class ABSTree(ABC):
         pass
 
 
-    def in_order_walk(self, node=None, result=None):
+    def in_order_walk(self, node=None, result=None, k=None):
         if result is None:
             result = []
         if node is None:
@@ -65,8 +65,11 @@ class ABSTree(ABC):
         if node:
             self.in_order_walk(node.get_left(), result)
             result.append(node)
+            if k is not None and len(result) == k:
+                return result
             self.in_order_walk(node.get_right(), result)
         return result
+
 
 
     def pre_order_walk(self, node=None, result=None):

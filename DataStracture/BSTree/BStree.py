@@ -80,7 +80,7 @@ class BSTree(ABSTree):
 
         result = []
         count = [0]
-        result = super().in_order_walk(self._root,result)
+        result = super().in_order_walk(self._root,result,k)
         return result[k-1]
 
     def rank(self, x):

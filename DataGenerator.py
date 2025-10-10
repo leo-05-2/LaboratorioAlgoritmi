@@ -14,3 +14,12 @@ class DataGenerator:
 
     def start(self):
         return np.random.choice(self.max_value, self.length, replace=False)
+
+    def index_generator(self):
+        """ Genera indici casuali unici.
+        Yields:
+            int: Un indice casuale unico.
+        """
+        indices = np.random.choice(self.length, self.length, replace=False)
+        for index in indices:
+            yield index
