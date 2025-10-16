@@ -1,5 +1,5 @@
-from DataStracture.BSTree.Node import Node
-from DataStracture.AstructSracture.ABSTree import ABSTree
+from src.DataStracture.BSTree.Node import Node
+from src.DataStracture.AstructSracture.ABSTree import ABSTree
 
 
 class BSTree(ABSTree):

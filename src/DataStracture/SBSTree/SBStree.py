@@ -1,6 +1,6 @@
 
-from DataStracture.AstructSracture.ABSTree import ABSTree
-from DataStracture.SBSTree.Node import Node
+from src.DataStracture.AstructSracture.ABSTree import ABSTree
+from src.DataStracture.SBSTree.Node import Node
 
 class SBStree(ABSTree):
     def __init__(self):

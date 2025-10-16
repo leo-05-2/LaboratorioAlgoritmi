@@ -1,9 +1,9 @@
 import time
 import matplotlib.pyplot as plt
-from DataStracture.LinkedList.LinkedList import LinkedList
-from DataStracture.BSTree.BStree import BSTree
-from DataStracture.SBSTree.SBStree import SBStree
-from DataGenerator import DataGenerator
+from src.DataStracture.LinkedList.LinkedList import LinkedList
+from src.DataStracture.BSTree.BStree import BSTree
+from src.DataStracture.SBSTree.SBStree import SBStree
+from src.DataGenerator import DataGenerator
 import numpy as np
 
 

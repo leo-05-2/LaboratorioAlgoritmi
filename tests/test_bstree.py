@@ -3,7 +3,7 @@ Test per la struttura dati BSTree.
 Si testano: inserimento, ricerca, rimozione, select (k-esimo), rank e tree walk pre-order.
 """
 import unittest
-from DataStracture.BSTree.BStree import BSTree
+from src.DataStracture.BSTree.BStree import BSTree
 
 
 class TestBSTree(unittest.TestCase):

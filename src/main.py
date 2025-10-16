@@ -1,4 +1,4 @@
-from Tester import *
+from src.Tester import *
 
 if __name__ == "__main__":
     tester = StructureTester()

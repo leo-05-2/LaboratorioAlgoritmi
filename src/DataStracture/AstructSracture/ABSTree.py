@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from DataStracture.BSTree import Node
+from src.DataStracture.BSTree import Node
 
 
 class ABSTree(ABC):
