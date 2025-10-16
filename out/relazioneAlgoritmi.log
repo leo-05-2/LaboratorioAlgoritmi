@@ -1,0 +1,867 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.7)  16 OCT 2025 12:09
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**relazioneAlgoritmi.tex
+(./relazioneAlgoritmi.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(./resource/macros/macros.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\lst@mode=\count195
+\lst@gtempboxa=\box51
+\lst@token=\toks18
+\lst@length=\count196
+\lst@currlwidth=\dimen141
+\lst@column=\count197
+\lst@pos=\count198
+\lst@lostspace=\dimen142
+\lst@width=\dimen143
+\lst@newlines=\count199
+\lst@lineno=\count266
+\lst@maxwidth=\dimen144
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count267
+\lst@skipnumbers=\count268
+\lst@framebox=\box52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen145
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen146
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count269
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count270
+\leftroot@=\count271
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count272
+\DOTSCASE@=\count273
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen147
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count274
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count275
+\dotsspace@=\muskip16
+\c@parentequation=\count276
+\dspbrk@lvl=\count277
+\tag@help=\toks20
+\row@=\count278
+\column@=\count279
+\maxfields@=\count280
+\andhelp@=\toks21
+\eqnshift@=\dimen148
+\alignsep@=\dimen149
+\tagshift@=\dimen150
+\tagwidth@=\dimen151
+\totwidth@=\dimen152
+\lineht@=\dimen153
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count281
+\Gm@cntv=\count282
+\c@Gm@tempcnt=\count283
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/crop/crop.sty
+Package: crop 2017/11/19 1.10 crop marks (mf)
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+\CROP@index=\count284
+\CROP@offset=\count285
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen164
+\ar@mcellbox=\box55
+\extrarowheight=\dimen165
+\NC@list=\toks27
+\extratabsurround=\skip62
+\backup@length=\skip63
+\ar@cellbox=\box56
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+\linenopenalty=\count287
+\output=\toks28
+\linenoprevgraf=\count288
+\linenumbersep=\dimen166
+\linenumberwidth=\dimen167
+\c@linenumber=\count289
+\c@pagewiselinenumber=\count290
+\c@LN@truepage=\count291
+\c@internallinenumber=\count292
+\c@internallinenumbers=\count293
+\quotelinenumbersep=\dimen168
+\bframerule=\dimen169
+\bframesep=\dimen170
+\bframebox=\box57
+\linenoamsmath@ams@eqpen=\count294
+LaTeX Info: Redefining \\ on input line 3180.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/flushend.sty
+Package: flushend 2021/10/04 v4.0 Balancing columns in twocolumn mode
+\flushend@@lastskip@a=\skip64
+\flushend@@lastskip@b=\skip65
+\flushend@@lastnode=\count295
+\var@@loop@iter=\count296
+\var@@temp@spread=\dimen171
+\var@@temp@a=\dimen172
+\var@@temp@loop=\dimen173
+\flushend@@page@rule=\dimen174
+\flushend@@varbox@lastpage=\box58
+\flushend@@varbox@a=\box59
+\flushend@@varbox@c=\box60
+\flushend@@tempbox@a=\box61
+\flushend@@tempbox@c=\box62
+\flushend@@floatbox=\box63
+\@viper=\box64
+\hold@viper=\box65
+\atColsBreak=\toks29
+\atColsEnd=\toks30
+\oldbreak@skip=\dimen175
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count297
+\c@dblbotnumber=\count298
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks31
+\thm@bodyfont=\toks32
+\thm@headfont=\toks33
+\thm@notefont=\toks34
+\thm@headpunct=\toks35
+\thm@preskip=\skip66
+\thm@postskip=\skip67
+\thm@headsep=\skip68
+\dth@everypar=\toks36
+)
+(/usr/share/texlive/texmf-dist/tex/latex/changepage/chngpage.sty
+Package: chngpage 2009/10/20 v1.2b change page layout
+\c@cp@cnt=\count299
+\c@cp@tempcnt=\count300
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-01-22 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count301
+\l__pdf_internal_box=\box66
+))
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count302
+\l__lipsum_a_int=\count303
+\l__lipsum_b_int=\count304
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2023/10/14 v2.0e lastpage: 2.09 or 2e? (HMM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage2e.sty
+Package: lastpage2e 2023/10/14 v2.0e Decide which 2e lastpage version to use (H
+MM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
+Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count305
+) 
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count306
+\calc@Bcount=\count307
+\calc@Adimen=\dimen176
+\calc@Bdimen=\dimen177
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count308
+\calc@Cskip=\skip71
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen178
+\WF@size=\dimen179
+\c@WF@wrappedlines=\count309
+\WF@box=\box67
+\WF@everypar=\toks37
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen180
+\TX@old@table=\dimen181
+\TX@old@col=\dimen182
+\TX@target=\dimen183
+\TX@delta=\dimen184
+\TX@cols=\count310
+\TX@ftn=\toks38
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip72
+\LTright=\skip73
+\LTpre=\skip74
+\LTpost=\skip75
+\LTchunksize=\count311
+\LTcapwidth=\dimen185
+\LT@head=\box68
+\LT@firsthead=\box69
+\LT@foot=\box70
+\LT@lastfoot=\box71
+\LT@gbox=\box72
+\LT@cols=\count312
+\LT@rows=\count313
+\c@LT@tables=\count314
+\c@LT@chunks=\count315
+\LT@p@ftn=\toks39
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip76
+\enit@outerparindent=\dimen186
+\enit@toks=\toks40
+\enit@inbox=\box73
+\enit@count@id=\count316
+\enitdp@description=\count317
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip77
+\multirow@cntb=\count318
+\multirow@dima=\skip78
+\bigstrutjot=\dimen187
+)
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+\csq@reset=\count319
+\csq@gtype=\count320
+\csq@glevel=\count321
+\csq@qlevel=\count322
+\csq@maxlvl=\count323
+\csq@tshold=\count324
+\csq@ltx@everypar=\toks41
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count325
+\U@D=\dimen188
+\l@unhyphenated=\language10
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count326
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2024/01/03 v.1.5.00 Italian support for the babel system
+\it@lettering=\count327
+\it@doublequoteactive=\count328
+\it@ISOcompliance=\count329
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 11.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count330
+
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count331
+\c@listtotal=\count332
+\c@listcount=\count333
+\c@liststart=\count334
+\c@liststop=\count335
+\c@citecount=\count336
+\c@citetotal=\count337
+\c@multicitecount=\count338
+\c@multicitetotal=\count339
+\c@instcount=\count340
+\c@maxnames=\count341
+\c@minnames=\count342
+\c@maxitems=\count343
+\c@minitems=\count344
+\c@citecounter=\count345
+\c@maxcitecounter=\count346
+\c@savedcitecounter=\count347
+\c@uniquelist=\count348
+\c@uniquename=\count349
+\c@refsection=\count350
+\c@refsegment=\count351
+\c@maxextratitle=\count352
+\c@maxextratitleyear=\count353
+\c@maxextraname=\count354
+\c@maxextradate=\count355
+\c@maxextraalpha=\count356
+\c@abbrvpenalty=\count357
+\c@highnamepenalty=\count358
+\c@lownamepenalty=\count359
+\c@maxparens=\count360
+\c@parenlevel=\count361
+\blx@tempcnta=\count362
+\blx@tempcntb=\count363
+\blx@tempcntc=\count364
+\c@blx@maxsection=\count365
+\blx@maxsegment@0=\count366
+\blx@notetype=\count367
+\blx@parenlevel@text=\count368
+\blx@parenlevel@foot=\count369
+\blx@sectionciteorder@0=\count370
+\blx@sectionciteorderinternal@0=\count371
+\blx@entrysetcounter=\count372
+\blx@biblioinstance=\count373
+\labelnumberwidth=\skip79
+\labelalphawidth=\skip80
+\biblabelsep=\skip81
+\bibitemsep=\skip82
+\bibnamesep=\skip83
+\bibinitsep=\skip84
+\bibparsep=\skip85
+\bibhang=\skip86
+\blx@bcfin=\read3
+\blx@bcfout=\write3
+\blx@langwohyphens=\language11
+\c@mincomprange=\count374
+\c@maxcomprange=\count375
+\c@mincompwidth=\count376
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'verbose.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count377
+\c@savedafterword=\count378
+\c@annotator=\count379
+\c@savedannotator=\count380
+\c@author=\count381
+\c@savedauthor=\count382
+\c@bookauthor=\count383
+\c@savedbookauthor=\count384
+\c@commentator=\count385
+\c@savedcommentator=\count386
+\c@editor=\count387
+\c@savededitor=\count388
+\c@editora=\count389
+\c@savededitora=\count390
+\c@editorb=\count391
+\c@savededitorb=\count392
+\c@editorc=\count393
+\c@savededitorc=\count394
+\c@foreword=\count395
+\c@savedforeword=\count396
+\c@holder=\count397
+\c@savedholder=\count398
+\c@introduction=\count399
+\c@savedintroduction=\count400
+\c@namea=\count401
+\c@savednamea=\count402
+\c@nameb=\count403
+\c@savednameb=\count404
+\c@namec=\count405
+\c@savednamec=\count406
+\c@translator=\count407
+\c@savedtranslator=\count408
+\c@shortauthor=\count409
+\c@savedshortauthor=\count410
+\c@shorteditor=\count411
+\c@savedshorteditor=\count412
+\c@labelname=\count413
+\c@savedlabelname=\count414
+\c@institution=\count415
+\c@savedinstitution=\count416
+\c@lista=\count417
+\c@savedlista=\count418
+\c@listb=\count419
+\c@savedlistb=\count420
+\c@listc=\count421
+\c@savedlistc=\count422
+\c@listd=\count423
+\c@savedlistd=\count424
+\c@liste=\count425
+\c@savedliste=\count426
+\c@listf=\count427
+\c@savedlistf=\count428
+\c@location=\count429
+\c@savedlocation=\count430
+\c@organization=\count431
+\c@savedorganization=\count432
+\c@origlocation=\count433
+\c@savedoriglocation=\count434
+\c@origpublisher=\count435
+\c@savedorigpublisher=\count436
+\c@publisher=\count437
+\c@savedpublisher=\count438
+\c@language=\count439
+\c@savedlanguage=\count440
+\c@origlanguage=\count441
+\c@savedoriglanguage=\count442
+\c@pageref=\count443
+\c@savedpageref=\count444
+\shorthandwidth=\skip87
+\shortjournalwidth=\skip88
+\shortserieswidth=\skip89
+\shorttitlewidth=\skip90
+\shortauthorwidth=\skip91
+\shorteditorwidth=\skip92
+\locallabelnumberwidth=\skip93
+\locallabelalphawidth=\skip94
+\localshorthandwidth=\skip95
+\localshortjournalwidth=\skip96
+\localshortserieswidth=\skip97
+\localshorttitlewidth=\skip98
+\localshortauthorwidth=\skip99
+\localshorteditorwidth=\skip100
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count445
+\c@textcitetotal=\count446
+\c@textcitemaxnames=\count447
+\c@biburlbigbreakpenalty=\count448
+\c@biburlbreakpenalty=\count449
+\c@biburlnumpenalty=\count450
+\c@biburlucpenalty=\count451
+\c@biburllcpenalty=\count452
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count453
+)
+Package biblatex Info: Trying to load bibliography style 'verbose'...
+Package biblatex Info: ... file 'verbose.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/verbose.bbx
+File: verbose.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'authortitle'...
+Package biblatex Info: ... file 'authortitle.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authortitle.bbx
+File: authortitle.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count454
+\c@bbx:relatedtotal=\count455
+)))
+Package biblatex Info: Trying to load citation style 'verbose'...
+Package biblatex Info: ... file 'verbose.cbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/verbose.cbx
+File: verbose.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2024-01-22 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'italian'.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux)
+\openout1 = `relazioneAlgoritmi.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+\c@lstlisting=\count456
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count457
+\scratchdimen=\dimen189
+\scratchbox=\box74
+\nofMPsegments=\count458
+\nofMParguments=\count459
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count460
+\MPscratchDim=\dimen190
+\MPnumerator=\count461
+\makeMPintoPDFobject=\count462
+\everyMPtoPDFconversion=\toks43
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(99.58464pt, 398.3386pt, 99.58464pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=398.3386pt
+* \textheight=731.23584pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package crop Info: requested driver: `' on input line 33.
+Package crop Info: detected driver: `pdftex' on input line 33.
+Package crop Info: using `pdftex' graphics driver on input line 33.
+LaTeX Info: Redefining \it@ocap on input line 33.
+LaTeX Info: Redefining \it@ccap on input line 33.
+
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting
+italian.ldf    on input line 33.
+
+Package biblatex Info: Trying to load language 'italian'...
+Package biblatex Info: ... file 'italian.lbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
+File: italian.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `relazioneAlgoritmi.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'relazioneAlgoritmi.bbl' not found.
+
+No file relazioneAlgoritmi.bbl.
+Package biblatex Info: Reference section=0 on input line 33.
+Package biblatex Info: Reference segment=0 on input line 33.
+(./resource/title.tex
+<resource/firenze2.png, id=1, 4149.5025pt x 2015.53pt>
+File: resource/firenze2.png Graphic file (type png)
+<use resource/firenze2.png>
+Package pdftex.def Info: resource/firenze2.png  used on input line 9.
+(pdftex.def)             Requested size: 398.33858pt x 193.47638pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
+st/fonts/enc/dvips/base/8r.enc} <./resource/firenze2.png>])
+(/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.toc)
+\tf@toc=\write4
+\openout4 = `relazioneAlgoritmi.toc'.
+
+
+(./components/introduzione.tex)
+(./components/descrizione del problema e implementazione.tex)
+(./components/documentazione.tex) (./components/test.tex) [1]
+
+enddocument/afterlastpage: lastpage setting LastPage.
+(/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package logreq Info: Writing requests to 'relazioneAlgoritmi.run.xml'.
+\openout1 = `relazioneAlgoritmi.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 16356 strings out of 476098
+ 292893 string characters out of 5793538
+ 1927975 words of memory out of 5000000
+ 38116 multiletter control sequences out of 15000+600000
+ 578390 words of font info for 67 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 79i,11n,93p,1143b,1314s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneA
+lgoritmi.pdf (2 pages, 372755 bytes).
+PDF statistics:
+ 30 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

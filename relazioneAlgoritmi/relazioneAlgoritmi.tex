@@ -1,0 +1,52 @@
+%! Author = leo
+%! Date = 16/10/25
+
+% Preamble
+\documentclass{article}
+\input{resource/macros/macros}
+% Packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{crop,graphicx,amsmath,array,color,amssymb,fancyhdr,lineno}
+\usepackage{flushend,stfloats,amsthm,chngpage,times,,lipsum,lastpage}
+\usepackage{calc,listings,color,wrapfig,tabularx,longtable,enumitem}
+\usepackage{multirow}
+
+\usepackage{lineno}
+\usepackage{csquotes}
+\usepackage[italian]{babel}
+\usepackage[backend=biber, style=verbose]{biblatex}
+
+% Document
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+}
+\title {Relazione di Algoritmi e Strutture Dati}
+\author{Leonardo Viti}
+\docente{docente}
+\begin{document}
+\input{resource/title}
+\fancyhf{}
+\fancyhead[L]{Relazione di Algoritmi e Strutture Dati}
+\fancyfoot[R]{ \large \bf \thepage\ \centering}%
+
+\newpage
+\tableofcontents
+
+\input{components/introduzione}
+\input{components/descrizione del problema e implementazione}
+\input{components/documentazione}
+\input{components/test}
+
+
+
+oqfno
+
+\end{document}
+
