@@ -3,3 +3,136 @@
 
 % Preamble
 \section{test effettuati}
+\subsection{Metodologia}
+I test sono stati eseguiti con i seguenti parametri:
+
+\begin{itemize}
+  \item Dimensione delle strutture dati: da 100 a 10000 elementi
+  \item Dataset generati per ogni dimensione: 5
+  \item Campioni per dataset: 50
+  \item Ripetizioni per misurazione: 300
+  \item Chiamate di warm-up: 30
+  \item Seme casuale fisso:
+  \item 42
+\end{itemize}
+%TODO: sistemare la sezione test questa è una descrizione più dei grafici che delle funzioni test e dei test fatti
+\subsection{Analisi dell'operazione rank()}
+\begin{figure}[H]
+\centering\begin{document}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{resource/rank_performance}
+  \caption{Rank performance}
+\end{figure}
+\end{document}
+\caption{Confronto delle prestazioni di rank() tra le strutture}
+\label{fig:rank_performance}
+\end{figure}
+
+Osservando il grafico di Figura \ref{fig:rank_performance}, si evidenziano i seguenti comportamenti:
+
+\begin{itemize}
+  \item \textbf{SBSTree} (linea verde) mostra prestazioni nettamente superiori, con tempi quasi costanti (nell'ordine di 10\textsuperscript{-5} secondi) al crescere della dimensione, confermando il comportamento teorico logaritmico.
+
+  \item \textbf{LinkedList} (linea blu) mostra una crescita lineare con la dimensione della struttura, ma con una pendenza moderata e una variabilità relativamente bassa, indicata dalla banda di deviazione standard stretta.
+
+  \item \textbf{BSTree} (linea arancione) mostra le prestazioni peggiori con tempi di esecuzione più elevati e, soprattutto, una variabilità molto ampia (evidenziata dalla banda di deviazione standard larga). Questo è dovuto all'implementazione che richiede il calcolo ricorsivo della dimensione dei sottoalberi ad ogni chiamata, senza memorizzazione.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{resource/rank_sbstree_only}
+    \caption{}
+    \label{fig:rank_sbstree_only}
+\end{figure}
+\caption{Dettaglio delle prestazioni di rank() per SBSTree}
+
+\end{figure}
+
+Il grafico in Figura \ref{fig:rank_sbstree_only} evidenzia in dettaglio le prestazioni di \texttt{SBSTree}:
+\begin{itemize}
+  \item Il tempo di esecuzione rimane estremamente basso (nell'ordine di 10\textsuperscript{-5} secondi).
+  \item Si nota una leggera crescita logaritmica al crescere della dimensione, coerente con la teoria.
+  \item La variabilità (banda verde) è significativa in proporzione al valore medio, indicando sensibilità alla forma specifica dell'albero e alla posizione dell'elemento cercato.
+  \item Il grafico mostra un plateau dopo la fase iniziale, suggerendo che gli effetti di cache e altri overhead di sistema diventano predominanti rispetto al costo algoritmico dell'operazione.
+\end{itemize}
+
+\subsection{Analisi dell'operazione select()}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{resource/select_performance}
+\caption{Confronto delle prestazioni di select() tra le strutture}
+\label{fig:select_performance}
+\end{figure}
+
+Analizzando il grafico in Figura \ref{fig:select_performance}:
+
+\begin{itemize}
+  \item \textbf{SBSTree} (linea verde) conferma la sua superiorità anche per l'operazione \texttt{select()}, con tempi di esecuzione prossimi allo zero anche per grandi dimensioni.
+
+  \item \textbf{LinkedList} (linea blu) mostra una crescita lineare, ma con tempi mediamente inferiori rispetto al \texttt{BSTree}. Questo può sembrare controintuitivo, ma è spiegabile con l'overhead più basso delle operazioni di scorrimento lineare in memoria rispetto alla ricorsione necessaria per l'albero senza attributo dimensione.
+
+  \item \textbf{BSTree} (linea arancione) mostra nuovamente le prestazioni peggiori con tempi elevati e alta variabilità. L'implementazione attraverso visita in-order fino al k-esimo elemento risulta inefficiente, specialmente per valori di k elevati.
+\end{itemize}
+
+\section{Discussione}
+\subsection{Prestazioni Comparative}
+I risultati sperimentali confermano le previsioni teoriche:
+
+\begin{itemize}
+  \item \textbf{SBSTree} è nettamente la struttura più efficiente per entrambe le operazioni, con prestazioni logaritmiche e bassa variabilità.
+
+  \item \textbf{LinkedList} offre prestazioni lineari ma prevedibili. Per piccole dimensioni, la sua semplicità può renderla competitiva rispetto al \texttt{BSTree} standard.
+
+  \item \textbf{BSTree} senza attributo dimensione mostra le prestazioni peggiori, sia in termini di tempi medi che di variabilità. La necessità di ricalcolare ricorsivamente le dimensioni dei sottoalberi ad ogni chiamata di \texttt{rank()} e la visita completa fino al k-esimo elemento per \texttt{select()} lo rendono inefficiente.
+\end{itemize}
+
+\subsection{Variabilità e Stabilità}
+Un aspetto importante evidenziato dai risultati è la variabilità delle prestazioni:
+
+\begin{itemize}
+  \item Il \texttt{BSTree} standard mostra la più alta variabilità, con un'ampia banda di deviazione standard. Questo è attribuibile alla forma potenzialmente sbilanciata dell'albero e alla dipendenza del tempo di esecuzione dalla posizione specifica dell'elemento cercato.
+
+  \item La \texttt{LinkedList} mostra una variabilità moderata, principalmente influenzata dalla posizione dell'elemento cercato.
+
+  \item Il \texttt{SBSTree}, pur avendo la variabilità più bassa in termini assoluti, mostra una certa variabilità relativa al suo valore medio molto basso. Questo è dovuto principalmente all'influenza della cache e di altri fattori di sistema su operazioni così veloci.
+\end{itemize}
+
+\subsection{Effetto della Dimensione del Dataset}
+L'analisi dei grafici evidenzia chiaramente come la dimensione del dataset influenzi le prestazioni:
+
+\begin{itemize}
+  \item La \texttt{LinkedList} e il \texttt{BSTree} mostrano una crescita significativa dei tempi al crescere della dimensione, confermando il loro comportamento O(n).
+
+  \item Il \texttt{SBSTree} mantiene tempi quasi costanti anche per grandi dimensioni, dimostrando il suo comportamento logaritmico O(log n).
+
+  \item Per dimensioni molto piccole (< 1000 elementi), le differenze tra le strutture sono meno pronunciate, suggerendo che per piccoli dataset la scelta della struttura potrebbe essere meno critica.
+\end{itemize}
+
+\subsection{Implicazioni Pratiche}
+I risultati hanno importanti implicazioni pratiche:
+
+\begin{itemize}
+  \item Per applicazioni che richiedono frequenti operazioni di \texttt{select()} e \texttt{rank()} su dataset dinamici, l'utilizzo di una struttura con attributo dimensione come \texttt{SBSTree} è fortemente consigliato.
+
+  \item Il costo aggiuntivo di memoria per memorizzare la dimensione in ogni nodo è ampiamente compensato dal guadagno in prestazioni.
+
+  \item Per dataset piccoli o applicazioni dove la semplicità è prioritaria, una \texttt{LinkedList} ordinata può essere una soluzione ragionevole.
+
+  \item L'implementazione standard di \texttt{BSTree} senza attributo dimensione non è consigliabile per applicazioni che richiedono frequenti operazioni di statistiche d'ordine.
+\end{itemize}
+
+\section{Conclusioni}
+Questa analisi ha confrontato tre implementazioni delle statistiche d'ordine dinamico, evidenziando come l'aggiunta di informazioni supplementari (l'attributo dimensione nei nodi dell'albero) possa migliorare drasticamente le prestazioni.
+
+Il \texttt{SBSTree} si è dimostrato nettamente superiore sia per l'operazione \texttt{select(k)} che per \texttt{rank(x)}, con tempi di esecuzione logaritmici e bassa variabilità anche su dataset di grandi dimensioni.
+
+La \texttt{LinkedList}, nonostante la sua semplicità e il comportamento lineare, ha mostrato prestazioni sorprendentemente buone, superando il \texttt{BSTree} standard in molti casi grazie alla sua implementazione diretta e all'assenza di overhead ricorsivi.
+
+Il \texttt{BSTree} standard ha mostrato le prestazioni peggiori, evidenziando come un'implementazione naive delle statistiche d'ordine su alberi binari di ricerca sia inefficiente quando non si memorizzano informazioni aggiuntive sulla struttura.
+
+Per applicazioni che richiedono frequenti operazioni di statistiche d'ordine dinamico, l'investimento in strutture dati più sofisticate come il \texttt{SBSTree} risulta ampiamente giustificato dai significativi guadagni in termini di prestazioni.
+
+\end{document}

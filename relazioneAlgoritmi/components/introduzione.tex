@@ -3,5 +3,27 @@
 
 % Preamble
 \section{Introduzione}
-esempio
-\subsection{prova}
+Questa relazione analizza le prestazioni di diverse strutture dati nell'implementazione delle statistiche d'ordine dinamico, in particolare le operazioni di \texttt{select(k)} e \texttt{rank(x)}.
+
+verranno descritte le strutture dati usate, esposte le scelte progettuali fatte e alcuni aspetti implementativi.
+Di seguito verranno messe a confronto con opportuni test le prestazioni nelle operazioni
+di selezione dell' i-esimo elemento più piccolo e di calcolo del rango di un elemento.
+Lo scopo di questa analisi è confrontare tre strutture dati differenti:
+\begin{itemize}
+  \item Lista concatenata ordinata (\texttt{LinkedList})
+  \item Albero binario di ricerca standard senza attributo dimensione (\texttt{BSTree})
+  \item Albero binario di ricerca con attributo dimensione (\texttt{SBSTree})
+\end{itemize}
+
+Verranno presentati i risultati sperimentali che evidenziano come le diverse implementazioni si comportano al variare delle dimensioni del dataset, con particolare attenzione a efficienza temporale e variabilità delle prestazioni.
+
+\subsection{Esercizio}
+% aggiungere snippet dell'esercizio con latex
+esercizio assegnato per l'esame di Laboratorio di Algoritmi e Strutture Dati:
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
+%todo: inserire immagine dell'esercizio

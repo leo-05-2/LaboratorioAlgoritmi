@@ -78,10 +78,24 @@ class BSTree(ABSTree):
 # funzioni per il confronto
     def select(self, k):
 
-        result = []
-        count = [0]
-        result = super().in_order_walk(self._root,result,k)
-        return result[k-1]
+        if k is None or k <= 0 or self._root is None:
+            return None
+
+        stack = []
+        current = self._root
+        count = 0
+
+        while stack or current:
+            while current:
+                stack.append(current)
+                current = current.get_left()
+            current = stack.pop()
+            count += 1
+            if count == k:
+                return current
+            current = current.get_right()
+
+        return None
 
     def rank(self, x):
         current = self._root

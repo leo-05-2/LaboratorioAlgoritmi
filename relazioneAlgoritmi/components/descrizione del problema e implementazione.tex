@@ -3,3 +3,69 @@
 
 % Preamble
 \section{Descrizione del problema e implementazione}
+\subsection{Statistiche d'Ordine Dinamico}
+Le statistiche d'ordine sono misure che descrivono la distribuzione degli elementi in un insieme ordinato. Nel contesto delle strutture dati dinamiche, ci concentriamo su due operazioni fondamentali:
+
+\begin{itemize}
+  \item \textbf{select(k)}: restituisce l'elemento di rango k (il k-esimo elemento più piccolo) nell'insieme.
+  \item \textbf{rank(x)}: restituisce il numero di elementi strettamente minori di x nell'insieme.
+\end{itemize}
+
+Queste operazioni consentono di estrarre informazioni sulla posizione relativa degli elementi in una collezione ordinata dinamica, dove elementi possono essere aggiunti o rimossi nel tempo.
+sono state implementate tre diverse strutture dati per supportare queste operazioni: una lista concatenata ordinata, un albero binario di ricerca standard e un albero binario di ricerca con attributo dimensione.
+
+
+\subsection{Implementazione}
+\subsubsection{Lista Concatenata Ordinata}
+La lista concatenata ordinata è implementata con nodi che contengono un valore e un puntatore al nodo successivo. %TODO: decidere come gestire i valori duplicati
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
+\subsubsection{Albero Binario di Ricerca Standard}
+L'albero binario di ricerca standard è implementato con nodi che contengono un valore e puntatori ai figli sinistro e destro e al padre.
+propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori.
+implementazione tradizionale %TODO: decidere come gestire i valori duplicati
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
+\subsubsection{Albero Binario di Ricerca con Attributo Dimensione}
+L'albero binario di ricerca con attributo dimensione estende la struttura del nodo per includere un campo \texttt{size} che tiene traccia del numero di nodi nel sottoalbero radicato in quel nodo.
+Questo campo viene aggiornato durante le operazioni di inserimento e cancellazione per mantenere la correttezza delle statistiche d'ordine.
+Questa implementazione offre significativi miglioramenti teorici rispetto alle alternative, specialmente quando l'albero non degenera in una lista.
+%TODO: decidere come gestire i valori duplicati
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
+
+\subsection{Complessità Teorica}
+\subsubsection{Lista Concatenata Ordinata}
+In una lista concatenata ordinata:
+\begin{itemize}
+  \item \texttt{select(k)} richiede O(k) passaggi, poiché è necessario attraversare la lista dall'inizio fino al k-esimo elemento.
+  \item \texttt{rank(x)} richiede O(n) passaggi nel caso peggiore, dove n è la dimensione della lista, poiché potrebbe essere necessario scorrere l'intera lista.
+\end{itemize}
+
+\subsubsection{Albero Binario di Ricerca Standard}
+In un albero binario di ricerca (BST) non bilanciato:
+\begin{itemize}
+  \item \texttt{select(k)} richiede O(n) nel caso peggiore, poiché l'implementazione tradizionale richiede una traversata dell'albero che può coinvolgere potenzialmente tutti i nodi.
+  \item \texttt{rank(x)} richiede O(n) nel caso peggiore, per le stesse ragioni.
+\end{itemize}
+
+Tuttavia, in un albero bilanciato, entrambe le operazioni potrebbero raggiungere O(log n), ma questo non è garantito nell'implementazione standard senza meccanismi di bilanciamento.
+
+\subsubsection{Albero Binario di Ricerca con Attributo Dimensione}
+Un BST con campo \texttt{size} che mantiene la dimensione del sottoalbero di ogni nodo:
+\begin{itemize}
+  \item \texttt{select(k)} richiede O(h) operazioni, dove h è l'altezza dell'albero. Nei casi peggiori di alberi sbilanciati, h può essere O(n), ma in alberi ragionevolmente bilanciati h si avvicina a O(log n).
+  \item \texttt{rank(x)} richiede anche O(h), con le stesse considerazioni.
+\end{itemize}

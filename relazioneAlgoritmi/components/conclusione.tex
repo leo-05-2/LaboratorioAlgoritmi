@@ -3,3 +3,25 @@
 
 % Preamble
 \section{Conclusione}
+In questa relazione abbiamo confrontato le prestazioni pratiche di tre implementazioni per le statistiche d'ordine dinamico: \texttt{LinkedList}, \texttt{BSTree} (albero binario non bilanciato senza campo \texttt{size}) e \texttt{SBStree} (albero che mantiene il campo \texttt{size}).
+
+Riepilogo dei risultati:
+\begin{itemize}
+  \item \textbf{SBStree} fornisce le migliori prestazioni per entrambe le operazioni \texttt{select} e \texttt{rank} nelle misure presentate, con crescita logaritmica apparente e varianza contenuta.
+  \item \textbf{BSTree} (non bilanciato e senza campo \texttt{size}) mostra ampia variabilità specialmente per \texttt{rank}, dovuta alla possibile degenerazione della forma dell'albero; i tempi possono variare molto tra istanze diverse.
+  \item \textbf{LinkedList} ha comportamento prevedibile (linearità per select/rank) ma non è competitiva su grandi dimensioni rispetto alla struttura con \texttt{size}.
+\end{itemize}
+
+Osservazioni sperimentali e raccomandazioni:
+\begin{itemize}
+  \item Le misure sono state condotte con warm-up e campionamento multiplo per ridurre bias; tuttavia valori estremamente piccoli (microsecondi) sono sensibili a jitter di sistema. Aumentare \texttt{datasets\_per\_n}, \texttt{count} o \texttt{calls\_per\_test} migliora la stabilit\`a statistica a costo di tempo computazionale.
+  \item Per analisi future consigliamo di introdurre anche strutture bilanciate come AVL/Red-Black con campo \texttt{size} per confronti più completi e di misurare anche l'overhead di inserimento/rimozione associato al mantenimento del campo \texttt{size}.
+\end{itemize}
+%aggiungere grafici
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
+Conclusione pratica: per applicazioni che richiedono \texttt{select} e \texttt{rank} efficienti su insiemi dinamici, l'uso di una struttura che mantiene \texttt{size} nei nodi (come \texttt{SBStree}) risulta consigliabile; alberi non bilanciati senza informazione di size mostrano prestazioni incerte e variabili.
