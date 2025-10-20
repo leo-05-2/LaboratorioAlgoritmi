@@ -9,9 +9,10 @@ import numpy as np
 
 class StructureTester:
 
-    def __init__(self, sizes=None, datasets_per_n=12, count=120, calls_per_test=30, warmup_calls=20):
+    def __init__(self, sizes=None, datasets_per_n=10, count=120, calls_per_test=30, warmup_calls=20):
         if sizes is None:
             sizes = np.unique(np.logspace(2, 4, 54, dtype=int))   # da 100 a ~1000, 25 punti
+            sizes = np.unique(np.logspace(2, 4, 50, dtype=int))   # da 100 a ~1000, 25 punti
         self.sizes = sizes
         self.datasets_per_n = datasets_per_n  # se >1 si possono aggregare più dataset per ogni n
         self.count = count                      # numero di k scelti per n (campioni per n)
@@ -52,11 +53,12 @@ class StructureTester:
                 structure.select(k)
             elapsed_select = (time.perf_counter() - start) / self.calls_per_test
             samples_select.append(elapsed_select)
+            x = structure.select(k).get_data()
 
             # measure rank
             start = time.perf_counter()
             for __ in range(self.calls_per_test):
-                structure.rank(k)
+                structure.rank(x)
             elapsed_rank = (time.perf_counter() - start) / self.calls_per_test
             samples_rank.append(elapsed_rank)
 
