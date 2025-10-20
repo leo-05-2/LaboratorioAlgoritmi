@@ -13,7 +13,7 @@ class BSTree(ABSTree):
         self._root = root
 
     def insert(self, key):
-        new_node = Node(key)  #rimane da gestire il caso in cui un valore sia uguale al nuovo dato
+        new_node = Node(key)  # rimane da gestire il caso in cui un valore sia uguale al nuovo dato
         if self._root is None:
             self._root = new_node
             return
@@ -34,7 +34,7 @@ class BSTree(ABSTree):
                 else:
                     current = current.get_right()
 
-    def search(self, key) -> Node or None:
+    def search(self, key) -> Node | None:
         current = self._root
         while current:
             if current.get_data() == key:
@@ -67,13 +67,10 @@ class BSTree(ABSTree):
         self._remove(node)
         return True
 
-
-
     def _subtree_size(self, node):
         if node is None:
             return 0
         return 1 + self._subtree_size(node.get_left()) + self._subtree_size(node.get_right())
-
 
 # funzioni per il confronto
     def select(self, k):
@@ -108,6 +105,5 @@ class BSTree(ABSTree):
             else:
                 current = current.get_left()
         return rank
+
 #insert e delete
-
-

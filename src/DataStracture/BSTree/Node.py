@@ -1,5 +1,5 @@
-
-class Node:
+from ..AstructSracture.ANode import ANode
+class Node(ANode):
     def __init__(self, key):
         self._left = None
         self._right = None
