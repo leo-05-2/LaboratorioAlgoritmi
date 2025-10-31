@@ -2,8 +2,7 @@ from ..AstructSracture.ANode import ANode
 class Node(ANode):
     def __init__(self, key):
         self._left = None
-        self._right = None
-        self._data = key
+        super().__init__(key)
         self._father = None
 
     def get_data(self):

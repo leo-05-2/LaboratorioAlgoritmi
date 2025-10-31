@@ -14,8 +14,8 @@ class TestLinkedList(unittest.TestCase):
         expected_values = [2, 3, 4, 5, 6, 7, 8]
         for value in expected_values:
             self.assertIsNotNone(current)
-            self.assertEqual(current.data, value)
-            current = current.next
+            self.assertEqual(current._data, value)
+            current = current._right
         self.assertIsNone(current)  # La lista deve terminare qui
 
     def test_search(self):
@@ -29,13 +29,13 @@ class TestLinkedList(unittest.TestCase):
         expected_values = [2, 4, 5, 6, 7, 8]
         for value in expected_values:
             self.assertIsNotNone(current)
-            self.assertEqual(current.data, value)
-            current = current.next
+            self.assertEqual(current._data, value)
+            current = current._right
         self.assertIsNone(current)  # La lista deve terminare qui
         self.assertFalse(self.list.remove(42))
 
     def test_select (self):
-        self.assertEqual(self.list.select(3), 4)
+        self.assertEqual(self.list.select(3)._data, 4)
         self.assertIsNone(self.list.select(10))  # k troppo grande
 
     def test_rank(self):
@@ -50,8 +50,8 @@ class TestLinkedList(unittest.TestCase):
         expected_values = [2, 3, 4, 5, 6, 7, 8]
         for value in expected_values:
             self.assertIsNotNone(current)
-            self.assertEqual(current.data, value)
-            current = current.next
+            self.assertEqual(current._data, value)
+            current = current._right
         self.assertIsNone(current)
 
     def test_remove_head(self):
@@ -61,6 +61,6 @@ class TestLinkedList(unittest.TestCase):
         expected_values = [3, 4, 5, 6, 7, 8]
         for value in expected_values:
             self.assertIsNotNone(current)
-            self.assertEqual(current.data, value)
-            current = current.next
+            self.assertEqual(current._data, value)
+            current = current._right
         self.assertIsNone(current)

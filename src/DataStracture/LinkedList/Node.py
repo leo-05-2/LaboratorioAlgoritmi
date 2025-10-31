@@ -2,18 +2,18 @@
 from src.DataStracture.AstructSracture.ANode import ANode
 class Node(ANode) :
     def __init__(self, data):
-        self.data = data
-        self.next :Node | None = None
+        super().__init__(data)
 
     def get_data(self):
-        return self.data
+        return self._data
 
     def set(self, data):
-        self.data = data
+        self._data = data
 
     def get_right(self):
-        return self.next
+        return self._right
 
 
     def set_right(self, node):
-        self.next = node
+        self._right = node
+

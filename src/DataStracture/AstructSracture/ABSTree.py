@@ -3,7 +3,7 @@ from src.DataStracture.BSTree import Node
 
 
 class ABSTree(ABC):
-    root = None
+
 
 
     @abstractmethod

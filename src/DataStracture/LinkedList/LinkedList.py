@@ -5,6 +5,12 @@ class LinkedList:
     def __init__(self):
          self._root = None
 
+    def get_root(self):
+        return self._root
+
+    def set_root(self, root):
+        self._root = root
+
     def insert(self, data):
         new_node = Node(data)
         # usa get_data / set_right per accedere/incapsulare i campi
