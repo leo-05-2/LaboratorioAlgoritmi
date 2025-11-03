@@ -13,7 +13,7 @@ class BSTree(ABSTree):
         self._root = root
 
     def insert(self, key):
-        new_node = Node(key)  # rimane da gestire il caso in cui un valore sia uguale al nuovo dato
+        new_node = Node(key)
         if self._root is None:
             self._root = new_node
             return

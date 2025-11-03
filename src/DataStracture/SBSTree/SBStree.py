@@ -6,6 +6,12 @@ class SBStree(ABSTree):
     def __init__(self):
         self._root = None
 
+    def get_root(self):
+        return self._root
+
+    def set_root(self, root):
+        self._root = root
+
     def insert(self, key):
         self._root = self._insert(self._root, key)
 
