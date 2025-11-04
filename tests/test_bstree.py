@@ -40,6 +40,7 @@ class TestBSTree(unittest.TestCase):
         i =0
         for x in result:
             self.assertEqual(x.get_data(), test_values[i] )
+            i += 1
         self.assertFalse(self.tree.remove(42))
 
     def test_select(self):

@@ -11,8 +11,8 @@ class StructureTester:
 
     def __init__(self, sizes=None, datasets_per_n=10, count=120, calls_per_test=30, warmup_calls=20):
         if sizes is None:
-            sizes = np.unique(np.logspace(2, 4, 54, dtype=int))   # da 100 a ~1000, 25 punti
             sizes = np.unique(np.logspace(2, 4, 50, dtype=int))   # da 100 a ~1000, 25 punti
+            # size spaziato linearmente tra 100 e 10000 con np e unique
         self.sizes = sizes
         self.datasets_per_n = datasets_per_n  # se >1 si possono aggregare più dataset per ogni n
         self.count = count                      # numero di k scelti per n (campioni per n)
@@ -25,13 +25,13 @@ class StructureTester:
         self.select_std  = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
         self.rank_mean   = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
         self.rank_std    = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
+        # test per i dati semplici semnza media
+        self.agg_select = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
+        self.agg_rank = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
+
 
     def _measure_on_structure_instance(self, structure, n):
-        """
-        structure: istanza già popolata
-        esegue warmup, poi per self.count volte sceglie un k casuale e misura avg time di select e rank
-        restituisce due liste: samples_select (len = self.count), samples_rank
-        """
+
         rng = np.random.default_rng()
         # warm-up
         for _ in range(self.warmup_calls):
@@ -45,9 +45,9 @@ class StructureTester:
         samples_select = []
         samples_rank = []
 
-        for _ in range(self.count): #test con k diversi per test
+        for _ in range(self.count): #test con k diversi per test quindi count esempi per ogni dimensione
             k = int(rng.integers(1, n + 1))
-            # measure select
+
             start = time.perf_counter()
             for __ in range(self.calls_per_test): # con lo stesso k per ridurre rumore
                 structure.select(k)
@@ -55,7 +55,6 @@ class StructureTester:
             samples_select.append(elapsed_select)
             x = structure.select(k).get_data()
 
-            # measure rank
             start = time.perf_counter()
             for __ in range(self.calls_per_test):
                 structure.rank(x)
@@ -120,6 +119,53 @@ class StructureTester:
                 self.rank_std[name].append(rnk_std)
 
             print(f'finished n={n} (datasets_per_n={self.datasets_per_n})')
+
+    def run_simple_test(self):
+        result_select = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
+        result_rank = {'LinkedList': [], 'BSTree': [], 'SBStree': []}
+
+        for n in self.sizes:
+            # opzionalmente aggrega più dataset per n (oggi lasciato semplice)
+
+            generator = DataGenerator(n * 2, n)
+            data = generator.start()
+
+            # LinkedList
+            ll = LinkedList()
+            for v in data:
+                ll.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(ll, n)
+            self.agg_select['LinkedList'].extend(sel_samps)
+            self.agg_rank['LinkedList'].extend(rnk_samps)
+
+            bst = BSTree()
+            for v in data:
+                bst.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(bst, n)
+            self.agg_select['BSTree'].extend(sel_samps)
+            self.agg_rank['BSTree'].extend(rnk_samps)
+
+            # SBStree
+            sbs = SBStree()
+            for v in data:
+                sbs.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(sbs, n)
+            self.agg_select['SBStree'].extend(sel_samps)
+            self.agg_rank['SBStree'].extend(rnk_samps)
+
+            print(f'finished n={n}')
+
+            for name in ['LinkedList', 'BSTree', 'SBStree']:
+                sel_arr = np.array(self.agg_select[name], dtype=float)
+                rnk_arr = np.array(self.agg_rank[name], dtype=float)
+                result_select[name].append(sel_arr.mean())
+                result_rank[name].append(rnk_arr.mean())
+                # clear agg select and rank [name] content
+                self.agg_select[name].clear()
+                self.agg_rank[name].clear()
+
+        return result_select, result_rank
+    #test basico senza deviazione standard
 
     def plot_results(self):
         markers = {'LinkedList': 'o', 'BSTree': 's', 'SBStree': '^'}
@@ -186,3 +232,271 @@ class StructureTester:
         plt.tight_layout()
         plt.savefig('rank_sbstree_only.png')
         plt.close()
+    
+    def plot_simple_result(self, result_select, result_rank):
+        markers = {'LinkedList': 'o', 'BSTree': 's', 'SBStree': '^'}
+        colors = {'LinkedList': 'tab:blue', 'BSTree': 'tab:orange', 'SBStree': 'tab:green'}
+        x = np.array(self.sizes)
+        plt.figure(figsize=(10, 5))
+        for name in ['LinkedList', 'BSTree', 'SBStree']:
+            data = np.array(result_select[name], dtype=float)
+            if data.size != x.size:
+                data = np.full_like(x, np.nan, dtype=float)
+            plt.plot(x, data, label=name, marker=markers[name], color=colors[name], linewidth=2)
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio select (s)', fontsize=12)
+        plt.title('Prestazioni select', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=12)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('select_performance_simple_test.png')
+        plt.close()
+
+        plt.figure(figsize=(10, 5))
+        for name in ['LinkedList', 'BSTree', 'SBStree']:
+            data = np.array(result_rank[name], dtype=float)
+            if data.size != x.size:
+                data = np.full_like(x, np.nan, dtype=float)
+            plt.plot(x, data, label=name, marker=markers[name], color=colors[name], linewidth=2)
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo rank (s)', fontsize=12)
+        plt.title('Prestazioni rank', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=12)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('rank_performance_simple_test.png')
+        plt.close()
+
+    def run_degenerate_vs_list_test(self): #todo: albero degenere contro lista, entrambi ordinati
+        result_select = {'LinkedList': [], 'BSTree_Degenerate': []}
+        result_rank = {'LinkedList': [], 'BSTree_Degenerate': []}
+
+        for n in self.sizes:
+            generator = DataGenerator(n * 2, n, data_type='sorted')
+            data = generator.start()
+
+            # LinkedList
+            ll = LinkedList()
+            for v in data:
+                ll.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(ll, n)
+            result_select['LinkedList'].append(np.mean(sel_samps))
+            result_rank['LinkedList'].append(np.mean(rnk_samps))
+
+            # BSTree con dati ordinati (degenera in lista)
+            bst = BSTree()
+            for v in data:
+                bst.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(bst, n)
+            result_select['BSTree_Degenerate'].append(np.mean(sel_samps))
+            result_rank['BSTree_Degenerate'].append(np.mean(rnk_samps))
+
+            print(f'finished degenerate test n={n}')
+
+        return result_select, result_rank
+
+    def run_balanced_vs_random_test(self): #todo: bilanziato vs random
+        result_select = {
+            'BSTree_Random': [], 'BSTree_Balanced': [],
+            'SBStree_Random': [], 'SBStree_Balanced': []
+        }
+        result_rank = {
+            'BSTree_Random': [], 'BSTree_Balanced': [],
+            'SBStree_Random': [], 'SBStree_Balanced': []
+        }
+
+        for n in self.sizes:
+            # Test Random
+            generator_random = DataGenerator(n * 2, n, data_type='random')
+            data_random = generator_random.start()
+
+            bst_rand = BSTree()
+            for v in data_random:
+                bst_rand.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(bst_rand, n)
+            result_select['BSTree_Random'].append(np.mean(sel_samps))
+            result_rank['BSTree_Random'].append(np.mean(rnk_samps))
+
+            sbs_rand = SBStree()
+            for v in data_random:
+                sbs_rand.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(sbs_rand, n)
+            result_select['SBStree_Random'].append(np.mean(sel_samps))
+            result_rank['SBStree_Random'].append(np.mean(rnk_samps))
+
+            # Test Balanced
+            generator_balanced = DataGenerator(n * 2, n, data_type='balanced')
+            data_balanced = generator_balanced.start()
+
+            bst_bal = BSTree()
+            for v in data_balanced:
+                bst_bal.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(bst_bal, n)
+            result_select['BSTree_Balanced'].append(np.mean(sel_samps))
+            result_rank['BSTree_Balanced'].append(np.mean(rnk_samps))
+
+            sbs_bal = SBStree()
+            for v in data_balanced:
+                sbs_bal.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(sbs_bal, n)
+            result_select['SBStree_Balanced'].append(np.mean(sel_samps))
+            result_rank['SBStree_Balanced'].append(np.mean(rnk_samps))
+
+            print(f'finished balanced vs random test n={n}')
+
+        return result_select, result_rank
+
+    #todo:aggiungere albero bilanciato confronto lista
+
+
+    def plot_degenerate_comparison(self, result_select, result_rank):
+        x = np.array(self.sizes)
+
+        # Select plot
+        plt.figure(figsize=(10, 5))
+        plt.plot(x, result_select['LinkedList'], label='LinkedList',
+                 marker='o', color='tab:blue', linewidth=2)
+        plt.plot(x, result_select['BSTree_Degenerate'], label='BSTree (Sorted/Degenerate)',
+                 marker='s', color='tab:orange', linewidth=2)
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio select (s)', fontsize=12)
+        plt.title('Prestazioni select: LinkedList vs BSTree Degenere', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=12)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('select_degenerate_comparison.png')
+        plt.close()
+
+        # Rank plot
+        plt.figure(figsize=(10, 5))
+        plt.plot(x, result_rank['LinkedList'], label='LinkedList',
+                 marker='o', color='tab:blue', linewidth=2)
+        plt.plot(x, result_rank['BSTree_Degenerate'], label='BSTree (Sorted/Degenerate)',
+                 marker='s', color='tab:orange', linewidth=2)
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio rank (s)', fontsize=12)
+        plt.title('Prestazioni rank: LinkedList vs BSTree Degenere', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=12)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('rank_degenerate_comparison.png')
+        plt.close()
+
+    def plot_balanced_comparison(self, result_select, result_rank):
+        x = np.array(self.sizes)
+
+        # Select plot
+        plt.figure(figsize=(12, 5))
+        plt.plot(x, result_select['BSTree_Random'], label='BSTree Random',
+                 marker='o', color='tab:orange', linewidth=2, linestyle='-')
+        plt.plot(x, result_select['BSTree_Balanced'], label='BSTree Balanced',
+                 marker='s', color='tab:orange', linewidth=2, linestyle='--')
+        plt.plot(x, result_select['SBStree_Random'], label='SBStree Random',
+                 marker='^', color='tab:green', linewidth=2, linestyle='-')
+        plt.plot(x, result_select['SBStree_Balanced'], label='SBStree Balanced',
+                 marker='v', color='tab:green', linewidth=2, linestyle='--')
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio select (s)', fontsize=12)
+        plt.title('Prestazioni select: Random vs Balanced Insertion', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=10)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('select_balanced_comparison.png')
+        plt.close()
+
+        # Rank plot
+        plt.figure(figsize=(12, 5))
+        plt.plot(x, result_rank['BSTree_Random'], label='BSTree Random',
+                 marker='o', color='tab:orange', linewidth=2, linestyle='-')
+        plt.plot(x, result_rank['BSTree_Balanced'], label='BSTree Balanced',
+                 marker='s', color='tab:orange', linewidth=2, linestyle='--')
+        plt.plot(x, result_rank['SBStree_Random'], label='SBStree Random',
+                 marker='^', color='tab:green', linewidth=2, linestyle='-')
+        plt.plot(x, result_rank['SBStree_Balanced'], label='SBStree Balanced',
+                 marker='v', color='tab:green', linewidth=2, linestyle='--')
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio rank (s)', fontsize=12)
+        plt.title('Prestazioni rank: Random vs Balanced Insertion', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=10)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('rank_balanced_comparison.png')
+        plt.close()
+
+    def run_balanced_vs_list(self):
+        result_select = {'LinkedList': [], 'BSTree': []}
+        result_rank = {'LinkedList': [], 'BSTree': []}
+
+        for n in self.sizes:
+            generator = DataGenerator(n * 2, n, data_type='balanced')
+            data = generator.start()
+
+            # LinkedList
+            ll = LinkedList()
+            for v in data:
+                ll.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(ll, n)
+            result_select['LinkedList'].append(np.mean(sel_samps))
+            result_rank['LinkedList'].append(np.mean(rnk_samps))
+
+            # BSTree con dati ordinati (degenera in lista)
+            bst = BSTree()
+            for v in data:
+                bst.insert(v)
+            sel_samps, rnk_samps = self._measure_on_structure_instance(bst, n)
+            result_select['BSTree'].append(np.mean(sel_samps))
+            result_rank['BSTree'].append(np.mean(rnk_samps))
+
+            print(f'finished degenerate test n={n}')
+
+        return result_select, result_rank
+
+    def plot_balanced_vs_list(self,result_select,result_rank):
+        x = np.array(self.sizes)
+
+        # Select plot
+        plt.figure(figsize=(12, 5))
+        plt.plot(x, result_select['LinkedList'], label='LinkedList ',
+                 marker='o', color='tab:blue', linewidth=2, linestyle='-')
+        plt.plot(x, result_select['BSTree'], label='BSTree ',
+                 marker='s', color='tab:orange', linewidth=2, linestyle='--')
+
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio select (s)', fontsize=12)
+        plt.title('Prestazioni select: Random vs Balanced Insertion', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=10)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('select_balanced_vs_list.png')
+        plt.close()
+
+        # Rank plot
+        plt.figure(figsize=(12, 5))
+        plt.plot(x, result_rank['LinkedList'], label='LinkedList ',
+                 marker='o', color='tab:blue', linewidth=2, linestyle='-')
+        plt.plot(x, result_rank['BSTree'], label='BSTree ',
+                 marker='s', color='tab:orange', linewidth=2, linestyle='--')
+
+        plt.xlabel('Dimensione struttura', fontsize=12)
+        plt.ylabel('Tempo medio rank (s)', fontsize=12)
+        plt.title('Prestazioni rank: Random vs Balanced Insertion', fontsize=14)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(fontsize=10)
+        plt.ylim(bottom=0)
+        plt.tight_layout()
+        plt.savefig('rank_balanced_vs_list.png')
+        plt.close()
+
+
+
+
+
+
+        

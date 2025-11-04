@@ -1,12 +1,13 @@
-
 from ..AstructSracture.ANode import ANode
 class Node(ANode):
     def __init__(self, key):
+        # usa il costruttore astratto per inizializzare _data e _right
+        super().__init__(key)
+        # attributi specifici dei nodi di alberi bilanciati
         self._left = None
-        self._right = None
-        self._data = key
         self._father = None
         self._size = 1
+        self._height = 1
 
     def get_data(self):
         return self._data
@@ -44,3 +45,20 @@ class Node(ANode):
 
     def set_size(self, size):
         self._size = size
+
+    # Height / balance helpers per AVL
+    def get_height(self):
+        return self._height
+
+    def set_height(self, h):
+        self._height = h
+
+    def update_height(self):
+        lh = self._left._height if (self._left is not None) else 0
+        rh = self._right._height if (self._right is not None) else 0
+        self._height = 1 + (lh if lh > rh else rh)
+
+    def get_balance(self):
+        lh = self._left._height if (self._left is not None) else 0
+        rh = self._right._height if (self._right is not None) else 0
+        return lh - rh
