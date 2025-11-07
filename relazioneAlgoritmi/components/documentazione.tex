@@ -11,16 +11,7 @@
   \label{fig:fbox}
 \end{figure}
 \subsection{Struttura del Progetto}
-Il progetto è organizzato nelle seguenti componenti principali:
-
-\begin{itemize}
-  \item \texttt{src/DataStracture/LinkedList/}: Implementazione della lista concatenata ordinata
-  \item \texttt{src/DataStracture/BSTree/}: Implementazione dell'albero binario di ricerca standard
-  \item \texttt{src/DataStracture/SBSTree/}: Implementazione dell'albero binario di ricerca con attributo dimensione
-  \item \texttt{src/DataGenerator.py}: Generatore di dati casuali per i test
-  \item \texttt{src/Tester.py}: Framework per i test di prestazioni
-  \item \texttt{src/main.py}: Script principale per l'esecuzione dei test
-\end{itemize}
+verranno descritte le classi principali del progetto e le loro funzionalità.
 tutti le implementazioni di insert per le strutture dati ricevono in ingresso solo la chiave e creano il nodo a seconda della struttura
 
 \subsection{LinkedList}
@@ -28,7 +19,7 @@ La classe \texttt{LinkedList} implementa una lista concatenata ordinata. Gli ele
 %aggiungere descrizione dei metodi della linked list no snippet
 i metodi principali della linked list senza select e rank:
 \texttt{insert(x)}: inserisce l'elemento x nella lista mantenendo l'ordine modificando i puntatori del nodo da inserire e del nodo precedente,
-\texttt{delete(x)}: rimuove l'elemento x dalla lista modificando i puntatori del nodo precedente,
+\texttt{delete(x)}: rimuove l'elemento x dalla lista modificando i puntatori del nodo precedente e del nodo successivo,
 \texttt{search(x)}: cerca l'elemento x nella lista e restituisce il nodo se trovato, altrimenti None.
 
 \begin{lstlisting}[language=Python, caption=Implementazione di select() e rank() in LinkedList]
@@ -56,7 +47,7 @@ In questa implementazione, \texttt{select(k)} scorre linearmente la lista fino a
 \subsection{BSTree}
 La classe \texttt{BSTree} implementa un albero binario di ricerca standard, senza attributo dimensione nei nodi.
 \texttt{insert(x)}: inserisce l'elemento x nell'albero mantenendo la proprietà di ricerca binaria,
-\texttt{subtree_size}: calcola la dimensione del sottoalbero avente come radice in un dato nodo,
+\texttt{subtree\_size(node)}: calcola la dimensione del sottoalbero avente come radice in un dato nodo,
 \texttt{delete(x)}: rimuove l'elemento x dall'albero mantenendo la proprietà di ricerca binaria usando i metodi standard di cancellazione in un BST,
 \texttt{search(x)}: cerca l'elemento x nell'albero e restituisce il nodo se trovato, altrimenti None.
 \texttt{transplant}: sostituisce un sottoalbero con un altro, utilizzato nella cancellazione dei nodi, ereditato dalla classe astratta.
@@ -101,14 +92,14 @@ def _subtree_size(self, node):
     return 1 + self._subtree_size(node.get_left()) + self._subtree_size(node.get_right())
 \end{lstlisting}
 
-In questa implementazione, \texttt{select(k)} effettua una visita in-order iterativa con conteggio degli elementi, mentre \texttt{rank(x)} calcola ricorsivamente la dimensione dei sottoalberi, operazione potenzialmente costosa quando invocata frequentemente.
+In questa implementazione, \texttt{select(k)} effettua una visita in-order iterativa con conteggio degli elementi, mentre \texttt{rank(x)} calcola ricorsivamente la dimensione dei sottoalberi contenenti nodi con chiave minore di x, operazione potenzialmente costosa quando invocata frequentemente.
 
 \subsection{SBSTree}
 La classe \texttt{SBSTree} implementa un albero binario di ricerca dove ogni nodo mantiene la dimensione del suo sottoalbero.
 \texttt{insert(x)}: inserisce l'elemento x nell'albero mantenendo la proprietà di ricerca binaria e aggiornando l'attributo dimensione dei nodi lungo il percorso di inserimento,
 \texttt{delete(x)}: rimuove l'elemento x dall'albero mantenendo la proprietà di ricerca binaria e aggiornando l'attributo dimensione dei nodi lungo il percorso di cancellazione,
 \texttt{search(x)}: cerca l'elemento x nell'albero e restituisce il nodo se trovato, altrimenti None.
-\texttt{update_size_upwards}: aggiorna l'attributo dimensione dei nodi lungo il percorso dalla radice al nodo specificato.
+\texttt{update\_size\_upwards}: aggiorna l'attributo dimensione dei nodi lungo il percorso dalla radice al nodo specificato.
 \texttt{transplant}: sostituisce un sottoalbero con un altro, utilizzato nella cancellazione dei nodi, ereditato dalla classe astratta.
 
 \begin{lstlisting}[language=Python, caption=Implementazione di select() e rank() in SBSTree]
@@ -144,6 +135,53 @@ def _rank(self, node, x):
 
 In questa implementazione, sia \texttt{select(k)} che \texttt{rank(x)} usano la proprietà \texttt{size} di ogni nodo per determinare rapidamente la dimensione dei sottoalberi, consentendo operazioni più efficienti.
 
+\subsection{DataGenerator}
+La classe \texttt{DataGenerator} è responsabile della generazione dei dataset utilizzati nei test delle strutture dati.
+È stata progettata per fornire diverse tipologie di dati di input, permettendo così di testare le strutture dati in vari scenari.
+
+\paragraph{Attributi}
+\begin{itemize}
+    \item \texttt{max\_value}: Valore massimo generabile nell'array
+    \item \texttt{length}: Lunghezza dell'array da generare
+    \item \texttt{data\_type}: Modalità di generazione dei dati ('random', 'sorted', 'sorted\_desc', 'balanced')
+\end{itemize}
+
+\paragraph{Costruttore}
+\begin{description}
+    \item[\texttt{\_\_init\_\_(max\_value, length, data\_type='random')}] Inizializza il generatore:
+    \begin{itemize}
+        \item Verifica che length $\leq$ max\_value
+        \item Imposta la modalità di generazione
+        \item Solleva ValueError se i parametri non sono validi
+    \end{itemize}
+\end{description}
+
+\paragraph{Metodi Principali}
+\begin{description}
+    \item[\texttt{start()}] Genera l'array secondo la modalità specificata:
+    \begin{itemize}
+        \item \texttt{'random'}: Array di numeri casuali non ripetuti
+        \item \texttt{'sorted'}: Array ordinato in modo crescente
+        \item \texttt{'sorted\_desc'}: Array ordinato in modo decrescente
+        \item \texttt{'balanced'}: Array ordinato per creare un albero bilanciato
+    \end{itemize}
+    \item[\texttt{\_balanced\_insertion\_order(sorted\_array)}] Metodo ausiliario che:
+    \begin{itemize}
+        \item Utilizza un approccio BFS sugli intervalli
+        \item Inserisce le mediane livello per livello
+        \item Produce un ordine di inserimento che genera alberi bilanciati
+        %todo: decidere se invece conviene copiare un albero bilanciato gia fatto
+    \end{itemize}
+\end{description}
+
+\paragraph{Caratteristiche Implementative}
+\begin{itemize}
+    \item Utilizza NumPy per la generazione efficiente degli array
+    \item Garantisce l'unicità dei valori generati
+    \item Supporta la generazione deterministica per test riproducibili
+    \item Ottimizzato per la generazione di grandi dataset
+\end{itemize}
+
 \subsection{Funzioni di Test}
 Il framework di test è stato progettato per valutare rigorosamente le prestazioni delle diverse implementazioni:
 
@@ -153,9 +191,46 @@ Il framework di test è stato progettato per valutare rigorosamente le prestazio
   \item \textbf{Campionamento}: Per ogni dataset vengono estratti casualmente indici k da testare
   \item \textbf{Ripetizioni}: Ogni operazione viene ripetuta più volte per ridurre il rumore di misurazione
   \item \textbf{Statistiche}: I risultati sono aggregati calcolando media e deviazione standard dei tempi
-\end{itemize}
-% è fatta con numpy
-\texttt{Datagenerator.py} genera liste di numeri casuali unici per i test, il metodo \textbf{start} restituisce un array numpy di numeri casuali senza ripetizioni di dimensione specificata.
-\subsubsection{Tester}
-%TODO: aggiungere descrizione cosnippet e spiegare i metodi principali
+\end{itemize}\subsubsection{StructureTester}
+La classe \texttt{StructureTester} è responsabile dell'esecuzione dei test di performance sulle strutture dati implementate.
+È stata progettata per fornire un'analisi statisticamente valida delle prestazioni.
 
+\paragraph{Attributi}
+\begin{itemize}
+    \item \texttt{sizes}: Array delle dimensioni dei dataset da testare
+    \item \texttt{datasets\_per\_n}: Numero di dataset per ogni dimensione
+    \item \texttt{count}: Numero di valori k da testare per ogni dimensione
+    \item \texttt{calls\_per\_test}: Numero di ripetizioni per ogni misurazione
+    \item \texttt{warmup\_calls}: Numero di chiamate di warmup prima delle misurazioni
+\end{itemize}
+
+\paragraph{Metodi Principali}
+\begin{description}
+    \item[\texttt{run\_tests()}] Esegue la batteria completa di test:
+    \begin{itemize}
+        \item Testa tutte le strutture dati implementate
+        \item Genera statistiche complete per ogni operazione
+        \item Applica warmup per misurazioni accurate
+        \item Memorizza risultati per analisi successive
+    \end{itemize}
+
+    \item[\texttt{run\_simple\_test()}] Test semplificato con dataset singolo
+    \item[\texttt{run\_degenerate\_vs\_list\_test()}] Confronta BST degenerato e lista
+    \item[\texttt{run\_balanced\_vs\_random\_test()}] Analizza impatto del bilanciamento
+\end{description}
+
+\paragraph{Metodi di Visualizzazione}
+\begin{description}
+    \item[\texttt{plot\_results()}] Grafici comparativi delle strutture
+    \item[\texttt{plot\_sbstree\_only()}] Analisi dettagliata di SBSTree
+    \item[\texttt{plot\_simple\_result()}] Visualizzazioni semplificate
+\end{description}
+
+\paragraph{Caratteristiche Tecniche}
+\begin{itemize}
+    \item Utilizza NumPy per elaborazioni statistiche
+    \item Genera grafici con Matplotlib
+    \item Implementa tecniche di warmup per accuratezza
+    \item Supporta test paralleli e aggregazione risultati
+    \item Gestione automatica di grafici ed etichette
+\end{itemize}

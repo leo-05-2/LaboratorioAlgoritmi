@@ -1,3 +1,5 @@
+from typing import Optional
+
 from src.DataStracture.BSTree.Node import Node
 from src.DataStracture.AstructSracture.ABSTree import ABSTree
 
@@ -79,7 +81,7 @@ class BSTree(ABSTree):
             return None
 
         stack = []
-        current = self._root
+        current :Optional[Node] = self._root
         count = 0
 
         while stack or current:

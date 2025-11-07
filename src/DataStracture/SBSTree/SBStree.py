@@ -55,29 +55,52 @@ class SBStree(ABSTree):
         while current is not None:
             left = current.get_left()
             right = current.get_right()
+            old_h = current.get_height()
+            old_size = current.get_size()
+
             left_h = left.get_height() if left is not None else 0
             right_h = right.get_height() if right is not None else 0
-            old_h = current.get_height()
-            new_h = 1 + (left_h if left_h > right_h else right_h)
-            current.set_height(new_h)
             balance = left_h - right_h
 
+            # eseguo rotazioni se necessario
+            rotated = False
             if balance > 1:
                 if left is not None and left.get_balance() < 0:
                     self.left_rotate(left)
                 self.right_rotate(current)
+                # Dopo right_rotate, current è stato spostato come figlio sinistro
+                # Il nodo che ora occupa la posizione originale è il padre di current
+                current = current.get_father()
+                rotated = True
             elif balance < -1:
                 if right is not None and right.get_balance() > 0:
                     self.right_rotate(right)
                 self.left_rotate(current)
+                # Dopo left_rotate, current è stato spostato come figlio destro
+                # Il nodo che ora occupa la posizione originale è il padre di current
+                current = current.get_father()
+                rotated = True
 
-            left_size = left.get_size() if left is not None else 0
-            right_size = right.get_size() if right is not None else 0
-            current.set_size(1 + left_size + right_size)
+            # Se non c'è stata rotazione, aggiorno current normalmente
+            if not rotated:
+                # aggiorno altezza e size correttamente sui figli attuali
+                left = current.get_left()
+                right = current.get_right()
+                # aggiorno altezza e size correttamente sui figli attuali
+                left_h = left.get_height() if left is not None else 0
+                right_h = right.get_height() if right is not None else 0
+                new_h = 1 + (left_h if left_h > right_h else right_h)
+                current.set_height(new_h)
+                left_size = left.get_size() if left is not None else 0
+                right_size = right.get_size() if right is not None else 0
+                current.set_size(1 + left_size + right_size)
 
-            # se height non è cambiato, non servono aggiornamenti superiori
-            if new_h == old_h:
-                break
+                # se height e size non sono cambiate, non servono aggiornamenti superiori
+                new_size = current.get_size()
+                if new_h == old_h and new_size == old_size:
+                    break
+
+
             current = current.get_father()
 
     def insert(self, key):
@@ -89,11 +112,13 @@ class SBStree(ABSTree):
         parent = None
         while current is not None:
             parent = current
-            parent.set_size(parent.get_size() + 1)
             if key < current.get_data():
                 current = current.get_left()
-            else:
+            elif key > current.get_data():
                 current = current.get_right()
+            else:
+                # La chiave esiste già, non inseriamo duplicati
+                return
         node.set_father(parent)
         if key < parent.get_data():
             parent.set_left(node)
@@ -149,6 +174,10 @@ class SBStree(ABSTree):
                 # parent/child puntano l'uno all'altro (ciclo), e l'aggiornamento
                 # delle size risalendo i parent entra in loop infinito.
                 self._transplant(y, y.get_right())
+                # Assicuriamoci che y non mantenga il puntatore al vecchio padre
+                # per evitare cicli temporanei quando riattacchiamo y come
+                # sostituto di z (vedi commento sopra).
+                y.set_father(None)
                 # aggiorno le size partendo dal genitore originale di y
                 self._update_size_upwards(y_original_parent)
                 # ora posso riattaccare il sottoalbero destro di z a y senza
@@ -160,6 +189,7 @@ class SBStree(ABSTree):
             y.set_left(z.get_left())
             if y.get_left() is not None:
                 y.get_left().set_father(y)
+            # aggiorna size/height partendo da y (nuova posizione)
             self._update_size_upwards(y)
             self._rebalance(y)
 
