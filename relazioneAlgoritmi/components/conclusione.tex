@@ -25,3 +25,38 @@ Osservazioni sperimentali e raccomandazioni:
   \label{fig:fbox}
 \end{figure}
 Conclusione pratica: per applicazioni che richiedono \texttt{select} e \texttt{rank} efficienti su insiemi dinamici, l'uso di una struttura che mantiene \texttt{size} nei nodi (come \texttt{SBStree}) risulta consigliabile; alberi non bilanciati senza informazione di size mostrano prestazioni incerte e variabili.
+
+
+\subsubsection{test empirici}
+% Sostituito paragrafo con elenco puntato per migliorare leggibilità nel PDF
+I test empirici condotti confermano in modo netto le previsioni della complessità teorica, evidenziando le profonde differenze prestazionali tra le tre strutture dati analizzate per le statistiche d'ordine dinamico.
+
+\begin{itemize}
+  \item \textbf{Supremazia di SBSTree (AVL + \texttt{size}):} I risultati per SBSTree sono consistenti e mostrano tempi di esecuzione per \texttt{select} e \texttt{rank} vicini alla complessità logaritmica, ossia \(O(\log n)\). Questo comportamento è dovuto al bilanciamento AVL, che garantisce un'altezza \(h=O(\log n)\), e all'attributo \texttt{size} nei nodi, che permette di prendere decisioni in tempo \(O(1)\) ad ogni passo della discesa senza dover visitare interi sottoalberi.
+
+  \item \textbf{Inefficienza di BSTree (senza \texttt{size}):} I test mostrano che un albero binario di ricerca non dotato del campo \texttt{size}, anche se mediamente bilanciato su dati casuali, non è efficiente per le statistiche d'ordine dinamico. In assenza di \texttt{size} le operazioni \texttt{select} e \texttt{rank} richiedono di conteggiare nodi o di eseguire visite in-order sui sottoalberi, portando a costi complessivi dell'ordine di \(O(n)\) in molti casi e annullando il vantaggio teorico dell'altezza \(O(\log n)\) per semplici ricerche.
+
+  \item \textbf{Linearità di LinkedList:} La lista concatenata ordinata mostra il comportamento atteso: sia \texttt{select} che \texttt{rank} hanno costo lineare \(O(n)\), essendo necessaria una scansione sequenziale della struttura.
+\end{itemize}
+
+
+\subsubsection{Analisi delle Pendenze}
+Analisi delle Pendenze (O(n)): LinkedList vs. BSTree
+
+\begin{itemize}
+  \item \textbf{Per select(k):}
+    \begin{itemize}
+      \item Il grafico mostra che \texttt{BSTree} ha una pendenza significativamente maggiore (più ripida) rispetto a \texttt{LinkedList}; entrambe hanno complessità media $O(n)$ ma con costanti diverse.
+      \item \texttt{LinkedList} esegue una semplice scansione sequenziale (\texttt{current = current.next}), operazione molto efficiente a basso livello.
+      \item \texttt{BSTree} richiede una visita in-order (iterativa o ricorsiva) che implica la gestione di uno stack e l'attraversamento dei puntatori \texttt{left}/\texttt{right}, comportando un ``maggiore overhead per nodo visitato''.
+    \end{itemize}
+
+  \item \textbf{Per rank(x):}
+    \begin{itemize}
+      \item I grafici mostrano pendenze molto simili per le due strutture: l'analisi teorica lo anticipa, notando che i ``coefficienti [sono] simili''.
+      \item \texttt{LinkedList} esegue una scansione lineare contando i nodi (costo $O(n)$).
+      \item \texttt{BSTree} esegue discesa e invoca funzioni di conteggio sui sottoalberi (ad es. \texttt{\_subtree\_size}); nonostante le chiamate ricorsive, il numero totale di nodi visitati risulta ``comparabile'' a quello della scansione lineare.
+    \end{itemize}
+\end{itemize}
+
+In sintesi, i test confermano che per \texttt{select} la scansione della lista ha costanti molto favorevoli rispetto alla visita in-order dell'albero, mentre per \texttt{rank} i costi totali risultano comparabili tra le due strutture.

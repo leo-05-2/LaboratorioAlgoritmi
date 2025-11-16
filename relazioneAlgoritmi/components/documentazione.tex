@@ -8,7 +8,7 @@
   \centering
   \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
   \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
+  \label{fig:placeholder}
 \end{figure}
 \subsection{Struttura del Progetto}
 verranno descritte le classi principali del progetto e le loro funzionalità.
@@ -23,7 +23,7 @@ i metodi principali della linked list senza select e rank:
 \texttt{search(x)}: cerca l'elemento x nella lista e restituisce il nodo se trovato, altrimenti None.
 
 \begin{lstlisting}[language=Python, caption=Implementazione di select() e rank() in LinkedList]
-def select(self, k) -> Node or None:
+def select(self, k):
     current = self._root
     count = 1
     while current:
@@ -33,7 +33,7 @@ def select(self, k) -> Node or None:
         count += 1
     return None  # k troppo grande
 
-def rank(self, x) -> int or None:
+def rank(self, x):
     current = self._root
     count = 0
     while current and current.data < x:
@@ -101,6 +101,9 @@ La classe \texttt{SBSTree} implementa un albero binario di ricerca dove ogni nod
 \texttt{search(x)}: cerca l'elemento x nell'albero e restituisce il nodo se trovato, altrimenti None.
 \texttt{update\_size\_upwards}: aggiorna l'attributo dimensione dei nodi lungo il percorso dalla radice al nodo specificato.
 \texttt{transplant}: sostituisce un sottoalbero con un altro, utilizzato nella cancellazione dei nodi, ereditato dalla classe astratta.
+\texttt{rotate\_left} e \texttt{rotate\_right}: eseguono rotazioni per mantenere l'equilibrio AVL, aggiornando anche l'attributo dimensione dei nodi coinvolti.
+\texttt{\_rebalance} : bilancia l'albero dopo inserimenti o cancellazioni, utilizzando le rotazioni AVL.
+le varie funzioni aggiornano correttamente l'attributo size dei nodi coinvolti.
 
 \begin{lstlisting}[language=Python, caption=Implementazione di select() e rank() in SBSTree]
 def select(self, k):
@@ -136,74 +139,49 @@ def _rank(self, node, x):
 In questa implementazione, sia \texttt{select(k)} che \texttt{rank(x)} usano la proprietà \texttt{size} di ogni nodo per determinare rapidamente la dimensione dei sottoalberi, consentendo operazioni più efficienti.
 
 \subsection{DataGenerator}
-La classe \texttt{DataGenerator} è responsabile della generazione dei dataset utilizzati nei test delle strutture dati.
-È stata progettata per fornire diverse tipologie di dati di input, permettendo così di testare le strutture dati in vari scenari.
+La generazione dei dati di test è affidata alla classe \texttt{DataGenerator}. Il suo scopo è :
+fornire insiemi di numeri interinon duplicati con caratteristiche controllate per mettere alla prova le strutture dati in scenari diversi.
+quando instanziata si specificano i parametri principali:
+lunghezza dell'array, eventuale valore massimo, tipo di ordinamento,
+ e il costruttore verifica la coerenza della configurazione sollevando \texttt{ValueError} quando i parametri sono in conflitto (per esempio quando si richiede l'unicità di valori ma \texttt{length} supera \texttt{max\_value}).
 
-\paragraph{Attributi}
-\begin{itemize}
-    \item \texttt{max\_value}: Valore massimo generabile nell'array
-    \item \texttt{length}: Lunghezza dell'array da generare
-    \item \texttt{data\_type}: Modalità di generazione dei dati ('random', 'sorted', 'sorted\_desc', 'balanced')
-\end{itemize}
+Per comodità sperimentale la classe offre tre modalità d'uso: dati casuali (\texttt{'random'}), dati già ordinati in senso crescente (\texttt{'sorted'}) e dati ordinati in senso decrescente (\texttt{'sorted\_desc'}). L'implementazione sfrutta \texttt{numpy} per la generazione efficiente e il mescolamento degli array.
 
-\paragraph{Costruttore}
-\begin{description}
-    \item[\texttt{\_\_init\_\_(max\_value, length, data\_type='random')}] Inizializza il generatore:
-    \begin{itemize}
-        \item Verifica che length $\leq$ max\_value
-        \item Imposta la modalità di generazione
-        \item Solleva ValueError se i parametri non sono validi
-    \end{itemize}
-\end{description}
+Il metodo \texttt{start()} restituisce l'array pronto all'uso: nel caso \texttt{'random'} un vettore di interi unici mescolati, nei casi \texttt{'sorted'} e \texttt{'sorted\_desc'} una sequenza ordinata in senso crescente o decrescente.
+il tester si occupa di usare l'array per popolare le strutture e avviare le misure.
 
-\paragraph{Metodi Principali}
-\begin{description}
-    \item[\texttt{start()}] Genera l'array secondo la modalità specificata:
-    \begin{itemize}
-        \item \texttt{'random'}: Array di numeri casuali non ripetuti
-        \item \texttt{'sorted'}: Array ordinato in modo crescente
-        \item \texttt{'sorted\_desc'}: Array ordinato in modo decrescente
-        \item \texttt{'balanced'}: Array ordinato per creare un albero bilanciato
-    \end{itemize}
-    \item[\texttt{\_balanced\_insertion\_order(sorted\_array)}] Metodo ausiliario che:
-    \begin{itemize}
-        \item Utilizza un approccio BFS sugli intervalli
-        \item Inserisce le mediane livello per livello
-        \item Produce un ordine di inserimento che genera alberi bilanciati
-        %todo: decidere se invece conviene copiare un albero bilanciato gia fatto
-    \end{itemize}
-\end{description}
+\paragraph{Esempio illustrativo}
+\begin{lstlisting}[language=Python, caption=Esempio semplificato di DataGenerator]
+import numpy as np
 
-\paragraph{Caratteristiche Implementative}
-\begin{itemize}
-    \item Utilizza NumPy per la generazione efficiente degli array
-    \item Garantisce l'unicità dei valori generati
-    \item Supporta la generazione deterministica per test riproducibili
-    \item Ottimizzato per la generazione di grandi dataset
-\end{itemize}
+class DataGenerator:
+    def __init__(self, length, max_value=None, data_type='random', seed=None):
+        # validazione parametri e inizializzazione
+        self.length = length
+        self.max_value = max_value or length
+        self.data_type = data_type
+        self.rng = np.random.default_rng(seed)
 
-\subsection{Funzioni di Test}
-Il framework di test è stato progettato per valutare rigorosamente le prestazioni delle diverse implementazioni:
+    def start(self):
+        if self.data_type == 'random':
+            arr = self.rng.choice(np.arange(self.max_value), size=self.length, replace=False)
+            self.rng.shuffle(arr)
+            return arr
+        if self.data_type == 'sorted':
+            return np.arange(self.length)
+        if self.data_type == 'sorted_desc':
+            return np.arange(self.length)[::-1]
+        raise ValueError('data_type non supportato')
+\end{lstlisting}
 
-\begin{itemize}
-  \item \textbf{Generazione dati}: Ogni test genera dataset di dimensione crescente
-  \item \textbf{Warm-up}: Prima delle misurazioni vengono effettuate chiamate di warm-up per stabilizzare la cache e ridurre l'overhead iniziale
-  \item \textbf{Campionamento}: Per ogni dataset vengono estratti casualmente indici k da testare
-  \item \textbf{Ripetizioni}: Ogni operazione viene ripetuta più volte per ridurre il rumore di misurazione
-  \item \textbf{Statistiche}: I risultati sono aggregati calcolando media e deviazione standard dei tempi
-\end{itemize}\subsubsection{StructureTester}
-La classe \texttt{StructureTester} è responsabile dell'esecuzione dei test di performance sulle strutture dati implementate.
-È stata progettata per fornire un'analisi statisticamente valida delle prestazioni.
+\subsection{Funzioni di test}
+Il framework di misurazione è organizzato per ottenere stime affidabili delle prestazioni mediando molteplici misure su dataset indipendenti.
+In pratica, per ogni dimensione di interesse si generano più dataset (sia casuali che degenerati), si popola la struttura in prova e si esegue una sequenza di campionamenti delle operazioni \texttt{select(k)} e \texttt{rank(x)}.
+Prima di raccogliere i tempi utili viene effettuato un breve warm-up per ridurre l'effetto delle inizializzazioni (cache, allocator, ecc.).
 
-\paragraph{Attributi}
-\begin{itemize}
-    \item \texttt{sizes}: Array delle dimensioni dei dataset da testare
-    \item \texttt{datasets\_per\_n}: Numero di dataset per ogni dimensione
-    \item \texttt{count}: Numero di valori k da testare per ogni dimensione
-    \item \texttt{calls\_per\_test}: Numero di ripetizioni per ogni misurazione
-    \item \texttt{warmup\_calls}: Numero di chiamate di warmup prima delle misurazioni
-\end{itemize}
+Le singole misure sono raccolte ripetendo la stessa chiamata per ogni dataset per ogni dimensione e registrando il tempo totale, da cui si ricava il tempo medio per dimensione; questi tempi medi vengono poi aggregati calcolando media e deviazione standard sull'insieme dei campioni e dei dataset per la stessa dimensione. Questo approccio riduce il rumore sperimentale e rende i risultati comparabili tra implementazioni.
 
+\subsection{StructureTester}
 \paragraph{Metodi Principali}
 \begin{description}
     \item[\texttt{run\_tests()}] Esegue la batteria completa di test:
@@ -212,25 +190,23 @@ La classe \texttt{StructureTester} è responsabile dell'esecuzione dei test di p
         \item Genera statistiche complete per ogni operazione
         \item Applica warmup per misurazioni accurate
         \item Memorizza risultati per analisi successive
-    \end{itemize}
-
-    \item[\texttt{run\_simple\_test()}] Test semplificato con dataset singolo
-    \item[\texttt{run\_degenerate\_vs\_list\_test()}] Confronta BST degenerato e lista
-    \item[\texttt{run\_balanced\_vs\_random\_test()}] Analizza impatto del bilanciamento
-\end{description}
-
-\paragraph{Metodi di Visualizzazione}
-\begin{description}
-    \item[\texttt{plot\_results()}] Grafici comparativi delle strutture
-    \item[\texttt{plot\_sbstree\_only()}] Analisi dettagliata di SBSTree
-    \item[\texttt{plot\_simple\_result()}] Visualizzazioni semplificate
-\end{description}
-
-\paragraph{Caratteristiche Tecniche}
+    \end{itemize }
+    \end{description}
+La classe \texttt{StructureTester} coordina l'intero esperimento. Progettata per essere parametrica e riutilizzabile, accetta in ingresso le dimensioni da testare, il numero di dataset per valore di \(n\), il numero di campioni per dataset e il numero di ripetizioni da effettuare per ciascuna chiamata. La scelta di questi parametri influisce sul compromesso tra accuratezza statistica e tempo di esecuzione complessivo.
+La classe `StructureTester` implementa una metodologia di test robusta per ottenere misurazioni accurate e statisticamente significative. Il processo è parametrizzato per garantire flessibilità e precisione:
 \begin{itemize}
-    \item Utilizza NumPy per elaborazioni statistiche
-    \item Genera grafici con Matplotlib
-    \item Implementa tecniche di warmup per accuratezza
-    \item Supporta test paralleli e aggregazione risultati
-    \item Gestione automatica di grafici ed etichette
+    \item \textbf{Warm-up} (\texttt{warmup\_calls}): Prima di ogni sessione di misurazione, vengono eseguite diverse chiamate a vuoto. Questo ``riscaldamento'' serve a stabilizzare l'ambiente di esecuzione, ad esempio popolando le cache della CPU ed evitando che l'overhead iniziale del sistema influenzi i risultati.
+    \item \textbf{Iterazione su Dimensioni Diverse} (\texttt{sizes}): I test vengono eseguiti per un intervallo di dimensioni di input \texttt{n} (da 100 a 10.000), permettendo di osservare come le performance scalano al crescere dei dati.
+    \item \textbf{Dataset Multipli per Dimensione} (\texttt{datasets\_per\_n}): Per ogni dimensione \texttt{n}, vengono generati più dataset indipendenti. I risultati vengono poi aggregati (calcolando media e deviazione standard). Questo riduce la probabilità che i risultati siano viziati da un singolo dataset anomalo.
+    \item \textbf{Campionamento delle Operazioni} (\texttt{count}): Per ogni dataset, le operazioni \texttt{select(k)} e \texttt{rank(x)} vengono testate con un numero elevato di input \texttt{k} e \texttt{x} scelti casualmente. Questo assicura che le performance misurate siano rappresentative del comportamento medio dell'operazione sull'intera struttura.
+    \item \textbf{Ripetizione delle Chiamate} (\texttt{calls\_per\_test}): Ogni singola operazione (es.\ \texttt{select} con un \texttt{k} specifico) viene eseguita in un ciclo stretto per un numero definito di volte. Il tempo totale viene poi diviso per il numero di chiamate, minimizzando il rumore e le fluttuazioni momentanee.
 \end{itemize}
+
+Alla fine del processo, `StructureTester` aggrega tutti i campioni raccolti per ogni dimensione `n` e calcola media e deviazione standard, che vengono poi utilizzate per generare i grafici di performance.
+
+Nel dettaglio, la procedura seguita su ogni istanza è la seguente: si esegue una fase di warm-up con poche chiamate a \texttt{select} e \texttt{rank} per stabilizzare l'ambiente; si raccolgono quindi i campioni scegliendo per ogni misurazione un \(k\) estratto in modo uniforme nell'intervallo \([1,n]\); per ogni \(k\) si misura \texttt{select(k)} ripetendolo il numero di volte richiesto e si ricava l'elemento trovato per misurare subito dopo \texttt{rank(x)} sul valore ottenuto. In questo modo le due misure sono correlate e confrontabili.
+
+I risultati finali sono conservati in vettori paralleli a \texttt{sizes}: per ogni dimensione si mantengono media e deviazione standard sia per \texttt{select} sia per \texttt{rank}. StructureTester espone inoltre la possibilità di salvare i dati grezzi e di produrre grafici descrittivi con nomi di file costruiti automaticamente per facilitare l'analisi a posteriori.
+
+\paragraph{Visualizzazione}
+Per comodità d'uso sono incluse funzioni di plotting che costruiscono confronti tra le varie strutture e tra i tipi di dataset (random o degenerato). I grafici sono pensati per essere autoesplicativi: i nomi dei file incorporano le strutture protagoniste e il tipo di input, così che risultino immediatamente interpretabili.

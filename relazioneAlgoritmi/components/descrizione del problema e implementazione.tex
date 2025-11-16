@@ -51,7 +51,12 @@ la cancellazione di un elemento avviene scorrendo la lista per trovare il nodo d
 
 
 \subsubsection{Albero Binario di Ricerca Standard}
-
+\begin{figure}[ht]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
 l'albero binario di ricerca (BST) è una struttura dati organizzata in un albero binario un grafo non orientato,
 connesso e aciclico; quindi ogni nodo può avere massimo due figli
 con il nodo iniziale detto radice dal quale si diramano tutti gli altri nodi e che ha il puntatore al padre nullo.
@@ -60,31 +65,28 @@ figlio destro, puntatore al padre. ogni nodo segue la proprietà fondamentale de
 
 la propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori
 
+
+
 \begin{tcolorbox}
-[colback=gray!10!white, colframe=gray!75!black, title=Nota]
-  %todo: aggiungere immagine albero binario
+[colback=gray!10!white, colframe=gray!75!black, title=Proprietà fondamentale]
+  \paragraph{Proprietà fondamentale} \\
+  Sia x un nodo in un ABR. \\
+  Se y è nel sottoalbero sinistro di x, allora y.key ≤ x.key \\
+  Se y è nel sottoalbero destro di x, allora y.key ≥ x.key
+
 \end{tcolorbox}
 
-propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori.
 l'inserimento di un nuovo elemento avviene confrontando il valore da inserire con i valori dei nodi, scendendo a sinistra o a destra a seconda del confronto, fino a trovare una posizione vuota dove inserire il nuovo nodo.
 la cancellazione di un elemento segue le regole standard per la rimozione in un albero binario di ricerca, gestendo i casi di nodi con zero, uno o due figli
 implementazione tradizionale %TODO: decidere come gestire i valori duplicati
-\begin{figure}[ht]
-  \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
-\end{figure}
+
 
 
 \subsubsection{Albero Binario di Ricerca auto bilanciato con Attributo Dimensione}
 
-\begin{tcolorbox}
-[colback=gray!10!white, colframe=gray!75!black, title=Nota]
-  %todo: aggiungere immagine albero binario decidere se rosso nero
-\end{tcolorbox}
 
-La classe \texttt{SBSTree} implementa un \textbf{Order-Statistic Tree} basato su una struttura \textbf{AVL (Albero Autobilanciato)}. Questa implementazione combina due proprietà fondamentali per garantire operazioni efficienti:
+
+La classe \texttt{SBSTree} implementa basato su una struttura \textbf{AVL (Albero Autobilanciato)}. Questa implementazione combina due proprietà fondamentali per garantire operazioni efficienti:
 
 \begin{enumerate}
 \item \textbf{Bilanciamento AVL}: L'albero mantiene un fattore di bilanciamento tra i sottoalberi sinistro e destro di ogni nodo, garantendo che l'altezza rimanga sempre $h = O(\log n)$, indipendentemente dall'ordine di inserimento.
@@ -92,13 +94,19 @@ La classe \texttt{SBSTree} implementa un \textbf{Order-Statistic Tree} basato su
 \item \textbf{Attributo size aggiornato}: Ogni nodo mantiene un campo \texttt{size} che tiene traccia del numero di nodi nel sottoalbero radicato in quel nodo. Questo attributo è il nucleo dell'ottimizzazione e viene \textbf{mantenuto aggiornato durante le rotazioni AVL} che avvengono per preservare il bilanciamento.
 \end{enumerate}
 
+\begin{tcolorbox}[colback=gray!10!white, colframe=gray!75!black, title=Proprietà fondamentale AVL]
+  Sia \(x\) un nodo in un albero AVL. Vale:
+
+\left| \operatorname{height}\bigl(x_{\text{sin}}\bigr) - \operatorname{height}\bigl(x_{\text{des}}\bigr) \right| &\le 1, \Rightarrow\quad h &= O(\log n), \\
+\quad\text{quindi inserimento, cancellazione e ricerca sono }O(\log n).
+
+\end{tcolorbox}
+
 \paragraph{Impatto sulla Complessità:} La combinazione di:
 \begin{itemize}
 \item Altezza logaritmica garantita dal bilanciamento AVL: $h = O(\log n)$
 \item Attributo \texttt{size} accessible in $O(1)$ ad ogni nodo
 \end{itemize}
-
-permette a \texttt{rank(x)} e \texttt{select(k)} di essere implementate in $O(h) = O(\log n)$, dove l'algoritmo scende lungo un singolo percorso dalla radice verso il nodo target, utilizzando il campo \texttt{size} per prendere decisioni di navigazione in tempo costante senza necessità di visitare sottoalberi interi.
 
 Questa implementazione rappresenta l'ottimale teorico per le operazioni di statistiche d'ordine su strutture dati dinamiche.
 
@@ -114,7 +122,6 @@ Questa implementazione rappresenta l'ottimale teorico per le operazioni di stati
 Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture dati implementate. La tabella riporta la funzione di costo di select e rank per le strutture e una breve spiegazione delle ragioni dietro queste complessità nei diversi casi.
 
 \subsubsection*{Nota sulla Tabella Riveduta:}
-La tabella originale conteneva errori concettuali. Nello specifico, la voce ``BST (con size)'' mostrava $O(h)$ per rank/select, ma non distingueva tra il caso in cui il \texttt{size} è presente senza bilanciamento (che \textbf{rimane $O(n)$ nel caso peggiore}) e il caso in cui è presente sia \texttt{size} che bilanciamento (che è effettivamente $O(\log n)$).
 
 \begin{table}[ht]
 \centering

@@ -28,8 +28,9 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{float}
-\graphicspath{{./relazioneAlgoritmi/}{./relazioneAlgoritmi/resource/}}
-
+\graphicspath{{./relazioneAlgoritmi/}{./relazioneAlgoritmi/resource/}{../src/}}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
 
 % Document
 \pagestyle{fancy}
@@ -46,8 +47,12 @@
   numberstyle=\tiny\color{gray},
   frame=single,
   breaklines=true,
+  breakatwhitespace=true,
   showstringspaces=false,
-  captionpos=b
+  captionpos=b,
+  keepspaces=true,
+  columns=fullflexible,
+  upquote=true
 }
 \title {Relazione di Algoritmi e Strutture Dati}
 \author{Leonardo Viti}
@@ -58,10 +63,12 @@
 \fancyhead[L]{Relazione di Algoritmi e Strutture Dati}
 \fancyfoot[R]{ \large \bf \thepage\ \centering}%
 
+
 \newpage
 \tableofcontents
 
 \input{components/introduzione}
+
 \input{components/descrizione del problema e implementazione}
 \input{components/documentazione}
 \input{components/test}
@@ -71,4 +78,3 @@
 oqfno
 
 \end{document}
-
