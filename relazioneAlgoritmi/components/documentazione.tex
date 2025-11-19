@@ -12,12 +12,11 @@
 \end{figure}
 \subsection{Struttura del Progetto}
 verranno descritte le classi principali del progetto e le loro funzionalità.
-tutti le implementazioni di insert per le strutture dati ricevono in ingresso solo la chiave e creano il nodo a seconda della struttura
+tutte le implementazioni di aggiunta di un nodo per le strutture dati ricevono in ingresso solo la chiave e creano il nodo a seconda della struttura
 
 \subsection{LinkedList}
 La classe \texttt{LinkedList} implementa una lista concatenata ordinata. Gli elementi sono mantenuti in ordine crescente durante l'inserimento.
-%aggiungere descrizione dei metodi della linked list no snippet
-i metodi principali della linked list senza select e rank:
+I metodi principali della linked list oltre a select e rank:
 \texttt{insert(x)}: inserisce l'elemento x nella lista mantenendo l'ordine modificando i puntatori del nodo da inserire e del nodo precedente,
 \texttt{delete(x)}: rimuove l'elemento x dalla lista modificando i puntatori del nodo precedente e del nodo successivo,
 \texttt{search(x)}: cerca l'elemento x nella lista e restituisce il nodo se trovato, altrimenti None.
@@ -135,65 +134,68 @@ def _rank(self, node, x):
         left_size = node.get_left().get_size() if node.get_left() else 0
         return left_size
 \end{lstlisting}
-
-In questa implementazione, sia \texttt{select(k)} che \texttt{rank(x)} usano la proprietà \texttt{size} di ogni nodo per determinare rapidamente la dimensione dei sottoalberi, consentendo operazioni più efficienti.
+\\
+In questa implementazione, sia \texttt{select(k)} che \texttt{rank(x)} usano la proprietà \texttt{size} di ogni nodo per determinare rapidamente la dimensione dei sotto alberi, consentendo operazioni più efficienti.
 
 \subsection{DataGenerator}
 La generazione dei dati di test è affidata alla classe \texttt{DataGenerator}. Il suo scopo è :
-fornire insiemi di numeri interinon duplicati con caratteristiche controllate per mettere alla prova le strutture dati in scenari diversi.
-quando instanziata si specificano i parametri principali:
-lunghezza dell'array, eventuale valore massimo, tipo di ordinamento,
+fornire insiemi di numeri interi non duplicati con caratteristiche controllate per mettere alla prova le strutture dati in scenari diversi.
+quando instanziata si specificano i parametri principali:\\
+lunghezza dell'array, valore massimo, tipo di ordinamento,
  e il costruttore verifica la coerenza della configurazione sollevando \texttt{ValueError} quando i parametri sono in conflitto (per esempio quando si richiede l'unicità di valori ma \texttt{length} supera \texttt{max\_value}).
 
-Per comodità sperimentale la classe offre tre modalità d'uso: dati casuali (\texttt{'random'}), dati già ordinati in senso crescente (\texttt{'sorted'}) e dati ordinati in senso decrescente (\texttt{'sorted\_desc'}). L'implementazione sfrutta \texttt{numpy} per la generazione efficiente e il mescolamento degli array.
-
-Il metodo \texttt{start()} restituisce l'array pronto all'uso: nel caso \texttt{'random'} un vettore di interi unici mescolati, nei casi \texttt{'sorted'} e \texttt{'sorted\_desc'} una sequenza ordinata in senso crescente o decrescente.
+\\Per comodità sperimentale la classe offre due modalità d'uso: dati casuali (\texttt{'random'}), dati già ordinati in senso crescente (\texttt{'sorted'}). \\
+L'implementazione sfrutta \texttt{numpy} per la generazione efficiente e il mescolamento degli array.
+\\
+Il metodo \texttt{start()} restituisce l'array pronto all'uso: nel caso \texttt{'random'} un vettore di interi unici mescolati, nel caso \texttt{'sorted'} una sequenza ordinata in senso crescente.
 il tester si occupa di usare l'array per popolare le strutture e avviare le misure.
 
-\paragraph{Esempio illustrativo}
+\paragraph{Esempio illustrativo} \mbox{}\par\noindent
+\\
+\\
+
 \begin{lstlisting}[language=Python, caption=Esempio semplificato di DataGenerator]
 import numpy as np
 
 class DataGenerator:
-    def __init__(self, length, max_value=None, data_type='random', seed=None):
+    def __init__(self, length, max_value=None, data_type='random'):
         # validazione parametri e inizializzazione
         self.length = length
         self.max_value = max_value or length
         self.data_type = data_type
-        self.rng = np.random.default_rng(seed)
 
     def start(self):
         if self.data_type == 'random':
             arr = self.rng.choice(np.arange(self.max_value), size=self.length, replace=False)
             self.rng.shuffle(arr)
             return arr
-        if self.data_type == 'sorted':
+        elif self.data_type == 'sorted':
             return np.arange(self.length)
-        if self.data_type == 'sorted_desc':
-            return np.arange(self.length)[::-1]
-        raise ValueError('data_type non supportato')
+        else:
+            raise ValueError('data_type non supportato')
 \end{lstlisting}
 
 \subsection{Funzioni di test}
-Il framework di misurazione è organizzato per ottenere stime affidabili delle prestazioni mediando molteplici misure su dataset indipendenti.
-In pratica, per ogni dimensione di interesse si generano più dataset (sia casuali che degenerati), si popola la struttura in prova e si esegue una sequenza di campionamenti delle operazioni \texttt{select(k)} e \texttt{rank(x)}.
+la classe di misurazione è organizzata per ottenere stime affidabili delle prestazioni mediando molteplici misure su dataset indipendenti.
+In pratica, per ogni dimensione di interesse si generano più dataset (sia casuali che ordinati a seconda dell' esperimento), si popola la struttura in prova e si esegue una sequenza di campionamenti delle operazioni \texttt{select(k)} e \texttt{rank(x)}.
 Prima di raccogliere i tempi utili viene effettuato un breve warm-up per ridurre l'effetto delle inizializzazioni (cache, allocator, ecc.).
-
+\\
 Le singole misure sono raccolte ripetendo la stessa chiamata per ogni dataset per ogni dimensione e registrando il tempo totale, da cui si ricava il tempo medio per dimensione; questi tempi medi vengono poi aggregati calcolando media e deviazione standard sull'insieme dei campioni e dei dataset per la stessa dimensione. Questo approccio riduce il rumore sperimentale e rende i risultati comparabili tra implementazioni.
 
 \subsection{StructureTester}
 \paragraph{Metodi Principali}
-\begin{description}
-    \item[\texttt{run\_tests()}] Esegue la batteria completa di test:
-    \begin{itemize}
-        \item Testa tutte le strutture dati implementate
-        \item Genera statistiche complete per ogni operazione
-        \item Applica warmup per misurazioni accurate
-        \item Memorizza risultati per analisi successive
-    \end{itemize }
-    \end{description}
+
 La classe \texttt{StructureTester} coordina l'intero esperimento. Progettata per essere parametrica e riutilizzabile, accetta in ingresso le dimensioni da testare, il numero di dataset per valore di \(n\), il numero di campioni per dataset e il numero di ripetizioni da effettuare per ciascuna chiamata. La scelta di questi parametri influisce sul compromesso tra accuratezza statistica e tempo di esecuzione complessivo.
-La classe `StructureTester` implementa una metodologia di test robusta per ottenere misurazioni accurate e statisticamente significative. Il processo è parametrizzato per garantire flessibilità e precisione:
+La classe `StructureTester` implementa una metodologia di test per ottenere misurazioni accurate e statisticamente significative.
+i metodi principali includono:
+\begin{description}
+    \item [\texttt{plot\_results(flag: Boolean, structure\_names, random: Boolean)}] Genera grafici comparativi delle performance per le strutture specificate, distinguendo tra i tipi di dataset (casuali o degenerati) con il parametro \texttt{random}, \\
+    il parametro \texttt{flag} indica se i grafici se si vuole visualizzare un grafico per ciascuna struttura dati singolarmente o se le strutture passate con \texttt{structure\_names} devono essere confrontate in un unico grafico, flag = False genera un grafico per ogni struttura dati, flag = true genera un unico grafico di confronto tra le strutture dati passate in \texttt{structure\_names}.
+
+    \item[\texttt{run\_tests(random: Boolean)}] Esegue i test per tutte le strutture dati specificate, raccogliendo i risultati in modo organizzato, il parametro \texttt{random} indica se utilizzare dataset casuali o degenerati.
+    % plot_results
+\end{description}
+Il processo è parametrizzato ed esegue:
 \begin{itemize}
     \item \textbf{Warm-up} (\texttt{warmup\_calls}): Prima di ogni sessione di misurazione, vengono eseguite diverse chiamate a vuoto. Questo ``riscaldamento'' serve a stabilizzare l'ambiente di esecuzione, ad esempio popolando le cache della CPU ed evitando che l'overhead iniziale del sistema influenzi i risultati.
     \item \textbf{Iterazione su Dimensioni Diverse} (\texttt{sizes}): I test vengono eseguiti per un intervallo di dimensioni di input \texttt{n} (da 100 a 10.000), permettendo di osservare come le performance scalano al crescere dei dati.
@@ -201,12 +203,12 @@ La classe `StructureTester` implementa una metodologia di test robusta per otten
     \item \textbf{Campionamento delle Operazioni} (\texttt{count}): Per ogni dataset, le operazioni \texttt{select(k)} e \texttt{rank(x)} vengono testate con un numero elevato di input \texttt{k} e \texttt{x} scelti casualmente. Questo assicura che le performance misurate siano rappresentative del comportamento medio dell'operazione sull'intera struttura.
     \item \textbf{Ripetizione delle Chiamate} (\texttt{calls\_per\_test}): Ogni singola operazione (es.\ \texttt{select} con un \texttt{k} specifico) viene eseguita in un ciclo stretto per un numero definito di volte. Il tempo totale viene poi diviso per il numero di chiamate, minimizzando il rumore e le fluttuazioni momentanee.
 \end{itemize}
-
-Alla fine del processo, `StructureTester` aggrega tutti i campioni raccolti per ogni dimensione `n` e calcola media e deviazione standard, che vengono poi utilizzate per generare i grafici di performance.
-
-Nel dettaglio, la procedura seguita su ogni istanza è la seguente: si esegue una fase di warm-up con poche chiamate a \texttt{select} e \texttt{rank} per stabilizzare l'ambiente; si raccolgono quindi i campioni scegliendo per ogni misurazione un \(k\) estratto in modo uniforme nell'intervallo \([1,n]\); per ogni \(k\) si misura \texttt{select(k)} ripetendolo il numero di volte richiesto e si ricava l'elemento trovato per misurare subito dopo \texttt{rank(x)} sul valore ottenuto. In questo modo le due misure sono correlate e confrontabili.
-
-I risultati finali sono conservati in vettori paralleli a \texttt{sizes}: per ogni dimensione si mantengono media e deviazione standard sia per \texttt{select} sia per \texttt{rank}. StructureTester espone inoltre la possibilità di salvare i dati grezzi e di produrre grafici descrittivi con nomi di file costruiti automaticamente per facilitare l'analisi a posteriori.
+\\
+Alla fine del processo, `StructureTester` aggrega tutti i campioni raccolti per ogni dimensione `n` e calcola media e deviazione standard, che vengono poi utilizzate per generare i grafici di prestazione.
+\\
+%Nel dettaglio, la procedura seguita su ogni istanza è la seguente: si esegue una fase di warm-up con poche chiamate a \texttt{select} e \texttt{rank} per stabilizzare l'ambiente; si raccolgono quindi i campioni scegliendo per ogni misurazione un \(k\) estratto in modo uniforme nell'intervallo \([1,n]\); per ogni \(k\) si misura \texttt{select(k)} ripetendolo il numero di volte richiesto e si ricava l'elemento trovato per misurare subito dopo \texttt{rank(x)} sul valore ottenuto. In questo modo le due misure sono correlate e confrontabili.
+\\
+I risultati finali sono conservati: per ogni dimensione si mantengono media e deviazione standard sia per \texttt{select} sia per \texttt{rank}. StructureTester espone inoltre la possibilità di salvare i dati grezzi e di produrre grafici descrittivi con nomi di file costruiti automaticamente per facilitare l'analisi a posteriori.
 
 \paragraph{Visualizzazione}
 Per comodità d'uso sono incluse funzioni di plotting che costruiscono confronti tra le varie strutture e tra i tipi di dataset (random o degenerato). I grafici sono pensati per essere autoesplicativi: i nomi dei file incorporano le strutture protagoniste e il tipo di input, così che risultino immediatamente interpretabili.

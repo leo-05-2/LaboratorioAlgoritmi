@@ -20,10 +20,18 @@ Verranno presentati i risultati sperimentali che evidenziano come le diverse imp
 \subsection{Esercizio}
 % aggiungere snippet dell'esercizio con latex
 esercizio assegnato per l'esame di Laboratorio di Algoritmi e Strutture Dati:
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \begin{tcolorbox}[colframe=black,colback=white,boxsep=8pt,left=6pt,right=6pt,width=\linewidth,sharp corners]
+    Vogliamo confrontare varie implementazioni di statistiche d'ordine dinamiche:
+    \begin{enumerate}
+      \item Con lista ordinata
+      \item Con ABR senza attributo \emph{size}
+      \item Come visto a lezione (AVL) con attributo \emph{size}
+    \end{enumerate}
+    Nota: La lista deve essere implementata considerando strutture collegate con puntatori e non la struttura dati lista di Python.
+  \end{tcolorbox}
   \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
+  \label{fig:esercizio}
 \end{figure}
-%todo: inserire immagine dell'esercizio
+

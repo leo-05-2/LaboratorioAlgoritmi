@@ -7,14 +7,7 @@
 
 in questo progetto verranno confrontate le prestazioni delle statistiche di ordine dinamico in 3 diverse strutture dati.
 verranno descritte le strutture dati utilizzate ed esposte le scelte progettuali e implementative.
-successivamente verranno confrontate con opportuni esperimenti le prestazioni nelle operazioni select e rank ogni struttura dati.
-
-\begin{tcolorbox}
-[colback=gray!10!white, colframe=gray!75!black, title=Nota]
-  %todo: aggiungere il testo dell' esercizio
-\end{tcolorbox}
-
-il problema principale di questo esercizio è implementare efficientemente due operazioni di statistiche d'ordine in strutture dati dinamiche.
+successivamente verranno confrontate con opportuni esperimenti le prestazioni nelle operazioni select(k) e rank(x) ogni struttura dati.
 il che comporta queste due operazioni fondamentali: select(k) e rank(x) devono essere implementate per ogni struttura dati scelta a seconda delle loro caratteristiche per permettere rispettivamente di selezionare l'elemento di rango k e di calcolare il rango di un elemento x.
 
 \subsection{Statistiche d'Ordine Dinamico}
@@ -24,9 +17,9 @@ Le statistiche d'ordine sono misure che descrivono la distribuzione degli elemen
   \item \textbf{select(k)}: restituisce l'elemento di rango k (il k-esimo elemento più piccolo) nell'insieme.
   \item \textbf{rank(x)}: restituisce il numero di elementi strettamente minori di x nell'insieme.
 \end{itemize}
-
+\\
 Queste operazioni consentono di estrarre informazioni sulla posizione relativa degli elementi in una collezione ordinata dinamica, dove elementi possono essere aggiunti o rimossi nel tempo.
-sono state implementate tre diverse strutture dati per supportare queste operazioni: una lista concatenata ordinata, un albero binario di ricerca standard e un albero binario di ricerca con attributo dimensione.
+sono state implementate tre diverse strutture dati per supportare queste operazioni: una lista concatenata ordinata, un albero binario di ricerca standard e un albero binario di ricerca auto bilanciato (AVL) con attributo dimensione.
 
 
 \subsection{Implementazione}
@@ -42,7 +35,7 @@ La lista concatenata ordinata è una struttura dati dinamica i cui elementi sono
   \caption{Placeholder: dimensione fissata.}
   \label{fig:fbox}
 \end{figure}
-
+\\
 \subsubsection{implementazione lista concatenata ordinata}
 è stato scelto di implementare la lista come singolarmente concatenata per semplicità, in quanto le operazioni richieste non necessitano di accesso bidirezionale.
 il puntatore \texttt{root} punta al primo nodo della lista.
@@ -56,13 +49,13 @@ la cancellazione di un elemento avviene scorrendo la lista per trovare il nodo d
   \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
   \caption{Placeholder: dimensione fissata.}
   \label{fig:fbox}
-\end{figure}
-l'albero binario di ricerca (BST) è una struttura dati organizzata in un albero binario un grafo non orientato,
+\end{figure}\\
+l'albero binario di ricerca (BST) è una struttura dati organizzata in un albero binario: un grafo non orientato,
 connesso e aciclico; quindi ogni nodo può avere massimo due figli
 con il nodo iniziale detto radice dal quale si diramano tutti gli altri nodi e che ha il puntatore al padre nullo.
-Ogni nodo è un oggetto e ha 4 campi: data(la chiave dell' nodo quindi il dato), puntatore al figlio sinistro, puntatore al
+Ogni nodo è un oggetto e ha 4 campi: valore(la chiave dell' nodo quindi il dato), puntatore al figlio sinistro, puntatore al
 figlio destro, puntatore al padre. ogni nodo segue la proprietà fondamentale degli alberi binari di ricerca.
-
+\\
 la propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori
 
 
@@ -85,11 +78,18 @@ implementazione tradizionale %TODO: decidere come gestire i valori duplicati
 \subsubsection{Albero Binario di Ricerca auto bilanciato con Attributo Dimensione}
 
 
-
-La classe \texttt{SBSTree} implementa basato su una struttura \textbf{AVL (Albero Autobilanciato)}. Questa implementazione combina due proprietà fondamentali per garantire operazioni efficienti:
+La classe \texttt{SBSTree} implementa basato su una struttura \textbf{AVL (Albero Autobilanciato)}.\\
+Questa implementazione combina due proprietà fondamentali:
 
 \begin{enumerate}
 \item \textbf{Bilanciamento AVL}: L'albero mantiene un fattore di bilanciamento tra i sottoalberi sinistro e destro di ogni nodo, garantendo che l'altezza rimanga sempre $h = O(\log n)$, indipendentemente dall'ordine di inserimento.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
+  \caption{Placeholder: dimensione fissata.}
+  \label{fig:fbox}
+\end{figure}
 
 \item \textbf{Attributo size aggiornato}: Ogni nodo mantiene un campo \texttt{size} che tiene traccia del numero di nodi nel sottoalbero radicato in quel nodo. Questo attributo è il nucleo dell'ottimizzazione e viene \textbf{mantenuto aggiornato durante le rotazioni AVL} che avvengono per preservare il bilanciamento.
 \end{enumerate}
@@ -110,20 +110,12 @@ La classe \texttt{SBSTree} implementa basato su una struttura \textbf{AVL (Alber
 
 Questa implementazione rappresenta l'ottimale teorico per le operazioni di statistiche d'ordine su strutture dati dinamiche.
 
-\begin{figure}[ht]
-  \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
-\end{figure}
 
 \subsection{Complessità Teorica}
 
 Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture dati implementate. La tabella riporta la funzione di costo di select e rank per le strutture e una breve spiegazione delle ragioni dietro queste complessità nei diversi casi.
 
-\subsubsection*{Nota sulla Tabella Riveduta:}
-
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \footnotesize
 \begin{tabular}{@{} l l c c c p{4.5cm} @{}}
@@ -150,46 +142,30 @@ Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture 
 
 \begin{itemize}
 \item \textbf{select(i) $\rightarrow$ T(n,i)=O(i)}
-\begin{itemize}
-\item \textbf{Spiegazione}: Il costo è $O(i)$ perché, per trovare l'i-esimo elemento, l'algoritmo deve partire dalla testa e scorrere i nodi. Non c'è modo di ``saltare'' al centro.
-
-\item \textbf{Calcolo Caso Medio (O(n))}: Assumendo che $i$ sia scelto con probabilità uniforme tra 1 e $n$, il costo medio è la media di tutti i possibili costi:
-\[
-T_{\text{medio}}(n) = \frac{1}{n} \sum_{i=1}^{n} O(i) = \frac{1}{n} \cdot O(1+2+\cdots+n)
-\]
-Dato che $1+2+\cdots+n = \frac{n(n+1)}{2}$, la funzione è $\frac{1}{n} \cdot O(n^2)$, che si semplifica in $\mathbf{O(n)}$.
-\end{itemize}
+\textbf{Spiegazione}: \\ Il costo è $O(i)$ perché, per trovare l'i-esimo elemento, l'algoritmo deve partire dalla testa e scorrere i nodi. Non c'è modo di ``saltare'' al centro.
 
 \item \textbf{rank(x) $\rightarrow$ T(n,k)=O(k)}
-\begin{itemize}
-\item \textbf{Spiegazione}: Il costo è $O(k)$, dove $k$ è il rango effettivo di $x$ (quanti elementi sono $< x$). L'algoritmo deve scorrere la lista e contare $k$ elementi.
+\textbf{Spiegazione}: \\ Il costo è $O(k)$, dove $k$ è il rango effettivo di $x$ (quanti elementi sono $< x$). L'algoritmo deve scorrere la lista e contare $k$ elementi.
 
 \item \textbf{Calcolo Caso Medio (O(n))}: Assumendo che il rango $k$ sia distribuito uniformemente tra 0 e $n$, il calcolo è identico a quello di select. Il costo medio è $\mathbf{O(n)}$.
-\end{itemize}
 \end{itemize}
 
 \subsubsection*{2. BSTree (senza attributo size)}
 
 \textbf{Complessità: $O(n)$ sia nel caso medio che nel caso peggiore}
 
-\textbf{Ragione fondamentale}: L'algoritmo è \textbf{intrinsecamente dipendente dal numero di elementi}, non dalla sola altezza dell'albero.
+ %\textbf{Ragione fondamentale}: L'algoritmo è \textbf{intrinsecamente dipendente dal numero di elementi}, non dalla sola altezza dell'albero.
 
 \begin{itemize}
-\item \textbf{select(k)}: Implementata con visita \textbf{in-order iterativa}, che tocca ogni nodo fino a raggiungere la k-esima posizione. Nel migliore dei casi ($k=1$) costa $O(1)$, ma nel caso medio ($k \approx n/2$) e peggiore ($k=n$) costa $O(n)$.
+\item \textbf{select(k)}: Implementata con visita \textbf{in-order iterativa}, che tocca ogni nodo fino a raggiungere la k-esima posizione. Nel caso medio ($k \approx n/2$) e peggiore ($k=n$) costa $O(n)$.
 
-\textit{Nota sul confronto con LinkedList}: Sebbene entrambe le strutture abbiano complessità $O(n)$ nel caso medio, il \textbf{coefficiente costante è significativamente diverso per select}. La LinkedList ha costo reale $\Theta(k)$ (scorre esattamente $k$ nodi in sequenza), mentre BSTree con visita in-order deve attraversare la struttura ad albero seguendo puntatori left/right con maggiore overhead per nodo visitato. Nei test empirici, la retta di crescita di BSTree per \texttt{select} risulta \textbf{più ripida} rispetto a LinkedList, mentre per \texttt{rank} le due strutture mostrano pendenze simili.
-
-\item \textbf{rank(x)}: Implementata scendendo l'albero e calcolando ricorsivamente la dimensione di sottoalberi sinistri mediante \texttt{\_subtree\_size()}. Sebbene ogni nodo venga visitato al massimo una volta dalle chiamate ricorsive a \texttt{\_subtree\_size}, il costo totale è comunque \textbf{$O(n)$} nel caso peggiore perché la somma dei nodi visitati in tutti i sottoalberi misurati è lineare rispetto a $n$.
-
-\textit{Nota sul confronto con LinkedList}: Per \texttt{rank}, BSTree e LinkedList mostrano \textbf{coefficienti simili} nei test empirici. Entrambe le strutture eseguono un conteggio lineare: LinkedList scorre sequenzialmente i nodi, mentre BSTree visita ricorsivamente i sottoalberi disgiunti. Il costo delle chiamate ricorsive in BSTree è bilanciato dal fatto che i sottoalberi visitati sono disgiunti e il numero totale di nodi toccati è comparabile.
+\item \textbf{rank(x)}: Implementata scendendo l'albero e calcolando ricorsivamente la dimensione di sottoalberi sinistri.
 \end{itemize}
-
-\textbf{Conclusione}: Anche se l'albero fosse perfettamente bilanciato ($h = O(\log n)$), l'assenza di informazioni pre-calcolate sulla dimensione dei sottoalberi costringe l'algoritmo a visitare/contare elementi, rendendo il costo \textbf{$O(n)$} indipendentemente dal bilanciamento.
 
 \subsubsection*{3. SBSTree (AVL + attributo size)}
 
 \textbf{Complessità: $O(h) = O(\log n)$}
-
+\\
 \textbf{Ragione fondamentale}: La presenza dell'attributo \texttt{size} aggiornato + il bilanciamento AVL permette un algoritmo che \textbf{non visita sottoalberi interni}.
 
 \begin{itemize}
@@ -200,6 +176,6 @@ Dato che $1+2+\cdots+n = \frac{n(n+1)}{2}$, la funzione è $\frac{1}{n} \cdot O(
 \item \textbf{Altezza garantita dal bilanciamento AVL}: \textbf{$h = O(\log n)$} in tutti i casi (migliore, medio, peggiore).
 \end{itemize}
 
-\textbf{Conclusione}: Con il bilanciamento AVL, la complessità finale è \textbf{$O(\log n)$}, rappresentando l'optimum teorico per le statistiche d'ordine dinamiche.
+\textbf{Conclusione}: Con il bilanciamento AVL, la complessità finale è \textbf{$O(\log n)$}, rappresentando l'ottimo teorico per le statistiche d'ordine dinamiche.
 
-si vuole mostrare anche che non è il bilanciamento da solo a garantire l'efficienza, ma l'attributo size aggiornato.
+si vuole mostrare anche che non è il bilanciamento a garantire l'efficienza, ma l'attributo size aggiornato.

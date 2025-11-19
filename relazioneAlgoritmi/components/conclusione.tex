@@ -27,7 +27,7 @@ Osservazioni sperimentali e raccomandazioni:
 Conclusione pratica: per applicazioni che richiedono \texttt{select} e \texttt{rank} efficienti su insiemi dinamici, l'uso di una struttura che mantiene \texttt{size} nei nodi (come \texttt{SBStree}) risulta consigliabile; alberi non bilanciati senza informazione di size mostrano prestazioni incerte e variabili.
 
 
-\subsubsection{test empirici}
+\subsection{test empirici}
 % Sostituito paragrafo con elenco puntato per migliorare leggibilità nel PDF
 I test empirici condotti confermano in modo netto le previsioni della complessità teorica, evidenziando le profonde differenze prestazionali tra le tre strutture dati analizzate per le statistiche d'ordine dinamico.
 
@@ -40,7 +40,7 @@ I test empirici condotti confermano in modo netto le previsioni della complessit
 \end{itemize}
 
 
-\subsubsection{Analisi delle Pendenze}
+\subsection{Analisi delle Pendenze}
 Analisi delle Pendenze (O(n)): LinkedList vs. BSTree
 
 \begin{itemize}
@@ -60,3 +60,17 @@ Analisi delle Pendenze (O(n)): LinkedList vs. BSTree
 \end{itemize}
 
 In sintesi, i test confermano che per \texttt{select} la scansione della lista ha costanti molto favorevoli rispetto alla visita in-order dell'albero, mentre per \texttt{rank} i costi totali risultano comparabili tra le due strutture.
+
+
+% nparagraph per l'ambientte di svilupp sia hardware che software
+\subsection{Ambiente di Sviluppo}
+I test sono stati eseguiti in un ambiente di sviluppo controllato per garantire la riproducibilità e l'affidabilità dei risultati. Di seguito sono riportati i dettagli dell'ambiente hardware e software utilizzato:
+\begin{itemize}
+  \item \textbf{Hardware:}
+    \begin{itemize}
+      \item Processore: Intel Core i7-8565U × 8
+      \item RAM: 8GB DDR4
+      \item Sistema Operativo: Ubuntu 24.04.3 LTS con Kernel Linux 6.8.0-85-generic
+    \end{itemize}
+  \end {itemize}
+per l'ambiente si è usato conda e come ide pycharm, per l'UML si è usato starUML, per la relazione si è usata un' estensione di pycharm per latex.
