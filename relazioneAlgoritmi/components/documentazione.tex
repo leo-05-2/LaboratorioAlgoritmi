@@ -198,7 +198,7 @@ i metodi principali includono:
 Il processo è parametrizzato ed esegue:
 \begin{itemize}
     \item \textbf{Warm-up} (\texttt{warmup\_calls}): Prima di ogni sessione di misurazione, vengono eseguite diverse chiamate a vuoto. Questo ``riscaldamento'' serve a stabilizzare l'ambiente di esecuzione, ad esempio popolando le cache della CPU ed evitando che l'overhead iniziale del sistema influenzi i risultati.
-    \item \textbf{Iterazione su Dimensioni Diverse} (\texttt{sizes}): I test vengono eseguiti per un intervallo di dimensioni di input \texttt{n} (da 100 a 10.000), permettendo di osservare come le performance scalano al crescere dei dati.
+    \item \textbf{Iterazione su Dimensioni Diverse} (\texttt{sizes}): I test vengono eseguiti per un intervallo di dimensioni di input \texttt{n} (da 1 a 10.000), permettendo di osservare come le performance scalano al crescere dei dati.
     \item \textbf{Dataset Multipli per Dimensione} (\texttt{datasets\_per\_n}): Per ogni dimensione \texttt{n}, vengono generati più dataset indipendenti. I risultati vengono poi aggregati (calcolando media e deviazione standard). Questo riduce la probabilità che i risultati siano viziati da un singolo dataset anomalo.
     \item \textbf{Campionamento delle Operazioni} (\texttt{count}): Per ogni dataset, le operazioni \texttt{select(k)} e \texttt{rank(x)} vengono testate con un numero elevato di input \texttt{k} e \texttt{x} scelti casualmente. Questo assicura che le performance misurate siano rappresentative del comportamento medio dell'operazione sull'intera struttura.
     \item \textbf{Ripetizione delle Chiamate} (\texttt{calls\_per\_test}): Ogni singola operazione (es.\ \texttt{select} con un \texttt{k} specifico) viene eseguita in un ciclo stretto per un numero definito di volte. Il tempo totale viene poi diviso per il numero di chiamate, minimizzando il rumore e le fluttuazioni momentanee.
@@ -209,6 +209,7 @@ Alla fine del processo, `StructureTester` aggrega tutti i campioni raccolti per 
 %Nel dettaglio, la procedura seguita su ogni istanza è la seguente: si esegue una fase di warm-up con poche chiamate a \texttt{select} e \texttt{rank} per stabilizzare l'ambiente; si raccolgono quindi i campioni scegliendo per ogni misurazione un \(k\) estratto in modo uniforme nell'intervallo \([1,n]\); per ogni \(k\) si misura \texttt{select(k)} ripetendolo il numero di volte richiesto e si ricava l'elemento trovato per misurare subito dopo \texttt{rank(x)} sul valore ottenuto. In questo modo le due misure sono correlate e confrontabili.
 \\
 I risultati finali sono conservati: per ogni dimensione si mantengono media e deviazione standard sia per \texttt{select} sia per \texttt{rank}. StructureTester espone inoltre la possibilità di salvare i dati grezzi e di produrre grafici descrittivi con nomi di file costruiti automaticamente per facilitare l'analisi a posteriori.
-
+\\
+\textbf{StructureTester} ha anche dei metodi che permettono di salvare i risultati usati per i grafici in tabelle latex.\\
 \paragraph{Visualizzazione}
 Per comodità d'uso sono incluse funzioni di plotting che costruiscono confronti tra le varie strutture e tra i tipi di dataset (random o degenerato). I grafici sono pensati per essere autoesplicativi: i nomi dei file incorporano le strutture protagoniste e il tipo di input, così che risultino immediatamente interpretabili.

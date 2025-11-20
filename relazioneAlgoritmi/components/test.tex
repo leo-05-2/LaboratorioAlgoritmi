@@ -4,145 +4,203 @@
 % Preamble
 \section{test effettuati}
 
-%todo: correggere tabella
-i test che sono stati effettuati al momento sono:
-- test su dati random per le tre strutture
-- test su albero senza size che degenera in lista contro lista
-- test su albero senza size bilanciato contro la lista
-- test su tutte le strutture con varianza
-%todo: test su sbstree bilanciato contro lista
+
+sono stati effettuati due test principali per valutare le prestazioni delle tre strutture dati (\texttt{LinkedList}, \texttt{BSTree} senza \texttt{size}, \texttt{SBSTree} con \texttt{size}) nelle operazioni di \texttt{select} e \texttt{rank}.
+di seguito sono descritti i test e i risultati ottenuti, con relativi andamenti sia singolarmente che comparativi.
+\\
+per i test i valori dei parametri della classe Tester sono stati scelti come segue:
+\begin{itemize}
+  \item  \texttt{warmup\_calls}: 20
+  \item  \texttt{datasets\_per\_n}: 10
+  \item  \texttt{count}: 120
+  \item  \texttt{calls\_per\_test}: 30
+\end{itemize}
+
+\subsection*{risultati dei test}
 di seguito verranno mostrati i risultati per ogni test effettuato con le relative considerazioni.
-
-
-\subsection*{Ipotesi Corrette per i Test}
 
 \subsubsection*{Test 1: Dati Casuali}
 
 % Prima immagine (placeholder -> sostituita con rank_performance)
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.7\textwidth}\centering
-    \includegraphics[width=\linewidth]{path/to/your/placeholder_image}
-    \captionof{figure}{Rank performance (overview)}\label{fig:rank_performance_overview}
-  \end{minipage}%
-}
+%\noindent\makebox[\textwidth][c]{%
+%  \begin{minipage}{0.7\textwidth}\centering
+%    \includegraphics[width=\linewidth]{path/to/your/placeholder_image}
+%    \captionof{figure}{Rank performance (overview)}\label{fig:rank_performance_overview}
+%  \end{minipage}%
+%}
 
-Ipotesi Riveduta:
 
-% Due immagini affiancate: LinkedList (random)
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_LinkedList_random}
-    \captionof{figure}{Rank - LinkedList (random)}\label{fig:rank_ll_rand}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_LinkedList_random}
-    \captionof{figure}{Select - LinkedList (random)}\label{fig:select_ll_rand}
-  \end{minipage}%
-}
+%todo: aggiungere tabelle e controllare che tutte le immagini siano citate e abbiano una didascalia
 
-\texttt{LinkedList}: O(n) (lineare, come previsto)
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{\textwidth}\centering
+    \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_random}
+    \caption{prestazioni Rank - LinkedList (random)}\label{fig:rank_ll_rand}
+  \end{minipage}
+\end{figure}
 
-% BSTree random: due immagini affiancate
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_BSTree_random}
-    \captionof{figure}{Rank - BSTree (random)}\label{fig:rank_bst_rand}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_BSTree_random}
-    \captionof{figure}{Select - BSTree (random)}\label{fig:select_bst_rand}
-  \end{minipage}%
-}
+\\
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{\textwidth}\centering
+    \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_random}
+    \caption{prestazioni Select - LinkedList (random)}\label{fig:select_ll_rand}
+  \end{minipage}
+\end{figure}
 
-\begin{itemize}
-\item Anche se i dati casuali producono mediamente un albero bilanciato con $h\approx\log n$, l'assenza di \texttt{size} costringe gli algoritmi select/rank a visitare/contare elementi.
-\item Risultato empirico atteso: le curve di tempo crescono linearmente con $n$, similmente a LinkedList (con costanti diverse).
-\end{itemize}
+\\
+\\
+\texttt{LinkedList}: O(n), lineare come previsto sia per select \ref{fig:rank_ll_rand} che per rank \ref{fig:select_ll_rand}.
+\\\\
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_BSTree_random}
+  \caption{Rank - BSTree (random)}\label{fig:rank_bst_rand}
+\end{minipage}
+  \end{figure}
+\\
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_BSTree_random}
+  \caption{Select - BSTree (random)}\label{fig:select_bst_rand}
+\end{minipage}%
+\end{figure}
 
-% SBSTree random: due immagini affiancate
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_SBStree_random}
-    \captionof{figure}{Rank - SBSTree (random)}\label{fig:rank_sbst_rand}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_SBStree_random}
-    \captionof{figure}{Select - SBSTree (random)}\label{fig:select_sbst_rand}
-  \end{minipage}%
-}
+\\
+\\
+Anche se i dati casuali producono mediamente un albero bilanciato con $h\approx\log n$, l'assenza di \texttt{size} costringe gli algoritmi select/rank a visitare/contare elementi.
+Risultato empirico atteso: le curve di tempo crescono linearmente con $n$ \ref{fig:rank_bst_rand},\ref{fig:select_bst_rand}, similmente a LinkedList (con costanti diverse).
 
-SBSTree: $O(\log n)$ — grazie al bilanciamento AVL e all'attributo \texttt{size}.
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_SBStree_random}
+  \caption{Rank - SBSTree (random)}\label{fig:rank_sbst_rand}
+\end{minipage}
+    \end{figure}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_SBStree_random}
+  \caption{Select - SBSTree (random)}\label{fig:select_sbst_rand}
+\end{minipage}%
+\end{figure}
 
+\\\\\\
+SBSTree: $O(\log n)$ come si vede da \ref{fig:rank_sbst_rand} e \ref{fig:select_sbst_rand}— grazie al bilanciamento AVL e all'attributo \texttt{size}.
+\\\\\\
 % Grafico comparativo
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_LinkedList_BSTree_SBStree_random}
-    \captionof{figure}{Confronto Rank (random)}\label{fig:rank_cmp_rand}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_LinkedList_BSTree_SBStree_random}
-    \captionof{figure}{Confronto Select (random)}\label{fig:select_cmp_rand}
-  \end{minipage}%
-}
 
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_BSTree_SBStree_random}
+  \caption{Confronto Rank (random)}\label{fig:rank_cmp_rand}
+\end{minipage}
+  \end{figure}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_BSTree_SBStree_random}
+  \caption{Confronto Select (random)}\label{fig:select_cmp_rand}
+\end{minipage}%
+\end{figure}
+
+\\\\\\
 Conseguenza: il test dovrebbe mostrare che LinkedList e BSTree hanno prestazioni comparabili (entrambe $O(n)$), mentre SBSTree è nettamente migliore ($O(\log n)$).
+\\\\\\
+\input{./components/tabella_risultati_random}
+\
+come si vede dalla tabella \ref{tab:random} e dai grafici comparativi \ref{fig:rank_cmp_rand}, \ref{fig:select_cmp_rand} i risultati confermano le aspettative teoriche:
+- \textbf{LinkedList e BSTree}: Come previsto dalla teoria, entrambe le strutture mostrano un tempo di esecuzione che cresce linearmente (O(n)) con la dimensione dell'input. Le loro curve di performance sono quasi sovrapponibili, con il BSTree che mostra una costante leggermente più alta (pendenza maggiore) a causa dell'overhead della gestione della struttura ad albero rispetto alla semplice iterazione della lista.
+- \textbf{SBSTree}: Mostra prestazioni nettamente superiori. La sua curva è quasi piatta, confermando la complessità logaritmica (O(log n)). Il tempo di esecuzione cresce molto lentamente e non è quasi influenzato dall'aumento di $n$.
+
+
 
 \subsubsection*{Test 2: Dati Ordinati (Albero BSTree Degenere)}
 
 % LinkedList ordinato - affiancate
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_LinkedList}
-    \captionof{figure}{Rank - LinkedList (ordinato)}\label{fig:rank_ll_sorted}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_LinkedList}
-    \captionof{figure}{Select - LinkedList (ordinato)}\label{fig:select_ll_sorted}
-  \end{minipage}%
-}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList}
+  \caption{Rank - LinkedList (ordinato)}\label{fig:rank_ll_sorted}
+\end{minipage}
+  \end{figure}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList}
+  \caption{Select - LinkedList (ordinato)}\label{fig:select_ll_sorted}
+\end{minipage}%
+\end{figure}
 
-LinkedList: O(n) (lineare)
+
+LinkedList: O(n) (lineare) simile al test precedente, dato che la lista mantiene la stessa struttura indipendentemente dall'ordine di inserimento \ref{fig:rank_ll_sorted}, \ref{fig:select_ll_sorted}.
 
 % BSTree ordinato
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_BSTree}
-    \captionof{figure}{Rank - BSTree (ordinato)}\label{fig:rank_bst_sorted}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_BSTree}
-    \captionof{figure}{Select - BSTree (ordinato)}\label{fig:select_bst_sorted}
-  \end{minipage}%
-}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_BSTree}
+  \caption{Rank - BSTree (ordinato)}\label{fig:rank_bst_sorted}
+\end{minipage}
+    \end{figure}\\
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_BSTree}
+  \caption{Select - BSTree (ordinato)}\label{fig:select_bst_sorted}
+\end{minipage}%
+\end{figure}
 
-BSTree (degenere): O(n)
 
-% SBSTree ordinato
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance_SBStree}
-    \captionof{figure}{Rank - SBSTree (ordinato)}\label{fig:rank_sbst_sorted}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance_SBStree}
-    \captionof{figure}{Select - SBSTree (ordinato)}\label{fig:select_sbst_sorted}
-  \end{minipage}%
-}
+BSTree (degenere): O(n) simile al test precedente \ref{fig:rank_bst_sorted}, \ref{fig:select_bst_sorted}.
 
-SBSTree: O(\log n) — bilanciamento AVL mantiene $h=O(\log n)$.
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance_SBStree}
+  \caption{Rank - SBSTree (ordinato)}\label{fig:rank_sbst_sorted}
+\end{minipage}
+    \end{figure}\\
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance_SBStree}
+  \caption{Select - SBSTree (ordinato)}\label{fig:select_sbst_sorted}
+\end{minipage}%
+\end{figure}
 
-% Grafico comparativo finale
-\noindent\makebox[\textwidth][c]{%
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/rank_performance}
-    \captionof{figure}{Confronto Rank (ordinato)}\label{fig:rank_cmp_sorted}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/select_performance}
-    \captionof{figure}{Confronto Select (ordinato)}\label{fig:select_cmp_sorted}
-  \end{minipage}%
-}
 
-Conseguenza: il test mostra una differenza netta tra BSTree degenerato e SBSTree (che rimane logaritmico).
+SBSTree: $O(\log n)$ — bilanciamento AVL mantiene $h=O(\log n)$, \ref{fig:rank_sbst_sorted}, \ref{fig:select_sbst_sorted}.
 
-%todo: considerare come caso test anche numeri che esulano dalla size, e i casi migliori per lista e bstree senza size
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/rank_performance}
+  \caption{Confronto Rank (ordinato)}\label{fig:rank_cmp_sorted}
+\end{minipage}
+    \end{figure}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{\textwidth}\centering
+  \includegraphics[width=\linewidth]{../src/png/select_performance}
+  \caption{Confronto Select (ordinato)}\label{fig:select_cmp_sorted}
+\end{minipage}%
+\end{figure}
+
+
+\\
+\input{./components/tabella_risultati_sorted}
+\\
+come si vede dalla tabella \ref{tab:sorted} e dai grafici comparativi \ref{fig:rank_cmp_sorted}, \ref{fig:select_cmp_sorted} i risultati
+confermano le aspettative teoriche:
+\\
+\textbf{LinkedList e BSTree}: In questo scenario, il `BSTree` degenera in una lista.\\
+\textbf{SBSTree}: Grazie al meccanismo di autobilanciamento AVL, la struttura non degenera. Mantiene un'altezza logaritmica e le sue prestazioni per `select` e `rank` rimangono \textbf{O(log n)}, come evidenziato dalla curva piatta nei grafici.
+\\
