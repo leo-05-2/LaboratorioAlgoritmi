@@ -1,4 +1,7 @@
 import time
+import matplotlib
+# Forza backend non-interattivo (headless) per ambienti come PythonAnywhere
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from src.DataStructure.LinkedList.LinkedList import LinkedList
 from src.DataStructure.BSTree.BStree import BSTree
@@ -6,7 +9,12 @@ from src.DataStructure.SBSTree.SBStree import SBStree
 from src.DataGenerator import DataGenerator
 import numpy as np
 import os
-os.makedirs('png', exist_ok=True)
+from pathlib import Path
+
+# Base directory: cartella `src/` (dove risiedono png/ e plt/)
+BASE_DIR = Path(__file__).resolve().parent
+# Assicuriamoci che la cartella png esista nella cartella src/
+os.makedirs(BASE_DIR / 'png', exist_ok=True)
 
 class StructureTester:
 
@@ -169,28 +177,30 @@ class StructureTester:
             for i in structure_names:
                 name += f'{i}_'
             name = name[:-1]  # rimuove l'ultimo underscore
+            png_dir = BASE_DIR / 'png'
             self._draw_metric(x, structure_names, self._select_mean, self._select_std, markers, colors,
                               'Dimensione struttura', 'Tempo medio select (s)', 'Prestazioni select',
-                              f'png/select_performance_{name}_{test_type}.png')
+                              str(png_dir / f'select_performance_{name}_{test_type}.png'))
 
             self._draw_metric(x, structure_names, self._rank_mean, self._rank_std, markers, colors,
                               'Dimensione struttura', 'Tempo medio rank (s)', 'Prestazioni rank',
-                              f'png/rank_performance_{name}_{test_type}.png')
+                              str(png_dir / f'rank_performance_{name}_{test_type}.png'))
             return
         else:
             for name in structure_names:
                 if name not in ['LinkedList', 'BSTree', 'SBStree']:
                     raise ValueError(f"Invalid structure name: {name}")
                 structure_name = structure_names
+                png_dir = BASE_DIR / 'png'
                 self._draw_metric(x, [name], self._select_mean, self._select_std, markers, colors,
                                   'Dimensione struttura', 'Tempo medio select (s)', f'Prestazioni select: {name}',
-                                  f'png/select_performance_{name}_{test_type}.png')
+                                  str(png_dir / f'select_performance_{name}_{test_type}.png'))
                 self._draw_metric(x, [name], self._rank_mean, self._rank_std, markers, colors,
                                   'Dimensione struttura', 'Tempo medio rank (s)', f'Prestazioni rank: {name}',
-                                  f'png/rank_performance_{name}_{test_type}.png')
+                                  str(png_dir / f'rank_performance_{name}_{test_type}.png'))
 
     def _save_to_latex(self, test_type):
-        filename = f"plt/tabella_risultati_{test_type}.tex"
+        filename = str(BASE_DIR / 'plt' / f"tabella_risultati_{test_type}.tex")
         print(f"   -> Generazione tabella LaTeX (Sync Indici) in {filename}...")
 
         structures = list(self._select_mean.keys())
@@ -201,6 +211,7 @@ class StructureTester:
             dirpath = os.path.dirname(filename)
             if dirpath:
                 os.makedirs(dirpath, exist_ok=True)
+
             with open(filename, 'w') as f:
                 # --- Intestazione Tabella ---
                 f.write("\\begin{table}[h!]\n")
@@ -215,13 +226,13 @@ class StructureTester:
                 header1 = "\\multirow{2}{*}{\\textbf{N}}"
                 for struct in structures:
                     header1 += f" & \\multicolumn{{2}}{{c|}}{{\\textbf{{{struct}}}}}"
-                f.write(header1 + " \\\\\n")
+                f.write(header1 + " \\\\n")
 
                 # Header 2: Select / Rank
                 header2 = ""
                 for _ in structures:
                     header2 += " & Select (s) & Rank (s)"
-                f.write(header2 + " \\\\\n")
+                f.write(header2 + " \\\\n")
                 f.write("\\hline\n")
 
                 # --- LOGICA SEMPLIFICATA BASATA SUGLI ARRAY ---
@@ -233,7 +244,7 @@ class StructureTester:
 
                 # Se non ci sono dati, usciamo
                 if data_count == 0:
-                    f.write("\\multicolumn{" + str(1 + len(structures) * 2) + "}{|c|}{Nessun dato disponibile} \\\\\n")
+                    f.write("\\multicolumn{" + str(1 + len(structures) * 2) + "}{|c|}{Nessun dato disponibile} \\\\n")
                 else:
                     # 2. Decidiamo quali indici stampare (Campionamento)
                     # Vogliamo circa 15 righe al massimo per non intasare la pagina
@@ -267,7 +278,7 @@ class StructureTester:
                                 # Se una struttura ha meno dati delle altre (errore raro ma possibile)
                                 row += " & - & -"
 
-                        f.write(row + " \\\\\n")
+                        f.write(row + " \\\\n")
                         f.write("\\hline\n")
 
                 # Chiusura
