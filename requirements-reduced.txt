@@ -1,0 +1,5 @@
+# requirements ridotto generato automaticamente: solo le dipendenze usate da `src/`
+# Usato in: src/DataGenerator.py, src/Tester.py
+matplotlib==3.10.6
+numpy
+

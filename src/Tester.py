@@ -197,6 +197,10 @@ class StructureTester:
         SIG_FIGS = 3
 
         try:
+            # Assicuriamoci che la directory esista prima di scrivere il file
+            dirpath = os.path.dirname(filename)
+            if dirpath:
+                os.makedirs(dirpath, exist_ok=True)
             with open(filename, 'w') as f:
                 # --- Intestazione Tabella ---
                 f.write("\\begin{table}[h!]\n")
@@ -281,7 +285,7 @@ class StructureTester:
         Formatta il numero usando un numero fisso di cifre significative (sig_figs).
         - Se il numero è 'normale' (es. 0.0123), usa la notazione decimale.
         - Se è molto piccolo o molto grande, passa automaticamente alla notazione scientifica.
-        - Converte la notazione scientifica 'e' in LaTeX ($ \times 10^{x} $).
+        - Converte la notazione scientifica 'e' in LaTeX ($ \\times 10^{x} $).
         """
         if val is None or np.isnan(val):
             return "-"
