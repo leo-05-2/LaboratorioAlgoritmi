@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.7)  17 OCT 2025 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.17)  21 NOV 2025 13:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -205,7 +205,9 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 \CROP@index=\count284
 \CROP@offset=\count285
-)
+Package crop Info: Local config file crop.cfg used on input line 622.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetexconfig/crop.cfg))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen164
@@ -866,12 +868,256 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks43
 \@floatcapt=\box75
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks44
+\pgfutil@tempdima=\dimen262
+\pgfutil@tempdimb=\dimen263
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box76
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks45
+\pgfkeys@temptoks=\toks46
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks47
+))
+\pgf@x=\dimen264
+\pgf@y=\dimen265
+\pgf@xa=\dimen266
+\pgf@ya=\dimen267
+\pgf@xb=\dimen268
+\pgf@yb=\dimen269
+\pgf@xc=\dimen270
+\pgf@yc=\dimen271
+\pgf@xd=\dimen272
+\pgf@yd=\dimen273
+\w@pgf@writea=\write4
+\r@pgf@reada=\read4
+\c@pgf@counta=\count472
+\c@pgf@countb=\count473
+\c@pgf@countc=\count474
+\c@pgf@countd=\count475
+\t@pgf@toka=\toks48
+\t@pgf@tokb=\toks49
+\t@pgf@tokc=\toks50
+\pgf@sys@id@count=\count476
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count477
+\pgfsyssoftpath@bigbuffer@items=\count478
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen274
+\pgfmath@count=\count479
+\pgfmath@box=\box77
+\pgfmath@toks=\toks51
+\pgfmath@stack@operand=\toks52
+\pgfmath@stack@operation=\toks53
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count480
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen275
+\pgf@picmaxx=\dimen276
+\pgf@picminy=\dimen277
+\pgf@picmaxy=\dimen278
+\pgf@pathminx=\dimen279
+\pgf@pathmaxx=\dimen280
+\pgf@pathminy=\dimen281
+\pgf@pathmaxy=\dimen282
+\pgf@xx=\dimen283
+\pgf@xy=\dimen284
+\pgf@yx=\dimen285
+\pgf@yy=\dimen286
+\pgf@zx=\dimen287
+\pgf@zy=\dimen288
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen289
+\pgf@path@lasty=\dimen290
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen291
+\pgf@shorten@start@additional=\dimen292
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box78
+\pgf@hbox=\box79
+\pgf@layerbox@main=\box80
+\pgf@picture@serial@count=\count481
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen293
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen294
+\pgf@pt@y=\dimen295
+\pgf@pt@temp=\dimen296
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen297
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen298
+\pgf@sys@shading@range@num=\count482
+\pgf@shadingcount=\count483
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box81
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box82
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen299
+\pgf@nodesepend=\dimen300
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks54
+\verbatim@line=\toks55
+\verbatim@in@stream=\read5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box83
+\tcb@upperbox=\box84
+\tcb@lowerbox=\box85
+\tcb@phantombox=\box86
+\c@tcbbreakpart=\count484
+\c@tcblayer=\count485
+\c@tcolorbox@number=\count486
+\l__tcobox_tmpa_box=\box87
+\l__tcobox_tmpa_dim=\dimen301
+\tcb@temp=\box88
+\tcb@temp=\box89
+\tcb@temp=\box90
+\tcb@temp=\box91
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'italian'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-5.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 6
+0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -879,39 +1125,39 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux)
 \openout1 = `relazioneAlgoritmi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-\c@lstlisting=\count472
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+\c@lstlisting=\count487
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count473
-\scratchdimen=\dimen262
-\scratchbox=\box76
-\nofMPsegments=\count474
-\nofMParguments=\count475
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count476
-\MPscratchDim=\dimen263
-\MPnumerator=\count477
-\makeMPintoPDFobject=\count478
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count488
+\scratchdimen=\dimen302
+\scratchbox=\box92
+\nofMPsegments=\count489
+\nofMParguments=\count490
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count491
+\MPscratchDim=\dimen303
+\MPnumerator=\count492
+\makeMPintoPDFobject=\count493
+\everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -955,18 +1201,18 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package crop Info: requested driver: `' on input line 55.
-Package crop Info: detected driver: `pdftex' on input line 55.
-Package crop Info: using `pdftex' graphics driver on input line 55.
-LaTeX Info: Redefining \it@ocap on input line 55.
-LaTeX Info: Redefining \it@ccap on input line 55.
+Package crop Info: requested driver: `' on input line 60.
+Package crop Info: detected driver: `pdftex' on input line 60.
+Package crop Info: using `pdftex' graphics driver on input line 60.
+LaTeX Info: Redefining \it@ocap on input line 60.
+LaTeX Info: Redefining \it@ccap on input line 60.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting
-italian.ldf    on input line 55.
+italian.ldf    on input line 60.
 
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
@@ -982,17 +1228,17 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'relazioneAlgoritmi.bbl' not found.
 
 No file relazioneAlgoritmi.bbl.
-Package biblatex Info: Reference section=0 on input line 55.
-Package biblatex Info: Reference segment=0 on input line 55.
-Package hyperref Info: Link coloring OFF on input line 55.
+Package biblatex Info: Reference section=0 on input line 60.
+Package biblatex Info: Reference segment=0 on input line 60.
+Package hyperref Info: Link coloring OFF on input line 60.
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.out)
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.out)
-\@outlinefile=\write4
-\openout4 = `relazioneAlgoritmi.out'.
+\@outlinefile=\write5
+\openout5 = `relazioneAlgoritmi.out'.
 
 
 (./resource/title.tex
-<resource/firenze2.png, id=56, 4149.5025pt x 2015.53pt>
+<resource/firenze2.png, id=115, 4149.5025pt x 2015.53pt>
 File: resource/firenze2.png Graphic file (type png)
 <use resource/firenze2.png>
 Package pdftex.def Info: resource/firenze2.png  used on input line 9.
@@ -1011,11 +1257,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc} <./resource/firenze2.png>])
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.toc)
-\tf@toc=\write5
-\openout5 = `relazioneAlgoritmi.toc'.
+\tf@toc=\write6
+\openout6 = `relazioneAlgoritmi.toc'.
 
 
-(./components/introduzione.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.69 \newpage
+              [1] (./components/introduzione.tex
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
 .
 
@@ -1023,244 +1274,909 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-0.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ))
 (./components/descrizione del problema e implementazione.tex
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.20   \item \texttt
-                    {select(k)} richiede O(k) passaggi, poiché è necessari...
-[1]) (./components/documentazione.tex
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 21.
- [2] [3])
-(./components/test.tex [4]
 
-./components/test.tex:20: LaTeX Error: Can be used only in preamble.
+./components/descrizione del problema e implementazione.tex:19: LaTeX Error: Th
+ere's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.20 \centering\begin{document}
-                               
+l.19 Q
+      ueste operazioni consentono di estrarre informazioni sulla posizione r...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<./resource/img/linkedlist.png, id=157, 1144.275pt x 283.0575pt>
+File: ./resource/img/linkedlist.png Graphic file (type png)
+<use ./resource/img/linkedlist.png>
+Package pdftex.def Info: ./resource/img/linkedlist.png  used on input line 30.
+(pdftex.def)             Requested size: 398.3386pt x 98.53603pt.
+
+Overfull \hbox (11.79999pt too wide) in paragraph at lines 30--31
+ [][] 
+ []
+
+
+./components/descrizione del problema e implementazione.tex:35: LaTeX Error: Th
+ere's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 \subsubsection
+                   {Implementazione lista concatenata ordinata}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[2]
+<./resource/img/Binary_search_tree.png, id=167, 250.9375pt x 209.78375pt>
+File: ./resource/img/Binary_search_tree.png Graphic file (type png)
+<use ./resource/img/Binary_search_tree.png>
+Package pdftex.def Info: ./resource/img/Binary_search_tree.png  used on input l
+ine 48.
+(pdftex.def)             Requested size: 204.20784pt x 170.71774pt.
+
+
+./components/descrizione del problema e implementazione.tex:52: LaTeX Error: Th
+ere's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 L
+      'albero binario di ricerca (BST) \ref{fig:binary_search_tree} è una s...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:21: LaTeX Error: Not in outer par mode.
+./components/descrizione del problema e implementazione.tex:65: LaTeX Error: Th
+ere's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.21 \begin{figure}[ht]
-                       
-You've lost some text.  Try typing  <return>  to proceed.
+l.65   S
+        ia x un nodo in un ABR. \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/descrizione del problema e implementazione.tex:66: LaTeX Error: Un
+icode character ≤ (U+2264)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...ottoalbero sinistro di x, allora y.key ≤
+                                                   x.key \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./components/descrizione del problema e implementazione.tex:67: LaTeX Error: Un
+icode character ≥ (U+2265)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ... sottoalbero destro di x, allora y.key ≥
+                                                   x.key
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.70 L
+      'inserimento di un nuovo elemento avviene confrontando il valore da in...
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.70 L
+      'inserimento di un nuovo elemento avviene confrontando il valore da in...
+ <./resource/img/linkedlist.png> <./resource/img/Binary_search_tree.png>]
+<./resource/img/AVL-Tree.png, id=178, 770.88pt x 462.72874pt>
+File: ./resource/img/AVL-Tree.png Graphic file (type png)
+<use ./resource/img/AVL-Tree.png>
+Package pdftex.def Info: ./resource/img/AVL-Tree.png  used on input line 89.
+(pdftex.def)             Requested size: 284.40952pt x 170.71977pt.
+
+./components/descrizione del problema e implementazione.tex:100: Missing $ inse
+rted.
+<inserted text> 
+                $
+l.100 \left
+           | \operatorname{height}\bigl(x_{\text{sin}}\bigr) - \operatorname...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./components/descrizione del problema e implementazione.tex:100: Misplaced alig
+nment tab character &.
+l.100 ...ight}\bigl(x_{\text{des}}\bigr) \right| &
+                                                  \le 1, \Rightarrow\quad h ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./components/descrizione del problema e implementazione.tex:100: Misplaced alig
+nment tab character &.
+l.100 ...igr) \right| &\le 1, \Rightarrow\quad h &
+                                                  = O(\log n), \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./components/descrizione del problema e implementazione.tex:102: Missing $ inse
+rted.
+<inserted text> 
+                $
+l.102 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.137 \end{table}
+                  <./resource/img/AVL-Tree.png>])
+(./components/documentazione.tex
+<./resource/img/Main.png, id=195, 1528.71124pt x 757.83125pt>
+File: ./resource/img/Main.png Graphic file (type png)
+<use ./resource/img/Main.png>
+Package pdftex.def Info: ./resource/img/Main.png  used on input line 11.
+(pdftex.def)             Requested size: 344.36507pt x 170.71281pt.
+ [5
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.15 \subsection
+                {Struttura del Progetto}]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 26.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+
+ []
+
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.55 
+      <./resource/img/Main.png>] [7]
+
+./components/documentazione.tex:140: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 I
+       n questa implementazione, sia \texttt{select(k)} che \texttt{rank(x)}...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
+59.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+) [8]
+Overfull \hbox (0.36142pt too wide) in paragraph at lines 190--192
+[]
+ []
+
+
+Overfull \hbox (15.05823pt too wide) in paragraph at lines 201--202
+[]\OT1/ptm/b/n/10 Campionamento del-le ope-ra-zio-ni \OT1/ptm/m/n/10 (\OT1/pcr/
+m/n/10 count\OT1/ptm/m/n/10 ): Per ogni in-sie-me di da-ti, le ope-ra-zio-ni \O
+T1/pcr/m/n/10 select(k)
+ []
+
+[9]
+
+./components/documentazione.tex:205: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 A
+       lla fine del processo, `StructureTester` aggrega tutti i campioni rac...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) (./components/test.tex
+Overfull \hbox (7.97667pt too wide) in paragraph at lines 6--11
+\OT1/ptm/m/n/10 Sono sta-ti ef-fet-tua-ti due te-st prin-ci-pa-li per va-lu-ta-
+re le pre-sta-zio-ni del-le tre strut-tu-re da-ti (\OT1/pcr/m/n/10 LinkedList\O
+T1/ptm/m/n/10 ,
+ []
+
+<../src/png/rank_performance_LinkedList_random.png, id=333, 722.7pt x 361.35pt>
+
+File: ../src/png/rank_performance_LinkedList_random.png Graphic file (type png)
+
+<use ../src/png/rank_performance_LinkedList_random.png>
+Package pdftex.def Info: ../src/png/rank_performance_LinkedList_random.png  use
+d on input line 36.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[10]
+
+./components/test.tex:42: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \begin
+           {figure}[H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/select_performance_LinkedList_random.png, id=339, 722.7pt x 361.35p
+t>
+File: ../src/png/select_performance_LinkedList_random.png Graphic file (type pn
+g)
+<use ../src/png/select_performance_LinkedList_random.png>
+Package pdftex.def Info: ../src/png/select_performance_LinkedList_random.png  u
+sed on input line 45.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+
+./components/test.tex:51: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 \\
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:52: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 \texttt
+            {LinkedList}: O(n), lineare come previsto sia per select \ref{fi...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/rank_performance_BSTree_random.png, id=342, 722.7pt x 361.35pt>
+File: ../src/png/rank_performance_BSTree_random.png Graphic file (type png)
+<use ../src/png/rank_performance_BSTree_random.png>
+Package pdftex.def Info: ../src/png/rank_performance_BSTree_random.png  used on
+ input line 57.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--60
+
+ []
+
+
+./components/test.tex:62: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 \begin
+           {figure}[H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/select_performance_BSTree_random.png, id=343, 722.7pt x 361.35pt>
+File: ../src/png/select_performance_BSTree_random.png Graphic file (type png)
+<use ../src/png/select_performance_BSTree_random.png>
+Package pdftex.def Info: ../src/png/select_performance_BSTree_random.png  used 
+on input line 65.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.68 \end{figure}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.68 \end{figure}
+                  </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/pn
+g/rank_performance_LinkedList_random.png> </home/leo/PycharmProjects/Laboratori
+oAlgoritmi/out/../src/png/select_performance_LinkedList_random.png>]
+
+./components/test.tex:71: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 \\
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:72: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 A
+      nche se i dati casuali producono mediamente un albero bilanciato con $...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/rank_performance_SBStree_random.png, id=354, 722.7pt x 361.35pt>
+File: ../src/png/rank_performance_SBStree_random.png Graphic file (type png)
+<use ../src/png/rank_performance_SBStree_random.png>
+Package pdftex.def Info: ../src/png/rank_performance_SBStree_random.png  used o
+n input line 78.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+<../src/png/select_performance_SBStree_random.png, id=355, 722.7pt x 361.35pt>
+File: ../src/png/select_performance_SBStree_random.png Graphic file (type png)
+<use ../src/png/select_performance_SBStree_random.png>
+Package pdftex.def Info: ../src/png/select_performance_SBStree_random.png  used
+ on input line 85.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.88 \end{figure}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.88 \end{figure}
+                  </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/pn
+g/rank_performance_BSTree_random.png> </home/leo/PycharmProjects/LaboratorioAlg
+oritmi/out/../src/png/select_performance_BSTree_random.png>]
+
+./components/test.tex:90: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 \\\\
+         \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:90: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 \\\\\\
+           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:91: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 S
+      BSTree: $O(\log n)$ come si vede da \ref{fig:rank_sbst_rand} e \ref{fi...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+<../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png, id=367, 722.
+7pt x 361.35pt>
+File: ../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png Graphic 
+file (type png)
+<use ../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png>
+Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_SBStree_
+random.png  used on input line 98.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.102 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.102 
+       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perf
+ormance_SBStree_random.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/out
+/../src/png/select_performance_SBStree_random.png>]
+<../src/png/select_performance_LinkedList_BSTree_SBStree_random.png, id=376, 72
+2.7pt x 361.35pt>
+File: ../src/png/select_performance_LinkedList_BSTree_SBStree_random.png Graphi
+c file (type png)
+<use ../src/png/select_performance_LinkedList_BSTree_SBStree_random.png>
+Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_SBStre
+e_random.png  used on input line 106.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+
+
+./components/test.tex:111: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111 \\\\
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:111: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111 \\\\\\
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/test.tex:112: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 C
+       onseguenza: il test dovrebbe mostrare che LinkedList e BSTree hanno p...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./components/tabella_risultati_random.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+./components/test.tex:120: LaTeX Error: Something's wrong--perhaps a missing \i
+tem.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \end{itemize}
+                   
+Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<resource/rank_performance.png, id=195, 722.7pt x 361.35pt>
-File: resource/rank_performance.png Graphic file (type png)
-<use resource/rank_performance.png>
-Package pdftex.def Info: resource/rank_performance.png  used on input line 23.
-(pdftex.def)             Requested size: 318.67209pt x 159.33633pt.
+<../src/png/rank_performance_LinkedList_sorted.png, id=380, 722.7pt x 361.35pt>
 
+File: ../src/png/rank_performance_LinkedList_sorted.png Graphic file (type png)
+
+<use ../src/png/rank_performance_LinkedList_sorted.png>
+Package pdftex.def Info: ../src/png/rank_performance_LinkedList_sorted.png  use
+d on input line 129.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+<../src/png/select_performance_LinkedList_sorted.png, id=381, 722.7pt x 361.35p
+t>
+File: ../src/png/select_performance_LinkedList_sorted.png Graphic file (type pn
+g)
+<use ../src/png/select_performance_LinkedList_sorted.png>
+Package pdftex.def Info: ../src/png/select_performance_LinkedList_sorted.png  u
+sed on input line 136.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.139 \end{figure}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.139 \end{figure}
+                   </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/p
+ng/rank_performance_LinkedList_BSTree_SBStree_random.png> </home/leo/PycharmPro
+jects/LaboratorioAlgoritmi/out/../src/png/select_performance_LinkedList_BSTree_
+SBStree_random.png>] [15
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.140 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.140 
+       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perf
+ormance_LinkedList_sorted.png>]
+<../src/png/rank_performance_BSTree_sorted.png, id=402, 722.7pt x 361.35pt>
+File: ../src/png/rank_performance_BSTree_sorted.png Graphic file (type png)
+<use ../src/png/rank_performance_BSTree_sorted.png>
+Package pdftex.def Info: ../src/png/rank_performance_BSTree_sorted.png  used on
+ input line 148.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+
+
+./components/test.tex:152: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.152 \begin
+            {figure}[H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/select_performance_BSTree_sorted.png, id=403, 722.7pt x 361.35pt>
+File: ../src/png/select_performance_BSTree_sorted.png Graphic file (type png)
+<use ../src/png/select_performance_BSTree_sorted.png>
+Package pdftex.def Info: ../src/png/select_performance_BSTree_sorted.png  used 
+on input line 155.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.159 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.159 
+       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
+rformance_LinkedList_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritm
+i/out/../src/png/rank_performance_BSTree_sorted.png>]
+<../src/png/rank_performance_SBStree_sorted.png, id=415, 722.7pt x 361.35pt>
+File: ../src/png/rank_performance_SBStree_sorted.png Graphic file (type png)
+<use ../src/png/rank_performance_SBStree_sorted.png>
+Package pdftex.def Info: ../src/png/rank_performance_SBStree_sorted.png  used o
+n input line 166.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+
+
+./components/test.tex:170: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.170 \begin
+            {figure}[H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../src/png/select_performance_SBStree_sorted.png, id=416, 722.7pt x 361.35pt>
+File: ../src/png/select_performance_SBStree_sorted.png Graphic file (type png)
+<use ../src/png/select_performance_SBStree_sorted.png>
+Package pdftex.def Info: ../src/png/select_performance_SBStree_sorted.png  used
+ on input line 173.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.177 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.177 
+       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
+rformance_BSTree_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/ou
+t/../src/png/rank_performance_SBStree_sorted.png>]
+<../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png, id=427, 722.
+7pt x 361.35pt>
+File: ../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png Graphic 
+file (type png)
+<use ../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png>
+Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_SBStree_
+sorted.png  used on input line 184.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+<../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png, id=428, 72
+2.7pt x 361.35pt>
+File: ../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png Graphi
+c file (type png)
+<use ../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png>
+Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_SBStre
+e_sorted.png  used on input line 191.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+ [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.195 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.195 
+       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
+rformance_SBStree_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/o
+ut/../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png>]
+
+./components/test.tex:198: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 \input
+            {./components/tabella_risultati_sorted}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./components/tabella_risultati_sorted.tex)) (./components/conclusione.tex
+Underfull \hbox (badness 10000) in paragraph at lines 200--3
+
+ []
+
+[19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.13 \end{itemize}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.13 \end{itemize}
+                   </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/p
+ng/select_performance_LinkedList_BSTree_SBStree_sorted.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+<../src/png/rank_performance_LinkedList_BSTree_random.png, id=449, 722.7pt x 36
+1.35pt>
+File: ../src/png/rank_performance_LinkedList_BSTree_random.png Graphic file (ty
+pe png)
+<use ../src/png/rank_performance_LinkedList_BSTree_random.png>
+Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_random.p
+ng  used on input line 30.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+./components/conclusione.tex:31: Undefined control sequence.
+l.31   \captionof
+                 {figure}{Rank performance (overview)}\label{fig:rank_perfor...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--33
+
+ []
+
+<../src/png/select_performance_LinkedList_BSTree_random.png, id=450, 722.7pt x 
+361.35pt>
+File: ../src/png/select_performance_LinkedList_BSTree_random.png Graphic file (
+type png)
+<use ../src/png/select_performance_LinkedList_BSTree_random.png>
+Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_random
+.png  used on input line 37.
+(pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
+./components/conclusione.tex:38: Undefined control sequence.
+l.38   \captionof
+                 {figure}{Rank performance (overview)}\label{fig:rank_perfor...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[20 </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perform
+ance_LinkedList_BSTree_random.png>]
+
+./components/conclusione.tex:42: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \\\\
+         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./components/conclusione.tex:43: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43 \begin
+           {itemize}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (23.79953pt too wide) in paragraph at lines 47--48
+[]\OT1/pcr/m/n/10 LinkedList \OT1/ptm/m/n/10 ese-gue una sem-pli-ce scan-sio-ne
+ se-quen-zia-le (\OT1/pcr/m/n/10 current = current.next\OT1/ptm/m/n/10 ),
+ []
+
+
+Overfull \hbox (32.09888pt too wide) in paragraph at lines 55--56
+[]\OT1/pcr/m/n/10 BSTree \OT1/ptm/m/n/10 ese-gue di-sce-sa e in-vo-ca fun-zio-n
+i di con-teg-gio sui sot-toal-be-ri (ad es. []\OT1/pcr/m/n/10 subtree[]size\OT1
+/ptm/m/n/10 );
+ []
+
+) (./components/bibliografia.tex [21 </home/leo/PycharmProjects/LaboratorioAlgo
+ritmi/out/../src/png/select_performance_LinkedList_BSTree_random.png>])
+[22] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `relazioneAlgoritmi.out' has not changed.
-(rerunfilecheck)             Checksum: 741BCFA12C7B527688411DFBD2DC99A7;2245.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `relazioneAlgoritmi.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `relazioneAlgoritmi.out':
+(rerunfilecheck)             Before: FAE09CFB327D6CE625D06EB9437365EB;4374
+(rerunfilecheck)             After:  B31C934A8E3F6768B88F04664540B4D7;4696.
 Package logreq Info: Writing requests to 'relazioneAlgoritmi.run.xml'.
 \openout1 = `relazioneAlgoritmi.run.xml'.
 
-
-./components/test.tex:26: You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.26 \end{document}
-                   
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Reference `fig:rank_performance' on page 5 undefined on input li
-ne 31.
-
-
-./components/test.tex:44: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.44     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<resource/rank_sbstree_only.png, id=196, 722.7pt x 361.35pt>
-File: resource/rank_sbstree_only.png Graphic file (type png)
-<use resource/rank_sbstree_only.png>
-Package pdftex.def Info: resource/rank_sbstree_only.png  used on input line 45.
-
-(pdftex.def)             Requested size: 318.67209pt x 159.33633pt.
-[5
-\BOOKMARK [1][-]{section.4}{\376\377\000t\000e\000s\000t\000\040\000e\000f\000f
-\000e\000t\000t\000u\000a\000t\000i}{}% 14
-\@writefile{toc}{\contentsline {section}{\numberline {4}test effettuati}{5}{sec
-tion.4}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.4.1}{\376\377\000M\000e\000t\000o\000d\000o\000l\00
-0o\000g\000i\000a}{section.4}% 15
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Metodologia}{5}{su
-bsection.4.1}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.4.2}{\376\377\000A\000n\000a\000l\000i\000s\000i\00
-0\040\000d\000e\000l\000l\000'\000o\000p\000e\000r\000a\000z\000i\000o\000n\000
-e\000\040\000r\000a\000n\000k\000\050\000\051}{section.4}% 16
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Analisi dell'opera
-zione rank()}{5}{subsection.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Rank perf
-ormance}}{5}{figure.1}\protected@file@percent }
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.52 
-     
-
-
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Confronto
- delle prestazioni di rank() tra le strutture}}{5}{figure.2}\protected@file@per
-cent }
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.52 
-     
-\newlabel{fig:rank_performance}{{2}{5}{Confronto delle prestazioni di rank() tr
-a le strutture}{figure.2}{}}
- <./resource/rank_performance.png>]
-
-LaTeX Warning: Reference `fig:rank_sbstree_only' on page 6 undefined on input l
-ine 53.
-
-<resource/select_performance.png, id=207, 722.7pt x 361.35pt>
-File: resource/select_performance.png Graphic file (type png)
-<use resource/select_performance.png>
-Package pdftex.def Info: resource/select_performance.png  used on input line 64
-.
-(pdftex.def)             Requested size: 318.67209pt x 159.33633pt.
-
-LaTeX Warning: Reference `fig:select_performance' on page 6 undefined on input 
-line 69.
-
-[6
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces }}{6}{fig
-ure.3}\protected@file@percent }
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.84   \item \textbf
-                    {SBSTree} è nettamente la struttura più efficiente per...
-\newlabel{fig:rank_sbstree_only}{{3}{6}{}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Dettaglio
- delle prestazioni di rank() per SBSTree}}{6}{figure.4}\protected@file@percent 
-}
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.84   \item \textbf
-                    {SBSTree} è nettamente la struttura più efficiente per...
-\BOOKMARK [2][-]{subsection.4.3}{\376\377\000A\000n\000a\000l\000i\000s\000i\00
-0\040\000d\000e\000l\000l\000'\000o\000p\000e\000r\000a\000z\000i\000o\000n\000
-e\000\040\000s\000e\000l\000e\000c\000t\000\050\000\051}{section.4}% 17
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Analisi dell'opera
-zione select()}{6}{subsection.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Confronto
- delle prestazioni di select() tra le strutture}}{6}{figure.5}\protected@file@p
-ercent }
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.84   \item \textbf
-                    {SBSTree} è nettamente la struttura più efficiente per...
-\newlabel{fig:select_performance}{{5}{6}{Confronto delle prestazioni di select(
-) tra le strutture}{figure.5}{}}
- <./resource/rank_sbstree_only.png> <./resource/select_performance.png>]
-[7
-\BOOKMARK [1][-]{section.5}{\376\377\000D\000i\000s\000c\000u\000s\000s\000i\00
-0o\000n\000e}{}% 18
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussione}{7}{section
-.5}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.5.1}{\376\377\000P\000r\000e\000s\000t\000a\000z\00
-0i\000o\000n\000i\000\040\000C\000o\000m\000p\000a\000r\000a\000t\000i\000v\000
-e}{section.5}% 19
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Prestazioni Compar
-ative}{7}{subsection.5.1}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.5.2}{\376\377\000V\000a\000r\000i\000a\000b\000i\00
-0l\000i\000t\000\340\000\040\000e\000\040\000S\000t\000a\000b\000i\000l\000i\00
-0t\000\340}{section.5}% 20
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Variabilità e Sta
-bilità}{7}{subsection.5.2}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.5.3}{\376\377\000E\000f\000f\000e\000t\000t\000o\00
-0\040\000d\000e\000l\000l\000a\000\040\000D\000i\000m\000e\000n\000s\000i\000o\
-000n\000e\000\040\000d\000e\000l\000\040\000D\000a\000t\000a\000s\000e\000t}{se
-ction.5}% 21
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Effetto della Dime
-nsione del Dataset}{7}{subsection.5.3}\protected@file@percent }
-\BOOKMARK [2][-]{subsection.5.4}{\376\377\000I\000m\000p\000l\000i\000c\000a\00
-0z\000i\000o\000n\000i\000\040\000P\000r\000a\000t\000i\000c\000h\000e}{section
-.5}% 22
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Implicazioni Prati
-che}{7}{subsection.5.4}\protected@file@percent }
-] [8
-\BOOKMARK [1][-]{section.6}{\376\377\000C\000o\000n\000c\000l\000u\000s\000i\00
-0o\000n\000i}{}% 23
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusioni}{8}{section
-.6}\protected@file@percent }
-]
-\gdef \@abspage@last{9}
-(/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux) ) )
- 
+ ) 
 Here is how much of TeX's memory you used:
- 23600 strings out of 476098
- 401987 string characters out of 5793538
- 2057975 words of memory out of 5000000
- 45135 multiletter control sequences out of 15000+600000
- 583411 words of font info for 77 fonts, out of 8000000 for 9000
+ 33540 strings out of 476098
+ 630442 string characters out of 5793536
+ 2125975 words of memory out of 5000000
+ 54791 multiletter control sequences out of 15000+600000
+ 592214 words of font info for 98 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 79i,12n,93p,1163b,2269s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmri8a.pfb>
+ 83i,12n,93p,1163b,2148s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
 Output written on /home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneA
-lgoritmi.pdf (9 pages, 586309 bytes).
+lgoritmi.pdf (23 pages, 1828532 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 567 PDF objects out of 1000 (max. 8388607)
+ 465 compressed objects within 5 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 344 words of extra memory for PDF output out of 10000 (max. 10000000)
 

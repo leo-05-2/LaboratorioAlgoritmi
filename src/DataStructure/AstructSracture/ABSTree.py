@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.DataStracture.BSTree import Node
+from src.DataStructure.BSTree import Node
 
 
 class ABSTree(ABC):
@@ -40,16 +40,6 @@ class ABSTree(ABC):
         while current.get_left() is not None:
             current = current.get_left()
         return current
-
-    def tree_successor(self, node) -> Node or None:
-        """Ritorna il successore inorder del nodo."""
-        if node.get_right() is not None:
-            return self._min_value_node(node.get_right())
-        parent = node.get_father()
-        while parent is not None and node == parent.get_right():
-            node = parent
-            parent = parent.get_father()
-        return parent
 
     def _transplant(self, u, v):
         """Sostituisce il sottoalbero radicato in u con il sottoalbero radicato in v."""

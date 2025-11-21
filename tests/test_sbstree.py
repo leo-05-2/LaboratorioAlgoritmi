@@ -4,7 +4,7 @@ Si testano: inserimento, ricerca, rimozione, select (k-esimo), rank, tree walk p
 e la correttezza del campo size nei nodi.
 """
 import unittest
-from src.DataStracture.SBSTree.SBStree import SBStree
+from src.DataStructure.SBSTree.SBStree import SBStree
 
 class TestSBStree(unittest.TestCase):
     def setUp(self):

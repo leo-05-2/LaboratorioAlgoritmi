@@ -1,5 +1,5 @@
 
-from src.DataStracture.AstructSracture.ANode import ANode
+from src.DataStructure.AstructSracture.ANode import ANode
 class Node(ANode) :
     def __init__(self, data):
         super().__init__(data)

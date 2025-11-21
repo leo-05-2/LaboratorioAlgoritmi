@@ -1,7 +1,7 @@
 from typing import Optional
 
-from src.DataStracture.BSTree.Node import Node
-from src.DataStracture.AstructSracture.ABSTree import ABSTree
+from src.DataStructure.BSTree.Node import Node
+from src.DataStructure.AstructSracture.ABSTree import ABSTree
 
 
 class BSTree(ABSTree):
@@ -107,5 +107,3 @@ class BSTree(ABSTree):
             else:
                 current = current.get_left()
         return rank
-
-#insert e delete

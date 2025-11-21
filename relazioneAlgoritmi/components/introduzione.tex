@@ -3,9 +3,8 @@
 
 % Preamble
 \section{Introduzione}
-Questa relazione analizza le prestazioni di diverse strutture dati nell'implementazione delle statistiche d'ordine dinamico, in particolare le operazioni di \texttt{select(k)} e \texttt{rank(x)}.
-
-verranno descritte le strutture dati usate, esposte le scelte progettuali fatte e alcuni aspetti implementativi.
+Questa relazione analizza le prestazioni di diverse strutture dati nell'implementazione delle statistiche d'ordine dinamiche, in particolare le operazioni di \texttt{select(k)} e \texttt{rank(x)}.
+Verranno descritte le strutture dati usate, esposte le scelte progettuali fatte e alcuni aspetti implementativi.
 Di seguito verranno messe a confronto con opportuni test le prestazioni nelle operazioni
 di selezione dell' i-esimo elemento più piccolo e di calcolo del rango di un elemento.
 Lo scopo di questa analisi è confrontare tre strutture dati differenti:
@@ -14,24 +13,20 @@ Lo scopo di questa analisi è confrontare tre strutture dati differenti:
   \item Albero binario di ricerca standard senza attributo dimensione (\texttt{BSTree})
   \item Albero binario di ricerca auto bilanciante (AVL) con attributo dimensione (\texttt{SBSTree})
 \end{itemize}
-
-Verranno presentati i risultati sperimentali che evidenziano come le diverse implementazioni si comportano al variare delle dimensioni e tipologia di dataset.
+Verranno presentati i risultati sperimentali che evidenziano come le diverse implementazioni si comportano al variare delle dimensioni e tipologia di dati in ingresso.
 
 \subsection{Esercizio}
 % aggiungere snippet dell'esercizio con latex
-esercizio assegnato per l'esame di Laboratorio di Algoritmi e Strutture Dati:
-\begin{figure}[H]
-  \centering
-  \begin{tcolorbox}[colframe=black,colback=white,boxsep=8pt,left=6pt,right=6pt,width=\linewidth,sharp corners]
-    Vogliamo confrontare varie implementazioni di statistiche d'ordine dinamiche:
-    \begin{enumerate}
-      \item Con lista ordinata
-      \item Con ABR senza attributo \emph{size}
-      \item Come visto a lezione (AVL) con attributo \emph{size}
-    \end{enumerate}
-    Nota: La lista deve essere implementata considerando strutture collegate con puntatori e non la struttura dati lista di Python.
-  \end{tcolorbox}
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:esercizio}
-\end{figure}
+Esercizio assegnato per l'esame di Laboratorio di Algoritmi e Strutture Dati:
+
+\begin{tcolorbox}[colframe=black,colback=white,boxsep=8pt,left=6pt,right=6pt,width=\linewidth,sharp corners]
+  Vogliamo confrontare varie implementazioni di statistiche d'ordine dinamiche:
+  \begin{enumerate}
+    \item Con lista ordinata
+    \item Con ABR senza attributo \emph{size}
+    \item Come visto a lezione (AVL) con attributo \emph{size}
+  \end{enumerate}
+  Nota: La lista deve essere implementata considerando strutture collegate con puntatori e non la struttura dati lista di Python.
+\end{tcolorbox}
+
 

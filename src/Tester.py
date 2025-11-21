@@ -1,8 +1,8 @@
 import time
 import matplotlib.pyplot as plt
-from src.DataStracture.LinkedList.LinkedList import LinkedList
-from src.DataStracture.BSTree.BStree import BSTree
-from src.DataStracture.SBSTree.SBStree import SBStree
+from src.DataStructure.LinkedList.LinkedList import LinkedList
+from src.DataStructure.BSTree.BStree import BSTree
+from src.DataStructure.SBSTree.SBStree import SBStree
 from src.DataGenerator import DataGenerator
 import numpy as np
 import os
@@ -10,9 +10,9 @@ os.makedirs('png', exist_ok=True)
 
 class StructureTester:
 
-    def __init__(self, sizes=None, datasets_per_n=10, count=120, calls_per_test=30, warmup_calls=20):
-        if sizes is None:
-            sizes = np.unique(np.logspace(2, 4, 50, dtype=int))   # da 100 a ~1000, 25 punti
+    def __init__(self, datasets_per_n=10, count=120, calls_per_test=30, warmup_calls=20):
+
+        sizes = np.unique(np.logspace(0, 4, 50, dtype=int))   # da 100 a ~1000, 25 punti
             # size spaziato linearmente tra 100 e 10000 con np e unique
         self._sizes = sizes
         self._datasets_per_n = datasets_per_n  # se >1 si possono aggregare più dataset per ogni n
@@ -75,7 +75,7 @@ class StructureTester:
 
             for ds in range(self._datasets_per_n): # per ridurre rumore
 
-                if not random:
+                if random == False:
                     # genera dati ordinati per test degenere
                     generator = DataGenerator(n * 2, n, data_type='sorted')
                     data = generator.start()
@@ -128,6 +128,10 @@ class StructureTester:
                 self._rank_std[name].append(rnk_std)
 
             print(f'finished n={n} (datasets_per_n={self._datasets_per_n})')
+        type_label = "sorted" if random == False else "random"
+        self._save_to_latex(type_label)
+
+        print(f"Test {type_label} completati.\n")
 
 
     def _draw_metric(self, x, structure_names, mean_dict, std_dict, markers, colors, xlabel, ylabel, title, filename,
@@ -146,7 +150,7 @@ class StructureTester:
         plt.ylabel(ylabel, fontsize=12)
         plt.title(title, fontsize=14)
         plt.grid(True, linestyle='--', alpha=0.6)
-        plt.legend(fontsize=legend_fontsize) #todo: fix upper
+        plt.legend(fontsize=legend_fontsize)
         plt.ylim(bottom=0)
         plt.tight_layout()
         plt.savefig(filename)
@@ -159,7 +163,7 @@ class StructureTester:
         if random:
             test_type = "random"
         else:
-            test_type = "degenerate"
+            test_type = "sorted"
         if flag:
             name =''
             for i in structure_names:
@@ -185,24 +189,113 @@ class StructureTester:
                                   'Dimensione struttura', 'Tempo medio rank (s)', f'Prestazioni rank: {name}',
                                   f'png/rank_performance_{name}_{test_type}.png')
 
+    def _save_to_latex(self, test_type):
+        filename = f"plt/tabella_risultati_{test_type}.tex"
+        print(f"   -> Generazione tabella LaTeX (Sync Indici) in {filename}...")
 
+        structures = list(self._select_mean.keys())
+        SIG_FIGS = 3
 
-    def plot_sbstree_only(self):
-        x = np.array(self._sizes)
-        plt.figure(figsize=(10, 5))
-        mean = np.array(self._rank_mean['SBStree'], dtype=float)
-        std  = np.array(self._rank_std['SBStree'], dtype=float)
-        if mean.size != x.size:
-            mean = np.full_like(x, np.nan, dtype=float)
-            std = np.full_like(x, np.nan, dtype=float)
-        plt.plot(x, mean, label='SBStree', marker='^', color='green', linewidth=2)
-        plt.fill_between(x, mean - std, mean + std, color='green', alpha=0.2)
-        plt.xlabel('Dimensione struttura', fontsize=12)
-        plt.ylabel('Tempo medio rank (s)', fontsize=12)
-        plt.title('Prestazioni rank SBStree', fontsize=14)
-        plt.grid(True, linestyle='--', alpha=0.6)
-        plt.legend(fontsize=12)
-        plt.ylim(bottom=0)
-        plt.tight_layout()
-        plt.savefig('rank_sbstree_only.png')
-        plt.close()
+        try:
+            with open(filename, 'w') as f:
+                # --- Intestazione Tabella ---
+                f.write("\\begin{table}[h!]\n")
+                f.write("\\centering\n")
+                f.write("\\resizebox{\\textwidth}{!}{%\n")
+
+                cols = "|c" + "|c" * (len(structures) * 2) + "|"
+                f.write(f"\\begin{{tabular}}{{{cols}}}\n")
+                f.write("\\hline\n")
+
+                # Header 1: Nomi Strutture
+                header1 = "\\multirow{2}{*}{\\textbf{N}}"
+                for struct in structures:
+                    header1 += f" & \\multicolumn{{2}}{{c|}}{{\\textbf{{{struct}}}}}"
+                f.write(header1 + " \\\\\n")
+
+                # Header 2: Select / Rank
+                header2 = ""
+                for _ in structures:
+                    header2 += " & Select (s) & Rank (s)"
+                f.write(header2 + " \\\\\n")
+                f.write("\\hline\n")
+
+                # --- LOGICA SEMPLIFICATA BASATA SUGLI ARRAY ---
+
+                # 1. Troviamo quanti dati validi abbiamo.
+                # Prendiamo la lunghezza della prima struttura come riferimento.
+                first_struct = structures[0]
+                data_count = len(self._select_mean[first_struct])
+
+                # Se non ci sono dati, usciamo
+                if data_count == 0:
+                    f.write("\\multicolumn{" + str(1 + len(structures) * 2) + "}{|c|}{Nessun dato disponibile} \\\\\n")
+                else:
+                    # 2. Decidiamo quali indici stampare (Campionamento)
+                    # Vogliamo circa 15 righe al massimo per non intasare la pagina
+                    step = max(1, data_count // 15)
+
+                    # Generiamo la lista degli indici: 0, step, 2*step...
+                    indices = list(range(0, data_count, step))
+
+                    # 3. Assicuriamoci che l'ULTIMO indice dell'array sia presente
+                    # (Quello che contiene il N massimo testato, es. 10.000)
+                    last_real_index = data_count - 1
+                    if indices[-1] != last_real_index:
+                        indices.append(last_real_index)
+
+                    # 4. Iteriamo solo su questi indici sincronizzati
+                    for i in indices:
+                        # Prendo la dimensione N corrispondente a questo indice
+                        n = self._sizes[i]
+                        row = f"{n}"
+
+                        for struct in structures:
+                            # Sicurezza: controlliamo che anche le altre strutture abbiano dati a questo indice
+                            if i < len(self._select_mean[struct]):
+                                val_select = self._select_mean[struct][i]
+                                val_rank = self._rank_mean[struct][i]
+
+                                s_val = self._format_smart_latex(val_select, SIG_FIGS)
+                                r_val = self._format_smart_latex(val_rank, SIG_FIGS)
+                                row += f" & {s_val} & {r_val}"
+                            else:
+                                # Se una struttura ha meno dati delle altre (errore raro ma possibile)
+                                row += " & - & -"
+
+                        f.write(row + " \\\\\n")
+                        f.write("\\hline\n")
+
+                # Chiusura
+                f.write("\\end{tabular}\n")
+                f.write("}\n")
+                f.write(f"\\caption{{Tempi medi per dataset {test_type} (Cifre sign.: {SIG_FIGS}).}}\n")
+                f.write(f"\\label{{tab:{test_type}}}\n")
+                f.write("\\end{table}\n")
+
+        except IOError as e:
+            print(f"Errore salvataggio LaTeX: {e}")
+
+    def _format_smart_latex(self, val, sig_figs=3):
+        """
+        Formatta il numero usando un numero fisso di cifre significative (sig_figs).
+        - Se il numero è 'normale' (es. 0.0123), usa la notazione decimale.
+        - Se è molto piccolo o molto grande, passa automaticamente alla notazione scientifica.
+        - Converte la notazione scientifica 'e' in LaTeX ($ \times 10^{x} $).
+        """
+        if val is None or np.isnan(val):
+            return "-"
+        if val == 0:
+            return "0"
+
+        # Usa il formato 'g' che gestisce automaticamente le cifre significative
+        formatted_str = f"{val:.{sig_figs}e}"
+
+        # Se Python usa la notazione scientifica (c'è una 'e'), convertiamola in LaTeX
+        if 'e' in formatted_str:
+            base, exponent = formatted_str.split('e')
+            exponent = int(exponent)  # Rimuove zeri extra (es. -05 -> -5)
+            return f"${base} \\times 10^{{{exponent}}}$"
+        else:
+            # Altrimenti è un numero decimale normale
+            return f"${formatted_str}$"

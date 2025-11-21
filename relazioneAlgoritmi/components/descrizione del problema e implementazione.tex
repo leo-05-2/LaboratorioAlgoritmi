@@ -1,16 +1,14 @@
 %! Author = leo
 %! Date = 16/10/25
-\usepackage{tcolorbox}
+
 
 % Preamble
 \section{Descrizione del problema e implementazione}
+In questo progetto verranno confrontate le prestazioni delle statistiche di ordine dinamiche in 3 diverse strutture dati.
+Verranno descritte le strutture dati utilizzate ed esposte le scelte progettuali e implementative.
+Successivamente verranno confrontate con opportuni esperimenti le prestazioni nelle operazioni select(k) e rank(x) per ogni struttura dati, il che comporta queste due operazioni fondamentali: select(k) e rank(x) devono essere implementate per ogni struttura dati scelta a seconda delle loro caratteristiche per permettere rispettivamente di selezionare l'elemento di rango k e di calcolare il rango di un elemento x.
 
-in questo progetto verranno confrontate le prestazioni delle statistiche di ordine dinamico in 3 diverse strutture dati.
-verranno descritte le strutture dati utilizzate ed esposte le scelte progettuali e implementative.
-successivamente verranno confrontate con opportuni esperimenti le prestazioni nelle operazioni select(k) e rank(x) ogni struttura dati.
-il che comporta queste due operazioni fondamentali: select(k) e rank(x) devono essere implementate per ogni struttura dati scelta a seconda delle loro caratteristiche per permettere rispettivamente di selezionare l'elemento di rango k e di calcolare il rango di un elemento x.
-
-\subsection{Statistiche d'Ordine Dinamico}
+\subsection{Statistiche d'Ordine Dinamiche}
 Le statistiche d'ordine sono misure che descrivono la distribuzione degli elementi in un insieme ordinato. Nel contesto delle strutture dati dinamiche, ci concentriamo su due operazioni fondamentali:
 
 \begin{itemize}
@@ -18,45 +16,46 @@ Le statistiche d'ordine sono misure che descrivono la distribuzione degli elemen
   \item \textbf{rank(x)}: restituisce il numero di elementi strettamente minori di x nell'insieme.
 \end{itemize}
 \\
-Queste operazioni consentono di estrarre informazioni sulla posizione relativa degli elementi in una collezione ordinata dinamica, dove elementi possono essere aggiunti o rimossi nel tempo.
-sono state implementate tre diverse strutture dati per supportare queste operazioni: una lista concatenata ordinata, un albero binario di ricerca standard e un albero binario di ricerca auto bilanciato (AVL) con attributo dimensione.
+Queste operazioni consentono di estrarre informazioni sulla posizione relativa degli elementi in una collezione ordinata dinamica, dove elementi possono essere aggiunti o rimossi nel tempo. Sono state implementate tre diverse strutture dati per supportare queste operazioni: una lista concatenata ordinata, un albero binario di ricerca standard e un albero binario di ricerca auto bilanciato (AVL) con attributo dimensione.
 
 
 \subsection{Implementazione}
 \subsubsection{Lista Concatenata Ordinata}
-\begin{tcolorbox}
-[colback=gray!10!white, colframe=gray!75!black, title=Nota]
-  %todo: aggiungere immagine lista concatenata
-\end{tcolorbox}
-La lista concatenata ordinata è una struttura dati dinamica i cui elementi sono mantenuti in ordine crescente è implementata con nodi che contengono un valore e un puntatore al nodo successivo. %TODO: decidere come gestire i valori duplicati
-\begin{figure}[ht]
+
+La lista concatenata ordinata è una struttura dati dinamica i cui elementi sono mantenuti in ordine crescente; è implementata con nodi che contengono un valore e un puntatore al nodo successivo. %TODO: decidere come gestire i valori duplicati
+\begin{figure}[H]
   \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
+  \fbox{
+    \includegraphics[width=\linewidth]{./resource/img/linkedlist}
+  }
+  \caption{struttura lista concatenata}
+  \label{fig:linkedlist}
 \end{figure}
 \\
-\subsubsection{implementazione lista concatenata ordinata}
-è stato scelto di implementare la lista come singolarmente concatenata per semplicità, in quanto le operazioni richieste non necessitano di accesso bidirezionale.
-il puntatore \texttt{root} punta al primo nodo della lista.
-l'inserimento di un nuovo elemento avviene scorrendo la lista fino a trovare la posizione corretta per mantenere l'ordine crescente, quindi si aggiorna il puntatore del nodo precedente per puntare al nodo appena inserito e il puntatore del nuovo nodo per puntare al nodo successivo.
-la cancellazione di un elemento avviene scorrendo la lista per trovare il nodo da rimuovere, quindi si aggiorna il puntatore del nodo precedente per saltare il nodo da rimuovere.
+\subsubsection{Implementazione lista concatenata ordinata}
+È stato scelto di implementare la lista come singolarmente concatenata \ref{fig:linkedlist}per semplicità, in quanto le operazioni richieste non necessitano di accesso bidirezionale.
+Il puntatore \texttt{root} punta al primo nodo della lista.
+L'inserimento di un nuovo elemento avviene scorrendo la lista fino a trovare la posizione corretta per mantenere l'ordine crescente, quindi si aggiorna il puntatore del nodo precedente per puntare al nodo appena inserito e il puntatore del nuovo nodo per puntare al nodo successivo.
+La cancellazione di un elemento avviene scorrendo la lista per trovare il nodo da rimuovere, quindi si aggiorna il puntatore del nodo precedente per saltare il nodo da rimuovere.
 
 
 \subsubsection{Albero Binario di Ricerca Standard}
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
+  \fbox{
+      \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{./resource/img/Binary_search_tree}
+
+  } % altezza 6cm, larghezza 10cm
+  \caption{struttura albero binario di ricerca}
+  \label{fig:binary_search_tree}
 \end{figure}\\
-l'albero binario di ricerca (BST) è una struttura dati organizzata in un albero binario: un grafo non orientato,
+L'albero binario di ricerca (BST) \ref{fig:binary_search_tree} è una struttura dati organizzata in un albero binario: un grafo non orientato,
 connesso e aciclico; quindi ogni nodo può avere massimo due figli
 con il nodo iniziale detto radice dal quale si diramano tutti gli altri nodi e che ha il puntatore al padre nullo.
-Ogni nodo è un oggetto e ha 4 campi: valore(la chiave dell' nodo quindi il dato), puntatore al figlio sinistro, puntatore al
-figlio destro, puntatore al padre. ogni nodo segue la proprietà fondamentale degli alberi binari di ricerca.
+Ogni nodo è un oggetto e ha 4 campi: valore(la chiave del nodo quindi il dato), puntatore al figlio sinistro, puntatore al
+figlio destro, puntatore al padre. Ogni nodo segue la proprietà fondamentale degli alberi binari di ricerca.
 \\
-la propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori
+La propietà fondamentale di un albero binario di ricerca è che per ogni nodo, tutti i valori nel sottoalbero sinistro sono minori del valore del nodo, e tutti i valori nel sottoalbero destro sono maggiori.
 
 
 
@@ -68,17 +67,16 @@ la propietà fondamentale di un albero binario di ricerca è che per ogni nodo, 
   Se y è nel sottoalbero destro di x, allora y.key ≥ x.key
 
 \end{tcolorbox}
+L'inserimento di un nuovo elemento avviene confrontando il valore da inserire con i valori dei nodi, scendendo a sinistra o a destra a seconda del confronto, fino a trovare una posizione vuota dove inserire il nuovo nodo.
+La cancellazione di un elemento segue le regole standard per la rimozione in un albero binario di ricerca, gestendo i casi di nodi con zero, uno o due figli.
 
-l'inserimento di un nuovo elemento avviene confrontando il valore da inserire con i valori dei nodi, scendendo a sinistra o a destra a seconda del confronto, fino a trovare una posizione vuota dove inserire il nuovo nodo.
-la cancellazione di un elemento segue le regole standard per la rimozione in un albero binario di ricerca, gestendo i casi di nodi con zero, uno o due figli
-implementazione tradizionale %TODO: decidere come gestire i valori duplicati
 
 
 
 \subsubsection{Albero Binario di Ricerca auto bilanciato con Attributo Dimensione}
 
 
-La classe \texttt{SBSTree} implementa basato su una struttura \textbf{AVL (Albero Autobilanciato)}.\\
+La classe \texttt{SBSTree} è implementata basandosi su una struttura \textbf{AVL (Albero Autobilanciato)}.\\
 Questa implementazione combina due proprietà fondamentali:
 
 \begin{enumerate}
@@ -86,16 +84,18 @@ Questa implementazione combina due proprietà fondamentali:
 
 \begin{figure}[H]
   \centering
-  \fbox{\rule{0pt}{6cm}\rule{10cm}{0pt}} % altezza 6cm, larghezza 10cm
-  \caption{Placeholder: dimensione fissata.}
-  \label{fig:fbox}
+  \fbox{
+    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{./resource/img/AVL-Tree}
+  } % altezza 6cm, larghezza 10cm
+  \caption{struttura albero AVL}
+  \label{fig:avl_tree}
 \end{figure}
-
+Oltre all' avl standard \ref{fig:avl_tree}, ogni nodo dell'albero contiene un attributo aggiuntivo:
 \item \textbf{Attributo size aggiornato}: Ogni nodo mantiene un campo \texttt{size} che tiene traccia del numero di nodi nel sottoalbero radicato in quel nodo. Questo attributo è il nucleo dell'ottimizzazione e viene \textbf{mantenuto aggiornato durante le rotazioni AVL} che avvengono per preservare il bilanciamento.
 \end{enumerate}
 
 \begin{tcolorbox}[colback=gray!10!white, colframe=gray!75!black, title=Proprietà fondamentale AVL]
-  Sia \(x\) un nodo in un albero AVL. Vale:
+  Sia \(x\) un nodo in un albero AVL vale:
 
 \left| \operatorname{height}\bigl(x_{\text{sin}}\bigr) - \operatorname{height}\bigl(x_{\text{des}}\bigr) \right| &\le 1, \Rightarrow\quad h &= O(\log n), \\
 \quad\text{quindi inserimento, cancellazione e ricerca sono }O(\log n).
@@ -113,7 +113,7 @@ Questa implementazione rappresenta l'ottimale teorico per le operazioni di stati
 
 \subsection{Complessità Teorica}
 
-Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture dati implementate. La tabella riporta la funzione di costo di select e rank per le strutture e una breve spiegazione delle ragioni dietro queste complessità nei diversi casi.
+Tabella delle prestazioni teoriche \ref{tab:complessita_teorica} attese per select e rank nelle tre strutture dati implementate. La tabella riporta la funzione di costo di select e rank per le strutture e una breve spiegazione delle ragioni dietro queste complessità nei diversi casi.
 
 \begin{table}[H]
 \centering
@@ -133,7 +133,7 @@ Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture 
 \bottomrule
 \end{tabular}
 \caption{Complessità teorica di select e rank nelle tre strutture dati.}
-\label{tab:complessita_riveduta}
+\label{tab:complessita_teorica}
 \end{table}
 
 \subsubsection{Note sulla Tabella}
@@ -146,8 +146,6 @@ Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture 
 
 \item \textbf{rank(x) $\rightarrow$ T(n,k)=O(k)}
 \textbf{Spiegazione}: \\ Il costo è $O(k)$, dove $k$ è il rango effettivo di $x$ (quanti elementi sono $< x$). L'algoritmo deve scorrere la lista e contare $k$ elementi.
-
-\item \textbf{Calcolo Caso Medio (O(n))}: Assumendo che il rango $k$ sia distribuito uniformemente tra 0 e $n$, il calcolo è identico a quello di select. Il costo medio è $\mathbf{O(n)}$.
 \end{itemize}
 
 \subsubsection*{2. BSTree (senza attributo size)}
@@ -159,7 +157,7 @@ Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture 
 \begin{itemize}
 \item \textbf{select(k)}: Implementata con visita \textbf{in-order iterativa}, che tocca ogni nodo fino a raggiungere la k-esima posizione. Nel caso medio ($k \approx n/2$) e peggiore ($k=n$) costa $O(n)$.
 
-\item \textbf{rank(x)}: Implementata scendendo l'albero e calcolando ricorsivamente la dimensione di sottoalberi sinistri.
+\item \textbf{rank(x)}: Implementata scendendo l'albero e calcolando ricorsivamente la dimensione dei sottoalberi sinistri.
 \end{itemize}
 
 \subsubsection*{3. SBSTree (AVL + attributo size)}
@@ -169,13 +167,12 @@ Tabella delle prestazioni teoriche attese per select e rank nelle tre strutture 
 \textbf{Ragione fondamentale}: La presenza dell'attributo \texttt{size} aggiornato + il bilanciamento AVL permette un algoritmo che \textbf{non visita sottoalberi interni}.
 
 \begin{itemize}
-\item \textbf{select(k)} e \textbf{rank(x)}: Scendono dalla radice verso il nodo target seguendo un singolo percorso. Ad ogni nodo, in tempo $O(1)$, usano il campo \texttt{size} del figlio sinistro per confrontare $k$ (o contare elementi $< x$) e decidere se andare a sinistra, a destra, o fermarsi. Nessun sottoalbero viene visitato completamente: solo i nodi sul cammino dalla radice al target.
+\item \textbf{select(k)} e \textbf{rank(x)}: Scendono dalla radice verso il nodo obbiettivo seguendo un singolo percorso. Ad ogni nodo, in tempo $O(1)$, usano il campo \texttt{size} del figlio sinistro per confrontare $k$ (o contare elementi $< x$) e decidere se andare a sinistra, a destra, o fermarsi. Nessun sottoalbero viene visitato completamente: solo i nodi sul cammino dalla radice al target.
 
 \item \textbf{Costo}: Proporzionale all'altezza dell'albero: \textbf{$O(h)$}.
 
 \item \textbf{Altezza garantita dal bilanciamento AVL}: \textbf{$h = O(\log n)$} in tutti i casi (migliore, medio, peggiore).
 \end{itemize}
 
-\textbf{Conclusione}: Con il bilanciamento AVL, la complessità finale è \textbf{$O(\log n)$}, rappresentando l'ottimo teorico per le statistiche d'ordine dinamiche.
-
-si vuole mostrare anche che non è il bilanciamento a garantire l'efficienza, ma l'attributo size aggiornato.
+\textbf{Conclusione}: Con il bilanciamento AVL, la complessità finale è \textbf{$O(\log n)$}, rappresentando l'ottimo teorico per le statistiche d'ordine dinamiche.\\
+Si vuole mostrare anche che non è il bilanciamento a garantire l'efficienza, ma l'attributo size aggiornato.

@@ -1,5 +1,5 @@
-from src.DataStracture.AstructSracture.ABSTree import ABSTree
-from src.DataStracture.SBSTree.Node import Node
+from src.DataStructure.AstructSracture.ABSTree import ABSTree
+from src.DataStructure.SBSTree.Node import Node
 
 
 class SBStree(ABSTree):
@@ -62,7 +62,7 @@ class SBStree(ABSTree):
             right_h = right.get_height() if right is not None else 0
             balance = left_h - right_h
 
-            # eseguo rotazioni se necessario
+            # esegue rotazioni se necessario
             rotated = False
             if balance > 1:
                 if left is not None and left.get_balance() < 0:
@@ -81,12 +81,12 @@ class SBStree(ABSTree):
                 current = current.get_father()
                 rotated = True
 
-            # Se non c'è stata rotazione, aggiorno current normalmente
+            # Se non c'è stata rotazione, si aggiorna current normalmente
             if not rotated:
-                # aggiorno altezza e size correttamente sui figli attuali
+
                 left = current.get_left()
                 right = current.get_right()
-                # aggiorno altezza e size correttamente sui figli attuali
+
                 left_h = left.get_height() if left is not None else 0
                 right_h = right.get_height() if right is not None else 0
                 new_h = 1 + (left_h if left_h > right_h else right_h)
@@ -167,21 +167,12 @@ class SBStree(ABSTree):
             y = self._min_value_node(z.get_right())
             y_original_parent = y.get_father()
             if y.get_father() is not z:
-                # Prima sostituisco y con il suo figlio destro: questo rimuove y dal
-                # suo posto originale. Subito dopo aggiornare le size partendo dal
-                # suo genitore originale, PRIMA di assegnare y.right = z.right.
-                # Se si fa il contrario si crea una situazione temporanea in cui
-                # parent/child puntano l'uno all'altro (ciclo), e l'aggiornamento
-                # delle size risalendo i parent entra in loop infinito.
+
                 self._transplant(y, y.get_right())
-                # Assicuriamoci che y non mantenga il puntatore al vecchio padre
-                # per evitare cicli temporanei quando riattacchiamo y come
-                # sostituto di z (vedi commento sopra).
+
                 y.set_father(None)
-                # aggiorno le size partendo dal genitore originale di y
                 self._update_size_upwards(y_original_parent)
-                # ora posso riattaccare il sottoalbero destro di z a y senza
-                # creare cicli permanenti
+
                 y.set_right(z.get_right())
                 if y.get_right() is not None:
                     y.get_right().set_father(y)
@@ -189,7 +180,6 @@ class SBStree(ABSTree):
             y.set_left(z.get_left())
             if y.get_left() is not None:
                 y.get_left().set_father(y)
-            # aggiorna size/height partendo da y (nuova posizione)
             self._update_size_upwards(y)
             self._rebalance(y)
 

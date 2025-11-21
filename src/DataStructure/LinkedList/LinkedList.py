@@ -1,4 +1,4 @@
-from src.DataStracture.LinkedList.Node import Node
+from src.DataStructure.LinkedList.Node import Node
 
 class LinkedList:
 # lista ordinata
@@ -69,11 +69,3 @@ class LinkedList:
             count += 1
             current = current.get_right()
         return count
-
-    def to_list(self):
-        result = []
-        current = self._root
-        while current:
-            result.append(current.get_data())
-            current = current.get_right()
-        return result
