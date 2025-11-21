@@ -19,21 +19,14 @@ Di seguito verranno mostrati i risultati per ogni test effettuato con le relativ
 
 \subsubsection{Test 1: Dati Casuali}
 
-% Prima immagine (placeholder -> sostituita con rank_performance)
-%\noindent\makebox[\textwidth][c]{%
-%  \begin{minipage}{0.7\textwidth}\centering
-%    \includegraphics[width=\linewidth]{path/to/your/placeholder_image}
-%    \captionof{figure}{Rank performance (overview)}\label{fig:rank_performance_overview}
-%  \end{minipage}%
-%}
 
 
-%todo: aggiungere tabelle e controllare che tutte le immagini siano citate e abbiano una didascalia
+
 
 \begin{figure}[H]
   \centering
   \begin{minipage}{\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_random}
+    \includegraphics[width=\linewidth]{./resource/png/rank_performance_LinkedList_random}
     \caption{prestazioni Rank - LinkedList (random)}\label{fig:rank_ll_rand}
   \end{minipage}
 \end{figure}
@@ -42,7 +35,7 @@ Di seguito verranno mostrati i risultati per ogni test effettuato con le relativ
 \begin{figure}[H]
   \centering
   \begin{minipage}{\textwidth}\centering
-    \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_random}
+    \includegraphics[width=\linewidth]{./resource/png/select_performance_LinkedList_random}
     \caption{prestazioni Select - LinkedList (random)}\label{fig:select_ll_rand}
   \end{minipage}
 \end{figure}
@@ -54,7 +47,7 @@ Di seguito verranno mostrati i risultati per ogni test effettuato con le relativ
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_BSTree_random}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_BSTree_random}
   \caption{Rank - BSTree (random)}\label{fig:rank_bst_rand}
 \end{minipage}
   \end{figure}
@@ -62,7 +55,7 @@ Di seguito verranno mostrati i risultati per ogni test effettuato con le relativ
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_BSTree_random}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_BSTree_random}
   \caption{Select - BSTree (random)}\label{fig:select_bst_rand}
 \end{minipage}%
 \end{figure}
@@ -75,14 +68,14 @@ Risultato empirico atteso: le curve di tempo crescono linearmente con $n$ \ref{f
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_SBStree_random}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_SBStree_random}
   \caption{Rank - SBSTree (random)}\label{fig:rank_sbst_rand}
 \end{minipage}
     \end{figure}
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_SBStree_random}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_SBStree_random}
   \caption{Select - SBSTree (random)}\label{fig:select_sbst_rand}
 \end{minipage}%
 \end{figure}
@@ -95,7 +88,7 @@ SBSTree: $O(\log n)$ come si vede da \ref{fig:rank_sbst_rand} e \ref{fig:select_
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_BSTree_SBStree_random}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_LinkedList_BSTree_SBStree_random}
   \caption{Confronto Rank (random)}\label{fig:rank_cmp_rand}
 \end{minipage}
   \end{figure}
@@ -103,7 +96,7 @@ SBSTree: $O(\log n)$ come si vede da \ref{fig:rank_sbst_rand} e \ref{fig:select_
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_BSTree_SBStree_random}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_LinkedList_BSTree_SBStree_random}
   \caption{Confronto Select (random)}\label{fig:select_cmp_rand}
 \end{minipage}%
 \end{figure}
@@ -126,14 +119,14 @@ Come si vede dalla tabella \ref{tab:random} e dai grafici comparativi \ref{fig:r
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_LinkedList_sorted}
   \caption{Rank - LinkedList (ordinato)}\label{fig:rank_ll_sorted}
 \end{minipage}
   \end{figure}
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_LinkedList_sorted}
   \caption{Select - LinkedList (ordinato)}\label{fig:select_ll_sorted}
 \end{minipage}%
 \end{figure}
@@ -145,14 +138,14 @@ LinkedList: O(n) (lineare) simile al test precedente, dato che la lista mantiene
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_BSTree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_BSTree_sorted}
   \caption{Rank - BSTree (ordinato)}\label{fig:rank_bst_sorted}
 \end{minipage}
     \end{figure}\\
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_BSTree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_BSTree_sorted}
   \caption{Select - BSTree (ordinato)}\label{fig:select_bst_sorted}
 \end{minipage}%
 \end{figure}
@@ -163,14 +156,14 @@ BSTree (degenere): O(n) simile al test precedente \ref{fig:rank_bst_sorted}, \re
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_SBStree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_SBStree_sorted}
   \caption{Rank - SBSTree (ordinato)}\label{fig:rank_sbst_sorted}
 \end{minipage}
     \end{figure}\\
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_SBStree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_SBStree_sorted}
   \caption{Select - SBSTree (ordinato)}\label{fig:select_sbst_sorted}
 \end{minipage}%
 \end{figure}
@@ -181,14 +174,14 @@ SBSTree: $O(\log n)$ — bilanciamento AVL mantiene $h=O(\log n)$, \ref{fig:rank
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/rank_performance_LinkedList_BSTree_SBStree_sorted}
   \caption{Confronto Rank (ordinato)}\label{fig:rank_cmp_sorted}
 \end{minipage}
     \end{figure}
 \begin{figure}[H]
   \centering
 \begin{minipage}{\textwidth}\centering
-  \includegraphics[width=\linewidth]{../src/png/select_performance_LinkedList_BSTree_SBStree_sorted}
+  \includegraphics[width=\linewidth]{./resource/png/select_performance_LinkedList_BSTree_SBStree_sorted}
   \caption{Confronto Select (ordinato)}\label{fig:select_cmp_sorted}
 \end{minipage}%
 \end{figure}

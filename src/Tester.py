@@ -13,19 +13,19 @@ from pathlib import Path
 
 # Base directory: cartella `src/` (dove risiedono png/ e plt/)
 BASE_DIR = Path(__file__).resolve().parent
-# Assicuriamoci che la cartella png esista nella cartella src/
+#  la cartella png esista nella cartella src/
 os.makedirs(BASE_DIR / 'png', exist_ok=True)
 
 class StructureTester:
 
     def __init__(self, datasets_per_n=10, count=120, calls_per_test=30, warmup_calls=20):
 
-        sizes = np.unique(np.logspace(0, 4, 50, dtype=int))   # da 100 a ~1000, 25 punti
-            # size spaziato linearmente tra 100 e 10000 con np e unique
+        sizes = np.unique(np.logspace(0, 4, 50, dtype=int))
+
         self._sizes = sizes
-        self._datasets_per_n = datasets_per_n  # se >1 si possono aggregare più dataset per ogni n
-        self._count = count                      # numero di k scelti per n (campioni per n)
-        self._calls_per_test = calls_per_test    # numero di chiamate ripetute per misurare una singola prova
+        self._datasets_per_n = datasets_per_n
+        self._count = count
+        self._calls_per_test = calls_per_test
         self._warmup_calls = warmup_calls
 
 
@@ -52,7 +52,7 @@ class StructureTester:
         samples_select = []
         samples_rank = []
 
-        for _ in range(self._count): #test con k diversi per test quindi count esempi per ogni dimensione
+        for _ in range(self._count):
             k = int(rng.integers(1, n + 1))
 
             start = time.perf_counter()

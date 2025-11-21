@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.17)  21 NOV 2025 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.17)  21 NOV 2025 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1238,7 +1238,7 @@ Package hyperref Info: Link coloring OFF on input line 60.
 
 
 (./resource/title.tex
-<resource/firenze2.png, id=115, 4149.5025pt x 2015.53pt>
+<resource/firenze2.png, id=119, 4149.5025pt x 2015.53pt>
 File: resource/firenze2.png Graphic file (type png)
 <use resource/firenze2.png>
 Package pdftex.def Info: resource/firenze2.png  used on input line 9.
@@ -1295,7 +1295,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<./resource/img/linkedlist.png, id=157, 1144.275pt x 283.0575pt>
+<./resource/img/linkedlist.png, id=162, 1144.275pt x 283.0575pt>
 File: ./resource/img/linkedlist.png Graphic file (type png)
 <use ./resource/img/linkedlist.png>
 Package pdftex.def Info: ./resource/img/linkedlist.png  used on input line 30.
@@ -1320,7 +1320,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [2]
-<./resource/img/Binary_search_tree.png, id=167, 250.9375pt x 209.78375pt>
+<./resource/img/Binary_search_tree.png, id=173, 250.9375pt x 209.78375pt>
 File: ./resource/img/Binary_search_tree.png Graphic file (type png)
 <use ./resource/img/Binary_search_tree.png>
 Package pdftex.def Info: ./resource/img/Binary_search_tree.png  used on input l
@@ -1399,7 +1399,7 @@ s been already used, duplicate ignored
 l.70 L
       'inserimento di un nuovo elemento avviene confrontando il valore da in...
  <./resource/img/linkedlist.png> <./resource/img/Binary_search_tree.png>]
-<./resource/img/AVL-Tree.png, id=178, 770.88pt x 462.72874pt>
+<./resource/img/AVL-Tree.png, id=183, 770.88pt x 462.72874pt>
 File: ./resource/img/AVL-Tree.png Graphic file (type png)
 <use ./resource/img/AVL-Tree.png>
 Package pdftex.def Info: ./resource/img/AVL-Tree.png  used on input line 89.
@@ -1453,7 +1453,7 @@ s been already used, duplicate ignored
 l.137 \end{table}
                   <./resource/img/AVL-Tree.png>])
 (./components/documentazione.tex
-<./resource/img/Main.png, id=195, 1528.71124pt x 757.83125pt>
+<./resource/img/Main.png, id=200, 1528.71124pt x 757.83125pt>
 File: ./resource/img/Main.png Graphic file (type png)
 <use ./resource/img/Main.png>
 Package pdftex.def Info: ./resource/img/Main.png  used on input line 11.
@@ -1534,201 +1534,207 @@ re le pre-sta-zio-ni del-le tre strut-tu-re da-ti (\OT1/pcr/m/n/10 LinkedList\O
 T1/ptm/m/n/10 ,
  []
 
-<../src/png/rank_performance_LinkedList_random.png, id=333, 722.7pt x 361.35pt>
-
-File: ../src/png/rank_performance_LinkedList_random.png Graphic file (type png)
-
-<use ../src/png/rank_performance_LinkedList_random.png>
-Package pdftex.def Info: ../src/png/rank_performance_LinkedList_random.png  use
-d on input line 36.
+<./resource/png/rank_performance_LinkedList_random.png, id=338, 722.7pt x 361.3
+5pt>
+File: ./resource/png/rank_performance_LinkedList_random.png Graphic file (type 
+png)
+<use ./resource/png/rank_performance_LinkedList_random.png>
+Package pdftex.def Info: ./resource/png/rank_performance_LinkedList_random.png 
+ used on input line 29.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [10]
 
-./components/test.tex:42: LaTeX Error: There's no line here to end.
+./components/test.tex:35: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 \begin
+l.35 \begin
            {figure}[H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/select_performance_LinkedList_random.png, id=339, 722.7pt x 361.35p
-t>
-File: ../src/png/select_performance_LinkedList_random.png Graphic file (type pn
-g)
-<use ../src/png/select_performance_LinkedList_random.png>
-Package pdftex.def Info: ../src/png/select_performance_LinkedList_random.png  u
-sed on input line 45.
+<./resource/png/select_performance_LinkedList_random.png, id=344, 722.7pt x 361
+.35pt>
+File: ./resource/png/select_performance_LinkedList_random.png Graphic file (typ
+e png)
+<use ./resource/png/select_performance_LinkedList_random.png>
+Package pdftex.def Info: ./resource/png/select_performance_LinkedList_random.pn
+g  used on input line 38.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 
-./components/test.tex:51: LaTeX Error: There's no line here to end.
+./components/test.tex:44: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 \\
+l.44 \\
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:52: LaTeX Error: There's no line here to end.
+./components/test.tex:45: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.52 \texttt
+l.45 \texttt
             {LinkedList}: O(n), lineare come previsto sia per select \ref{fi...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/rank_performance_BSTree_random.png, id=342, 722.7pt x 361.35pt>
-File: ../src/png/rank_performance_BSTree_random.png Graphic file (type png)
-<use ../src/png/rank_performance_BSTree_random.png>
-Package pdftex.def Info: ../src/png/rank_performance_BSTree_random.png  used on
- input line 57.
+<./resource/png/rank_performance_BSTree_random.png, id=347, 722.7pt x 361.35pt>
+
+File: ./resource/png/rank_performance_BSTree_random.png Graphic file (type png)
+
+<use ./resource/png/rank_performance_BSTree_random.png>
+Package pdftex.def Info: ./resource/png/rank_performance_BSTree_random.png  use
+d on input line 50.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--60
+Underfull \hbox (badness 10000) in paragraph at lines 45--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--60
+Underfull \hbox (badness 10000) in paragraph at lines 45--53
 
  []
 
 
-./components/test.tex:62: LaTeX Error: There's no line here to end.
+./components/test.tex:55: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 \begin
+l.55 \begin
            {figure}[H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/select_performance_BSTree_random.png, id=343, 722.7pt x 361.35pt>
-File: ../src/png/select_performance_BSTree_random.png Graphic file (type png)
-<use ../src/png/select_performance_BSTree_random.png>
-Package pdftex.def Info: ../src/png/select_performance_BSTree_random.png  used 
-on input line 65.
+<./resource/png/select_performance_BSTree_random.png, id=348, 722.7pt x 361.35p
+t>
+File: ./resource/png/select_performance_BSTree_random.png Graphic file (type pn
+g)
+<use ./resource/png/select_performance_BSTree_random.png>
+Package pdftex.def Info: ./resource/png/select_performance_BSTree_random.png  u
+sed on input line 58.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.68 \end{figure}
+l.61 \end{figure}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.68 \end{figure}
-                  </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/pn
-g/rank_performance_LinkedList_random.png> </home/leo/PycharmProjects/Laboratori
-oAlgoritmi/out/../src/png/select_performance_LinkedList_random.png>]
+l.61 \end{figure}
+                  <./resource/png/rank_performance_LinkedList_random.png> <./re
+source/png/select_performance_LinkedList_random.png>]
 
-./components/test.tex:71: LaTeX Error: There's no line here to end.
+./components/test.tex:64: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \\
+l.64 \\
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:72: LaTeX Error: There's no line here to end.
+./components/test.tex:65: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72 A
+l.65 A
       nche se i dati casuali producono mediamente un albero bilanciato con $...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/rank_performance_SBStree_random.png, id=354, 722.7pt x 361.35pt>
-File: ../src/png/rank_performance_SBStree_random.png Graphic file (type png)
-<use ../src/png/rank_performance_SBStree_random.png>
-Package pdftex.def Info: ../src/png/rank_performance_SBStree_random.png  used o
-n input line 78.
+<./resource/png/rank_performance_SBStree_random.png, id=359, 722.7pt x 361.35pt
+>
+File: ./resource/png/rank_performance_SBStree_random.png Graphic file (type png
+)
+<use ./resource/png/rank_performance_SBStree_random.png>
+Package pdftex.def Info: ./resource/png/rank_performance_SBStree_random.png  us
+ed on input line 71.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
-<../src/png/select_performance_SBStree_random.png, id=355, 722.7pt x 361.35pt>
-File: ../src/png/select_performance_SBStree_random.png Graphic file (type png)
-<use ../src/png/select_performance_SBStree_random.png>
-Package pdftex.def Info: ../src/png/select_performance_SBStree_random.png  used
- on input line 85.
+<./resource/png/select_performance_SBStree_random.png, id=360, 722.7pt x 361.35
+pt>
+File: ./resource/png/select_performance_SBStree_random.png Graphic file (type p
+ng)
+<use ./resource/png/select_performance_SBStree_random.png>
+Package pdftex.def Info: ./resource/png/select_performance_SBStree_random.png  
+used on input line 78.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.88 \end{figure}
+l.81 \end{figure}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.88 \end{figure}
-                  </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/pn
-g/rank_performance_BSTree_random.png> </home/leo/PycharmProjects/LaboratorioAlg
-oritmi/out/../src/png/select_performance_BSTree_random.png>]
+l.81 \end{figure}
+                  <./resource/png/rank_performance_BSTree_random.png> <./resour
+ce/png/select_performance_BSTree_random.png>]
 
-./components/test.tex:90: LaTeX Error: There's no line here to end.
+./components/test.tex:83: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \\\\
+l.83 \\\\
          \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:90: LaTeX Error: There's no line here to end.
+./components/test.tex:83: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \\\\\\
+l.83 \\\\\\
            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:91: LaTeX Error: There's no line here to end.
+./components/test.tex:84: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 S
+l.84 S
       BSTree: $O(\log n)$ come si vede da \ref{fig:rank_sbst_rand} e \ref{fi...
 
 Your command was ignored.
@@ -1736,86 +1742,85 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
-<../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png, id=367, 722.
-7pt x 361.35pt>
-File: ../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png Graphic 
-file (type png)
-<use ../src/png/rank_performance_LinkedList_BSTree_SBStree_random.png>
-Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_SBStree_
-random.png  used on input line 98.
+<./resource/png/rank_performance_LinkedList_BSTree_SBStree_random.png, id=372, 
+722.7pt x 361.35pt>
+File: ./resource/png/rank_performance_LinkedList_BSTree_SBStree_random.png Grap
+hic file (type png)
+<use ./resource/png/rank_performance_LinkedList_BSTree_SBStree_random.png>
+Package pdftex.def Info: ./resource/png/rank_performance_LinkedList_BSTree_SBSt
+ree_random.png  used on input line 91.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.102 
-      
+l.95 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.102 
-       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perf
-ormance_SBStree_random.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/out
-/../src/png/select_performance_SBStree_random.png>]
-<../src/png/select_performance_LinkedList_BSTree_SBStree_random.png, id=376, 72
-2.7pt x 361.35pt>
-File: ../src/png/select_performance_LinkedList_BSTree_SBStree_random.png Graphi
-c file (type png)
-<use ../src/png/select_performance_LinkedList_BSTree_SBStree_random.png>
-Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_SBStre
-e_random.png  used on input line 106.
+l.95 
+      <./resource/png/rank_performance_SBStree_random.png> <./resource/png/sele
+ct_performance_SBStree_random.png>]
+<./resource/png/select_performance_LinkedList_BSTree_SBStree_random.png, id=381
+, 722.7pt x 361.35pt>
+File: ./resource/png/select_performance_LinkedList_BSTree_SBStree_random.png Gr
+aphic file (type png)
+<use ./resource/png/select_performance_LinkedList_BSTree_SBStree_random.png>
+Package pdftex.def Info: ./resource/png/select_performance_LinkedList_BSTree_SB
+Stree_random.png  used on input line 99.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 
 
-./components/test.tex:111: LaTeX Error: There's no line here to end.
+./components/test.tex:104: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 \\\\
+l.104 \\\\
           \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:111: LaTeX Error: There's no line here to end.
+./components/test.tex:104: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 \\\\\\
+l.104 \\\\\\
             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./components/test.tex:112: LaTeX Error: There's no line here to end.
+./components/test.tex:105: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.112 C
+l.105 C
        onseguenza: il test dovrebbe mostrare che LinkedList e BSTree hanno p...
 
 Your command was ignored.
@@ -1823,12 +1828,12 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 (./components/tabella_risultati_random.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 112--118
+Underfull \hbox (badness 10000) in paragraph at lines 105--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--118
+Underfull \hbox (badness 10000) in paragraph at lines 105--111
 
  []
 
@@ -1836,191 +1841,194 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--118
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-./components/test.tex:120: LaTeX Error: Something's wrong--perhaps a missing \i
+./components/test.tex:113: LaTeX Error: Something's wrong--perhaps a missing \i
 tem.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 \end{itemize}
+l.113 \end{itemize}
                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<../src/png/rank_performance_LinkedList_sorted.png, id=380, 722.7pt x 361.35pt>
-
-File: ../src/png/rank_performance_LinkedList_sorted.png Graphic file (type png)
-
-<use ../src/png/rank_performance_LinkedList_sorted.png>
-Package pdftex.def Info: ../src/png/rank_performance_LinkedList_sorted.png  use
-d on input line 129.
+<./resource/png/rank_performance_LinkedList_sorted.png, id=385, 722.7pt x 361.3
+5pt>
+File: ./resource/png/rank_performance_LinkedList_sorted.png Graphic file (type 
+png)
+<use ./resource/png/rank_performance_LinkedList_sorted.png>
+Package pdftex.def Info: ./resource/png/rank_performance_LinkedList_sorted.png 
+ used on input line 122.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
-<../src/png/select_performance_LinkedList_sorted.png, id=381, 722.7pt x 361.35p
-t>
-File: ../src/png/select_performance_LinkedList_sorted.png Graphic file (type pn
-g)
-<use ../src/png/select_performance_LinkedList_sorted.png>
-Package pdftex.def Info: ../src/png/select_performance_LinkedList_sorted.png  u
-sed on input line 136.
+<./resource/png/select_performance_LinkedList_sorted.png, id=386, 722.7pt x 361
+.35pt>
+File: ./resource/png/select_performance_LinkedList_sorted.png Graphic file (typ
+e png)
+<use ./resource/png/select_performance_LinkedList_sorted.png>
+Package pdftex.def Info: ./resource/png/select_performance_LinkedList_sorted.pn
+g  used on input line 129.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.139 \end{figure}
+l.132 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.139 \end{figure}
-                   </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/p
-ng/rank_performance_LinkedList_BSTree_SBStree_random.png> </home/leo/PycharmPro
-jects/LaboratorioAlgoritmi/out/../src/png/select_performance_LinkedList_BSTree_
-SBStree_random.png>] [15
+l.132 \end{figure}
+                   <./resource/png/rank_performance_LinkedList_BSTree_SBStree_r
+andom.png> <./resource/png/select_performance_LinkedList_BSTree_SBStree_random.
+png>] [15
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.140 
+l.133 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.140 
-       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perf
-ormance_LinkedList_sorted.png>]
-<../src/png/rank_performance_BSTree_sorted.png, id=402, 722.7pt x 361.35pt>
-File: ../src/png/rank_performance_BSTree_sorted.png Graphic file (type png)
-<use ../src/png/rank_performance_BSTree_sorted.png>
-Package pdftex.def Info: ../src/png/rank_performance_BSTree_sorted.png  used on
- input line 148.
+l.133 
+       <./resource/png/rank_performance_LinkedList_sorted.png>]
+<./resource/png/rank_performance_BSTree_sorted.png, id=407, 722.7pt x 361.35pt>
+
+File: ./resource/png/rank_performance_BSTree_sorted.png Graphic file (type png)
+
+<use ./resource/png/rank_performance_BSTree_sorted.png>
+Package pdftex.def Info: ./resource/png/rank_performance_BSTree_sorted.png  use
+d on input line 141.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 
 
-./components/test.tex:152: LaTeX Error: There's no line here to end.
+./components/test.tex:145: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152 \begin
+l.145 \begin
             {figure}[H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/select_performance_BSTree_sorted.png, id=403, 722.7pt x 361.35pt>
-File: ../src/png/select_performance_BSTree_sorted.png Graphic file (type png)
-<use ../src/png/select_performance_BSTree_sorted.png>
-Package pdftex.def Info: ../src/png/select_performance_BSTree_sorted.png  used 
-on input line 155.
+<./resource/png/select_performance_BSTree_sorted.png, id=408, 722.7pt x 361.35p
+t>
+File: ./resource/png/select_performance_BSTree_sorted.png Graphic file (type pn
+g)
+<use ./resource/png/select_performance_BSTree_sorted.png>
+Package pdftex.def Info: ./resource/png/select_performance_BSTree_sorted.png  u
+sed on input line 148.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [16
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.159 
+l.152 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.159 
-       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
-rformance_LinkedList_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritm
-i/out/../src/png/rank_performance_BSTree_sorted.png>]
-<../src/png/rank_performance_SBStree_sorted.png, id=415, 722.7pt x 361.35pt>
-File: ../src/png/rank_performance_SBStree_sorted.png Graphic file (type png)
-<use ../src/png/rank_performance_SBStree_sorted.png>
-Package pdftex.def Info: ../src/png/rank_performance_SBStree_sorted.png  used o
-n input line 166.
+l.152 
+       <./resource/png/select_performance_LinkedList_sorted.png> <./resource/pn
+g/rank_performance_BSTree_sorted.png>]
+<./resource/png/rank_performance_SBStree_sorted.png, id=419, 722.7pt x 361.35pt
+>
+File: ./resource/png/rank_performance_SBStree_sorted.png Graphic file (type png
+)
+<use ./resource/png/rank_performance_SBStree_sorted.png>
+Package pdftex.def Info: ./resource/png/rank_performance_SBStree_sorted.png  us
+ed on input line 159.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 
 
-./components/test.tex:170: LaTeX Error: There's no line here to end.
+./components/test.tex:163: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170 \begin
+l.163 \begin
             {figure}[H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../src/png/select_performance_SBStree_sorted.png, id=416, 722.7pt x 361.35pt>
-File: ../src/png/select_performance_SBStree_sorted.png Graphic file (type png)
-<use ../src/png/select_performance_SBStree_sorted.png>
-Package pdftex.def Info: ../src/png/select_performance_SBStree_sorted.png  used
- on input line 173.
+<./resource/png/select_performance_SBStree_sorted.png, id=420, 722.7pt x 361.35
+pt>
+File: ./resource/png/select_performance_SBStree_sorted.png Graphic file (type p
+ng)
+<use ./resource/png/select_performance_SBStree_sorted.png>
+Package pdftex.def Info: ./resource/png/select_performance_SBStree_sorted.png  
+used on input line 166.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.177 
+l.170 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.177 
-       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
-rformance_BSTree_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/ou
-t/../src/png/rank_performance_SBStree_sorted.png>]
-<../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png, id=427, 722.
-7pt x 361.35pt>
-File: ../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png Graphic 
-file (type png)
-<use ../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png>
-Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_SBStree_
-sorted.png  used on input line 184.
+l.170 
+       <./resource/png/select_performance_BSTree_sorted.png> <./resource/png/ra
+nk_performance_SBStree_sorted.png>]
+<./resource/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png, id=431, 
+722.7pt x 361.35pt>
+File: ./resource/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png Grap
+hic file (type png)
+<use ./resource/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png>
+Package pdftex.def Info: ./resource/png/rank_performance_LinkedList_BSTree_SBSt
+ree_sorted.png  used on input line 177.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
-<../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png, id=428, 72
-2.7pt x 361.35pt>
-File: ../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png Graphi
-c file (type png)
-<use ../src/png/select_performance_LinkedList_BSTree_SBStree_sorted.png>
-Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_SBStre
-e_sorted.png  used on input line 191.
+<./resource/png/select_performance_LinkedList_BSTree_SBStree_sorted.png, id=432
+, 722.7pt x 361.35pt>
+File: ./resource/png/select_performance_LinkedList_BSTree_SBStree_sorted.png Gr
+aphic file (type png)
+<use ./resource/png/select_performance_LinkedList_BSTree_SBStree_sorted.png>
+Package pdftex.def Info: ./resource/png/select_performance_LinkedList_BSTree_SB
+Stree_sorted.png  used on input line 184.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
  [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.195 
+l.188 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.195 
-       </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/select_pe
-rformance_SBStree_sorted.png> </home/leo/PycharmProjects/LaboratorioAlgoritmi/o
-ut/../src/png/rank_performance_LinkedList_BSTree_SBStree_sorted.png>]
+l.188 
+       <./resource/png/select_performance_SBStree_sorted.png> <./resource/png/r
+ank_performance_LinkedList_BSTree_SBStree_sorted.png>]
 
-./components/test.tex:198: LaTeX Error: There's no line here to end.
+./components/test.tex:191: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 \input
+l.191 \input
             {./components/tabella_risultati_sorted}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 (./components/tabella_risultati_sorted.tex)) (./components/conclusione.tex
-Underfull \hbox (badness 10000) in paragraph at lines 200--3
+Underfull \hbox (badness 10000) in paragraph at lines 193--3
 
  []
 
@@ -2036,19 +2044,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.13 \end{itemize}
-                   </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/p
-ng/select_performance_LinkedList_BSTree_SBStree_sorted.png>]
+                   <./resource/png/select_performance_LinkedList_BSTree_SBStree
+_sorted.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 20--23
 
  []
 
-<../src/png/rank_performance_LinkedList_BSTree_random.png, id=449, 722.7pt x 36
-1.35pt>
-File: ../src/png/rank_performance_LinkedList_BSTree_random.png Graphic file (ty
-pe png)
-<use ../src/png/rank_performance_LinkedList_BSTree_random.png>
-Package pdftex.def Info: ../src/png/rank_performance_LinkedList_BSTree_random.p
-ng  used on input line 30.
+<./resource/png/rank_performance_LinkedList_BSTree_random.png, id=453, 722.7pt 
+x 361.35pt>
+File: ./resource/png/rank_performance_LinkedList_BSTree_random.png Graphic file
+ (type png)
+<use ./resource/png/rank_performance_LinkedList_BSTree_random.png>
+Package pdftex.def Info: ./resource/png/rank_performance_LinkedList_BSTree_rand
+om.png  used on input line 30.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 ./components/conclusione.tex:31: Undefined control sequence.
 l.31   \captionof
@@ -2069,13 +2077,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--33
 
  []
 
-<../src/png/select_performance_LinkedList_BSTree_random.png, id=450, 722.7pt x 
-361.35pt>
-File: ../src/png/select_performance_LinkedList_BSTree_random.png Graphic file (
-type png)
-<use ../src/png/select_performance_LinkedList_BSTree_random.png>
-Package pdftex.def Info: ../src/png/select_performance_LinkedList_BSTree_random
-.png  used on input line 37.
+<./resource/png/select_performance_LinkedList_BSTree_random.png, id=454, 722.7p
+t x 361.35pt>
+File: ./resource/png/select_performance_LinkedList_BSTree_random.png Graphic fi
+le (type png)
+<use ./resource/png/select_performance_LinkedList_BSTree_random.png>
+Package pdftex.def Info: ./resource/png/select_performance_LinkedList_BSTree_ra
+ndom.png  used on input line 37.
 (pdftex.def)             Requested size: 398.3386pt x 199.16766pt.
 ./components/conclusione.tex:38: Undefined control sequence.
 l.38   \captionof
@@ -2086,8 +2094,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[20 </home/leo/PycharmProjects/LaboratorioAlgoritmi/out/../src/png/rank_perform
-ance_LinkedList_BSTree_random.png>]
+[20 <./resource/png/rank_performance_LinkedList_BSTree_random.png>]
 
 ./components/conclusione.tex:42: LaTeX Error: There's no line here to end.
 
@@ -2127,36 +2134,26 @@ i di con-teg-gio sui sot-toal-be-ri (ad es. []\OT1/pcr/m/n/10 subtree[]size\OT1
 /ptm/m/n/10 );
  []
 
-) (./components/bibliografia.tex [21 </home/leo/PycharmProjects/LaboratorioAlgo
-ritmi/out/../src/png/select_performance_LinkedList_BSTree_random.png>])
-[22] 
+) (./components/bibliografia.tex [21 <./resource/png/select_performance_LinkedL
+ist_BSTree_random.png>]) [22]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (/home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneAlgoritmi.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `relazioneAlgoritmi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `relazioneAlgoritmi.out':
-(rerunfilecheck)             Before: FAE09CFB327D6CE625D06EB9437365EB;4374
-(rerunfilecheck)             After:  B31C934A8E3F6768B88F04664540B4D7;4696.
+Package rerunfilecheck Info: File `relazioneAlgoritmi.out' has not changed.
+(rerunfilecheck)             Checksum: B31C934A8E3F6768B88F04664540B4D7;4696.
 Package logreq Info: Writing requests to 'relazioneAlgoritmi.run.xml'.
 \openout1 = `relazioneAlgoritmi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33540 strings out of 476098
- 630442 string characters out of 5793536
+ 33541 strings out of 476098
+ 631255 string characters out of 5793536
  2125975 words of memory out of 5000000
- 54791 multiletter control sequences out of 15000+600000
+ 54792 multiletter control sequences out of 15000+600000
  592214 words of font info for 98 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  83i,12n,93p,1163b,2148s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2173,10 +2170,10 @@ r/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
 Output written on /home/leo/PycharmProjects/LaboratorioAlgoritmi/out/relazioneA
-lgoritmi.pdf (23 pages, 1828532 bytes).
+lgoritmi.pdf (23 pages, 1829061 bytes).
 PDF statistics:
- 567 PDF objects out of 1000 (max. 8388607)
- 465 compressed objects within 5 object streams
+ 571 PDF objects out of 1000 (max. 8388607)
+ 469 compressed objects within 5 object streams
  194 named destinations out of 1000 (max. 500000)
- 344 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 words of extra memory for PDF output out of 10000 (max. 10000000)
 

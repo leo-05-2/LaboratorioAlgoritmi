@@ -1,9 +1,7 @@
 from ..AstructSracture.ANode import ANode
 class Node(ANode):
     def __init__(self, key):
-        # usa il costruttore astratto per inizializzare _data e _right
         super().__init__(key)
-        # attributi specifici dei nodi di alberi bilanciati
         self._left = None
         self._father = None
         self._size = 1

@@ -68,16 +68,14 @@ class SBStree(ABSTree):
                 if left is not None and left.get_balance() < 0:
                     self.left_rotate(left)
                 self.right_rotate(current)
-                # Dopo right_rotate, current è stato spostato come figlio sinistro
-                # Il nodo che ora occupa la posizione originale è il padre di current
+
                 current = current.get_father()
                 rotated = True
             elif balance < -1:
                 if right is not None and right.get_balance() > 0:
                     self.right_rotate(right)
                 self.left_rotate(current)
-                # Dopo left_rotate, current è stato spostato come figlio destro
-                # Il nodo che ora occupa la posizione originale è il padre di current
+
                 current = current.get_father()
                 rotated = True
 
@@ -117,7 +115,7 @@ class SBStree(ABSTree):
             elif key > current.get_data():
                 current = current.get_right()
             else:
-                # La chiave esiste già, non inseriamo duplicati
+
                 return
         node.set_father(parent)
         if key < parent.get_data():
